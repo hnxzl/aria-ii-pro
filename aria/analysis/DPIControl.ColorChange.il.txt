@@ -1,0 +1,120 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary.DPIControl METHOD=CustomDPIButton_ColorChange TOKEN=0x060007B1 IL_BYTES=392
+0000: ldarg.0
+0001: ldfld            0x04000733 // Boolean UpdateUIFlag
+0006: brtrue.s         IL_0009
+0008: ret
+0009: call             0x0600040D // Boolean GetDeviceOnlineFlag()
+000E: brtrue.s         IL_0011
+0010: ret
+0011: ldarg.0
+0012: ldfld            0x04000732 // Boolean IsUpdateUI
+0017: brtrue           IL_0187
+001C: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0021: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+0026: ldarg.0
+0027: ldfld            0x04000738 // Int32 SelectIndex
+002C: ldelema          0x02000024 // DriverLib.DPIConfig
+0031: ldfld            0x040000E7 // Byte[] color
+0036: ldc.i4.0
+0037: ldelem.u1
+0038: ldarg.0
+0039: ldfld            0x04000735 // System.Collections.Generic.List`1[CustomControlLibrary.CustomDPIButton] CustomDPIButtons
+003E: ldarg.0
+003F: ldfld            0x04000738 // Int32 SelectIndex
+0044: callvirt         0x0A00036F // CustomControlLibrary.CustomDPIButton get_Item(Int32)
+0049: callvirt         0x0600027D // System.Drawing.Color get_DPIColor()
+004E: stloc.0
+004F: ldloca.s         0
+0051: call             0x0A0002A4 // Byte get_R()
+0056: bne.un.s         IL_00D3
+0058: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+005D: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+0062: ldarg.0
+0063: ldfld            0x04000738 // Int32 SelectIndex
+0068: ldelema          0x02000024 // DriverLib.DPIConfig
+006D: ldfld            0x040000E7 // Byte[] color
+0072: ldc.i4.1
+0073: ldelem.u1
+0074: ldarg.0
+0075: ldfld            0x04000735 // System.Collections.Generic.List`1[CustomControlLibrary.CustomDPIButton] CustomDPIButtons
+007A: ldarg.0
+007B: ldfld            0x04000738 // Int32 SelectIndex
+0080: callvirt         0x0A00036F // CustomControlLibrary.CustomDPIButton get_Item(Int32)
+0085: callvirt         0x0600027D // System.Drawing.Color get_DPIColor()
+008A: stloc.0
+008B: ldloca.s         0
+008D: call             0x0A0002A5 // Byte get_G()
+0092: bne.un.s         IL_00D3
+0094: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0099: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+009E: ldarg.0
+009F: ldfld            0x04000738 // Int32 SelectIndex
+00A4: ldelema          0x02000024 // DriverLib.DPIConfig
+00A9: ldfld            0x040000E7 // Byte[] color
+00AE: ldc.i4.2
+00AF: ldelem.u1
+00B0: ldarg.0
+00B1: ldfld            0x04000735 // System.Collections.Generic.List`1[CustomControlLibrary.CustomDPIButton] CustomDPIButtons
+00B6: ldarg.0
+00B7: ldfld            0x04000738 // Int32 SelectIndex
+00BC: callvirt         0x0A00036F // CustomControlLibrary.CustomDPIButton get_Item(Int32)
+00C1: callvirt         0x0600027D // System.Drawing.Color get_DPIColor()
+00C6: stloc.0
+00C7: ldloca.s         0
+00C9: call             0x0A0002A6 // Byte get_B()
+00CE: beq              IL_0187
+00D3: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+00D8: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+00DD: ldarg.0
+00DE: ldfld            0x04000738 // Int32 SelectIndex
+00E3: ldelema          0x02000024 // DriverLib.DPIConfig
+00E8: ldfld            0x040000E7 // Byte[] color
+00ED: ldc.i4.0
+00EE: ldarg.0
+00EF: ldfld            0x04000735 // System.Collections.Generic.List`1[CustomControlLibrary.CustomDPIButton] CustomDPIButtons
+00F4: ldarg.0
+00F5: ldfld            0x04000738 // Int32 SelectIndex
+00FA: callvirt         0x0A00036F // CustomControlLibrary.CustomDPIButton get_Item(Int32)
+00FF: callvirt         0x0600027D // System.Drawing.Color get_DPIColor()
+0104: stloc.0
+0105: ldloca.s         0
+0107: call             0x0A0002A4 // Byte get_R()
+010C: stelem.i1
+010D: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0112: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+0117: ldarg.0
+0118: ldfld            0x04000738 // Int32 SelectIndex
+011D: ldelema          0x02000024 // DriverLib.DPIConfig
+0122: ldfld            0x040000E7 // Byte[] color
+0127: ldc.i4.1
+0128: ldarg.0
+0129: ldfld            0x04000735 // System.Collections.Generic.List`1[CustomControlLibrary.CustomDPIButton] CustomDPIButtons
+012E: ldarg.0
+012F: ldfld            0x04000738 // Int32 SelectIndex
+0134: callvirt         0x0A00036F // CustomControlLibrary.CustomDPIButton get_Item(Int32)
+0139: callvirt         0x0600027D // System.Drawing.Color get_DPIColor()
+013E: stloc.0
+013F: ldloca.s         0
+0141: call             0x0A0002A5 // Byte get_G()
+0146: stelem.i1
+0147: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+014C: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+0151: ldarg.0
+0152: ldfld            0x04000738 // Int32 SelectIndex
+0157: ldelema          0x02000024 // DriverLib.DPIConfig
+015C: ldfld            0x040000E7 // Byte[] color
+0161: ldc.i4.2
+0162: ldarg.0
+0163: ldfld            0x04000735 // System.Collections.Generic.List`1[CustomControlLibrary.CustomDPIButton] CustomDPIButtons
+0168: ldarg.0
+0169: ldfld            0x04000738 // Int32 SelectIndex
+016E: callvirt         0x0A00036F // CustomControlLibrary.CustomDPIButton get_Item(Int32)
+0173: callvirt         0x0600027D // System.Drawing.Color get_DPIColor()
+0178: stloc.0
+0179: ldloca.s         0
+017B: call             0x0A0002A6 // Byte get_B()
+0180: stelem.i1
+0181: ldarg.0
+0182: call             0x060007AF // Void UpdateValue()
+0187: ret

@@ -1,0 +1,72 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=UpdateLEDPreview TOKEN=0x06000436 IL_BYTES=220
+0000: ldarg.1
+0001: call             0x0A0002AD // System.Drawing.Point get_MousePosition()
+0006: callvirt         0x0A0002AE // System.Drawing.Point PointToClient(System.Drawing.Point)
+000B: stloc.0
+000C: ldarg.1
+000D: callvirt         0x0A00006C // System.Drawing.Image get_BackgroundImage()
+0012: newobj           0x0A00003B // Void .ctor(System.Drawing.Image)
+0017: ldloca.s         0
+0019: call             0x0A00000E // Int32 get_X()
+001E: ldc.i4.s         96
+0020: mul
+0021: call             0x06000584 // Int32 GetDpi()
+0026: div
+0027: ldloca.s         0
+0029: call             0x0A00000F // Int32 get_Y()
+002E: ldc.i4.s         96
+0030: mul
+0031: call             0x06000584 // Int32 GetDpi()
+0036: div
+0037: call             0x0A000033 // System.Drawing.Color GetPixel(Int32, Int32)
+003C: stloc.1
+003D: ldarg.0
+003E: ldc.i4.1
+003F: stfld            0x04000490 // Boolean UpdateLEDFlag
+0044: ldarg.0
+0045: ldfld            0x040004E0 // System.Windows.Forms.PictureBox pictureBox_LEDPreview
+004A: ldloc.1
+004B: callvirt         0x0A0000D6 // Void set_BackColor(System.Drawing.Color)
+0050: ldarg.0
+0051: ldfld            0x040004CE // Mouse_Drive_Beta.ComboControlLibrary.AdjustControl adjustControl_R
+0056: ldloca.s         1
+0058: call             0x0A0002A4 // Byte get_R()
+005D: callvirt         0x060006C0 // Void set_Value(Int32)
+0062: ldarg.0
+0063: ldfld            0x040004CD // Mouse_Drive_Beta.ComboControlLibrary.AdjustControl adjustControl_G
+0068: ldloca.s         1
+006A: call             0x0A0002A5 // Byte get_G()
+006F: callvirt         0x060006C0 // Void set_Value(Int32)
+0074: ldarg.0
+0075: ldfld            0x040004CC // Mouse_Drive_Beta.ComboControlLibrary.AdjustControl adjustControl_B
+007A: ldloca.s         1
+007C: call             0x0A0002A6 // Byte get_B()
+0081: callvirt         0x060006C0 // Void set_Value(Int32)
+0086: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+008B: ldflda           0x04000104 // DriverLib.LedBar ledBar
+0090: ldfld            0x040000ED // Byte[] color
+0095: ldc.i4.0
+0096: ldloca.s         1
+0098: call             0x0A0002A4 // Byte get_R()
+009D: stelem.i1
+009E: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+00A3: ldflda           0x04000104 // DriverLib.LedBar ledBar
+00A8: ldfld            0x040000ED // Byte[] color
+00AD: ldc.i4.1
+00AE: ldloca.s         1
+00B0: call             0x0A0002A5 // Byte get_G()
+00B5: stelem.i1
+00B6: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+00BB: ldflda           0x04000104 // DriverLib.LedBar ledBar
+00C0: ldfld            0x040000ED // Byte[] color
+00C5: ldc.i4.2
+00C6: ldloca.s         1
+00C8: call             0x0A0002A6 // Byte get_B()
+00CD: stelem.i1
+00CE: ldarg.0
+00CF: call             0x0600040E // Void UpdataUSBData()
+00D4: ldarg.0
+00D5: ldc.i4.0
+00D6: stfld            0x04000490 // Boolean UpdateLEDFlag
+00DB: ret

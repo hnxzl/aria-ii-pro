@@ -1,0 +1,14 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._2In1 METHOD=customRadioButton_ReportRateClick TOKEN=0x0600067B IL_BYTES=40
+0000: ldarg.1
+0001: castclass        0x02000060 // CustomControlLibrary.CustomRadioButton
+0006: stloc.0
+0007: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+000C: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+0011: ldloc.0
+0012: callvirt         0x0A000269 // System.Object get_Tag()
+0017: call             0x0A000356 // Byte ToByte(System.Object)
+001C: stfld            0x040000D5 // Byte reportRate
+0021: ldarg.0
+0022: call             0x06000682 // Void UpdateValue()
+0027: ret

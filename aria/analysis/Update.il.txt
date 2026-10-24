@@ -1,0 +1,21 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.DataParser METHOD=Update TOKEN=0x0600009F IL_BYTES=57
+0000: ldtoken          0x0200002C // DriverLib.FlashDataMap
+0005: call             0x0A0000B2 // System.Type GetTypeFromHandle(System.RuntimeTypeHandle)
+000A: call             0x0A0000B3 // Int32 SizeOf(System.Type)
+000F: call             0x0A0000B4 // IntPtr AllocHGlobal(Int32)
+0014: stloc.0
+0015: ldarg.0
+0016: ldloc.0
+0017: ldc.i4.1
+0018: call             0x2B000001 // Void StructureToPtr[FlashDataMap](DriverLib.FlashDataMap, IntPtr, Boolean)
+001D: call             0x060000EF // Boolean isX64System()
+0022: brfalse.s        IL_002C
+0024: ldloc.0
+0025: call             0x06000095 // Void CS_ProtocolDataUpdate(IntPtr)
+002A: br.s             IL_0032
+002C: ldloc.0
+002D: call             0x060000B0 // Void CS_ProtocolDataUpdate(IntPtr)
+0032: ldloc.0
+0033: call             0x0A0000B7 // Void FreeHGlobal(IntPtr)
+0038: ret

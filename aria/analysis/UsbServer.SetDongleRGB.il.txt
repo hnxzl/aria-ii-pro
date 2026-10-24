@@ -1,0 +1,10 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.UsbServer METHOD=Set4KDongleRGB TOKEN=0x0600017E IL_BYTES=21
+0000: call             0x060000EF // Boolean isX64System()
+0005: brfalse.s        IL_000E
+0007: ldarg.0
+0008: call             0x06000157 // Void CS_UsbServer_Set4KDongleRGB(DriverLib.DongleRGB ByRef)
+000D: ret
+000E: ldarg.0
+000F: call             0x060001AE // Void CS_UsbServer_Set4KDongleRGB(DriverLib.DongleRGB ByRef)
+0014: ret

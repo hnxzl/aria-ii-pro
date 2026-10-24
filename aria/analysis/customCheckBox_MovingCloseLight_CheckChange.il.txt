@@ -1,0 +1,23 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=customCheckBox_MovingCloseLight_CheckChange TOKEN=0x0600043F IL_BYTES=57
+0000: ldarg.0
+0001: ldfld            0x04000490 // Boolean UpdateLEDFlag
+0006: brfalse.s        IL_0009
+0008: ret
+0009: ldarg.0
+000A: call             0x0600040C // Boolean GetDeviceOnline()
+000F: brfalse.s        IL_0038
+0011: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0016: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+001B: ldarg.0
+001C: ldfld            0x040004A6 // CustomControlLibrary.CustomCheckBox customCheckBox_MovingCloseLight
+0021: callvirt         0x06000219 // Boolean get_Checked()
+0026: brtrue.s         IL_002B
+0028: ldc.i4.0
+0029: br.s             IL_002C
+002B: ldc.i4.1
+002C: conv.u1
+002D: stfld            0x040000E0 // Byte moveOffLedEnable
+0032: ldarg.0
+0033: call             0x0600040E // Void UpdataUSBData()
+0038: ret

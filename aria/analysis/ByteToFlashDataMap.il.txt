@@ -1,0 +1,22 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=FileManager.ConfigFile METHOD=ByteToFlashDataMap TOKEN=0x06000041 IL_BYTES=60
+0000: ldtoken          0x0200002C // DriverLib.FlashDataMap
+0005: call             0x0A0000B2 // System.Type GetTypeFromHandle(System.RuntimeTypeHandle)
+000A: call             0x0A0000B3 // Int32 SizeOf(System.Type)
+000F: stloc.0
+0010: ldloc.0
+0011: call             0x0A0000B4 // IntPtr AllocHGlobal(Int32)
+0016: stloc.1
+0017: ldarg.0
+0018: ldc.i4.0
+0019: ldloc.1
+001A: ldloc.0
+001B: call             0x0A0000B8 // Void Copy(Byte[], Int32, IntPtr, Int32)
+0020: ldloc.1
+0021: ldtoken          0x0200002C // DriverLib.FlashDataMap
+0026: call             0x0A0000B2 // System.Type GetTypeFromHandle(System.RuntimeTypeHandle)
+002B: call             0x0A0000B9 // System.Object PtrToStructure(IntPtr, System.Type)
+0030: unbox.any        0x0200002C // DriverLib.FlashDataMap
+0035: ldloc.1
+0036: call             0x0A0000B7 // Void FreeHGlobal(IntPtr)
+003B: ret

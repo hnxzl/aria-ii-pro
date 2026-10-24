@@ -1,0 +1,45 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ValueConvert METHOD=SetLEDMode TOKEN=0x06000510 IL_BYTES=83
+0000: ldc.i4.3
+0001: newarr           0x01000084 // System.Boolean
+0006: stloc.0
+0007: ldc.i4.1
+0008: stloc.1
+0009: ldc.i4.1
+000A: stloc.2
+000B: ldc.i4.1
+000C: stloc.3
+000D: ldarg.0
+000E: switch           IL_0031, IL_0039, IL_0045, IL_0043, IL_0039, IL_0039, IL_003D
+002F: br.s             IL_0045
+0031: ldc.i4.0
+0032: stloc.1
+0033: ldc.i4.0
+0034: stloc.2
+0035: ldc.i4.0
+0036: stloc.3
+0037: br.s             IL_0045
+0039: ldc.i4.0
+003A: stloc.1
+003B: br.s             IL_0045
+003D: ldc.i4.0
+003E: stloc.1
+003F: ldc.i4.0
+0040: stloc.3
+0041: br.s             IL_0045
+0043: ldc.i4.0
+0044: stloc.3
+0045: ldloc.0
+0046: ldc.i4.0
+0047: ldloc.2
+0048: stelem.i1
+0049: ldloc.0
+004A: ldc.i4.1
+004B: ldloc.3
+004C: stelem.i1
+004D: ldloc.0
+004E: ldc.i4.2
+004F: ldloc.1
+0050: stelem.i1
+0051: ldloc.0
+0052: ret

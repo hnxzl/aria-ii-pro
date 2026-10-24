@@ -1,0 +1,69 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._3In1 METHOD=UpdateDPIEffect TOKEN=0x06000699 IL_BYTES=238
+0000: ldarg.0
+0001: ldc.i4.1
+0002: stfld            0x0400069C // Boolean UpdateUIFlag
+0007: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+000C: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+0011: ldfld            0x040000EB // Byte enable
+0016: ldc.i4.0
+0017: ble.s            IL_0040
+0019: ldarg.0
+001A: ldfld            0x040006C6 // CustomControlLibrary.CustomComboBox customComboBox_DPIEffect
+001F: ldarg.0
+0020: ldfld            0x040006C6 // CustomControlLibrary.CustomComboBox customComboBox_DPIEffect
+0025: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+002A: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+002F: ldfld            0x040000E8 // Byte mode
+0034: call             0x06000519 // Int32 ValueToComboxIndex(CustomControlLibrary.CustomComboBox, Int32)
+0039: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+003E: br.s             IL_0057
+0040: ldarg.0
+0041: ldfld            0x040006C6 // CustomControlLibrary.CustomComboBox customComboBox_DPIEffect
+0046: ldarg.0
+0047: ldfld            0x040006C6 // CustomControlLibrary.CustomComboBox customComboBox_DPIEffect
+004C: ldc.i4.0
+004D: call             0x06000519 // Int32 ValueToComboxIndex(CustomControlLibrary.CustomComboBox, Int32)
+0052: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+0057: ldarg.0
+0058: ldfld            0x040006C2 // System.Windows.Forms.Label label_DPISpeedValue
+005D: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0062: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+0067: ldflda           0x040000EA // Byte breathSpeed
+006C: call             0x0A000241 // System.String ToString()
+0071: callvirt         0x0A000069 // Void set_Text(System.String)
+0076: ldarg.0
+0077: ldfld            0x040006C3 // CustomControlLibrary.CustomTrackBar customTrackBar_DPISpeed
+007C: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0081: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+0086: ldfld            0x040000EA // Byte breathSpeed
+008B: callvirt         0x0600036F // Void set_Value(Int32)
+0090: ldarg.0
+0091: ldfld            0x040006C1 // CustomControlLibrary.CustomTrackBar customTrackBar_DPIBrightness
+0096: ldarg.0
+0097: ldfld            0x040006C3 // CustomControlLibrary.CustomTrackBar customTrackBar_DPISpeed
+009C: ldsfld           0x04000452 // DriveParam driveParam
+00A1: ldfld            0x04000639 // System.Drawing.Color SliderClr
+00A6: dup
+00A7: stloc.1
+00A8: callvirt         0x0600035D // Void set_SliderColor(System.Drawing.Color)
+00AD: ldloc.1
+00AE: callvirt         0x0600035D // Void set_SliderColor(System.Drawing.Color)
+00B3: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+00B8: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+00BD: ldfld            0x040000E9 // Byte brightness
+00C2: call             0x0600050E // Int32 DPIBrightnessToIndex(Int32)
+00C7: stloc.0
+00C8: ldarg.0
+00C9: ldfld            0x040006C0 // System.Windows.Forms.Label label_DPIBrightnessValue
+00CE: ldloca.s         0
+00D0: call             0x0A000235 // System.String ToString()
+00D5: callvirt         0x0A000069 // Void set_Text(System.String)
+00DA: ldarg.0
+00DB: ldfld            0x040006C1 // CustomControlLibrary.CustomTrackBar customTrackBar_DPIBrightness
+00E0: ldloc.0
+00E1: callvirt         0x0600036F // Void set_Value(Int32)
+00E6: ldarg.0
+00E7: ldc.i4.0
+00E8: stfld            0x0400069C // Boolean UpdateUIFlag
+00ED: ret

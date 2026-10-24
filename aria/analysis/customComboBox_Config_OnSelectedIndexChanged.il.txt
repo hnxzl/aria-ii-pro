@@ -1,0 +1,30 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=customComboBox_Config_OnSelectedIndexChanged TOKEN=0x06000448 IL_BYTES=81
+0000: ldarg.0
+0001: call             0x0600040C // Boolean GetDeviceOnline()
+0006: brfalse.s        IL_0050
+0008: ldarg.0
+0009: ldfld            0x04000471 // Boolean UpdateingConfigFlag
+000E: brtrue.s         IL_003F
+0010: ldsfld           0x04000478 // Boolean SetLanguage
+0015: brtrue.s         IL_003F
+0017: ldarg.0
+0018: ldfld            0x040004A1 // CustomControlLibrary.CustomComboBox customComboBox_Config
+001D: callvirt         0x06000234 // ObjectCollection get_Item()
+0022: callvirt         0x0A0000E9 // Int32 get_Count()
+0027: ldc.i4.1
+0028: beq.s            IL_003F
+002A: ldarg.0
+002B: ldfld            0x040004A1 // CustomControlLibrary.CustomComboBox customComboBox_Config
+0030: callvirt         0x06000232 // Int32 get_SelectIndex()
+0035: ldarg.0
+0036: ldfld            0x04000476 // Int32[] ConfigParam
+003B: ldc.i4.1
+003C: ldelem.i4
+003D: bne.un.s         IL_0040
+003F: ret
+0040: ldarg.0
+0041: ldfld            0x040004A1 // CustomControlLibrary.CustomComboBox customComboBox_Config
+0046: call             0x06000518 // Int32 ComboxIndexToValue(CustomControlLibrary.CustomComboBox)
+004B: call             0x06000170 // Void SetCurrentConfig(Int32)
+0050: ret

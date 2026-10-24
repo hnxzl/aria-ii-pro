@@ -1,0 +1,48 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ValueConvert METHOD=DPIBrightnessToIndex TOKEN=0x0600050E IL_BYTES=80
+0000: ldc.i4.0
+0001: stloc.0
+0002: ldarg.0
+0003: ldc.i4.s         30
+0005: rem
+0006: brtrue.s         IL_0011
+0008: ldarg.0
+0009: ldc.i4.s         30
+000B: div
+000C: ldc.i4.1
+000D: add
+000E: stloc.0
+000F: br.s             IL_004E
+0011: ldarg.0
+0012: ldc.i4           128
+0017: bgt.s            IL_0028
+0019: ldarg.0
+001A: ldc.i4.s         16
+001C: beq.s            IL_003A
+001E: ldarg.0
+001F: ldc.i4           128
+0024: beq.s            IL_003E
+0026: br.s             IL_004C
+0028: ldarg.0
+0029: ldc.i4           230
+002E: beq.s            IL_0042
+0030: ldarg.0
+0031: ldc.i4           255
+0036: beq.s            IL_0047
+0038: br.s             IL_004C
+003A: ldc.i4.1
+003B: stloc.0
+003C: br.s             IL_004E
+003E: ldc.i4.5
+003F: stloc.0
+0040: br.s             IL_004E
+0042: ldc.i4.s         9
+0044: stloc.0
+0045: br.s             IL_004E
+0047: ldc.i4.s         10
+0049: stloc.0
+004A: br.s             IL_004E
+004C: ldc.i4.5
+004D: stloc.0
+004E: ldloc.0
+004F: ret

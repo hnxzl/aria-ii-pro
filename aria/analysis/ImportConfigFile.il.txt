@@ -1,0 +1,132 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=FileManager.ConfigFile METHOD=ImportConfigFile TOKEN=0x0600003D IL_BYTES=251
+0000: ldc.i4.m1
+0001: stloc.0
+0002: newobj           0x0A0000AB // Void .ctor()
+0007: stloc.1
+0008: ldloc.1
+0009: ldstr            0x7000006B // 导入配置
+000E: callvirt         0x0A0000A4 // Void set_Title(System.String)
+0013: ldloc.1
+0014: ldstr            0x70000053 // bin文件|*.bin
+0019: callvirt         0x0A0000A5 // Void set_Filter(System.String)
+001E: ldloc.1
+001F: callvirt         0x0A0000A6 // System.Windows.Forms.DialogResult ShowDialog()
+0024: ldc.i4.1
+0025: bne.un           IL_00F9
+002A: ldloc.1
+002B: callvirt         0x0A0000A7 // System.String get_FileName()
+0030: ldc.i4.3
+0031: ldc.i4.1
+0032: newobj           0x0A000049 // Void .ctor(System.String, System.IO.FileMode, System.IO.FileAccess)
+0037: stloc.2
+0038: ldloc.2
+0039: callvirt         0x0A00004B // Int64 get_Length()
+003E: conv.ovf.i
+003F: newarr           0x01000026 // System.Byte
+0044: stloc.3
+0045: ldloc.2
+0046: ldloc.3
+0047: ldc.i4.0
+0048: ldloc.3
+0049: ldlen
+004A: conv.i4
+004B: callvirt         0x0A000051 // Int32 Read(Byte[], Int32, Int32)
+0050: pop
+0051: ldloc.3
+0052: brtrue.s         IL_0056
+0054: ldc.i4.1
+0055: ret
+0056: call             0x0A0000A8 // System.Text.Encoding get_UTF8()
+005B: ldarg.0
+005C: callvirt         0x0A0000A9 // Byte[] GetBytes(System.String)
+0061: stloc.s          4
+0063: ldc.i4.0
+0064: stloc.s          6
+0066: br.s             IL_007B
+0068: ldloc.s          4
+006A: ldloc.s          6
+006C: ldelem.u1
+006D: ldloc.3
+006E: ldloc.s          6
+0070: ldelem.u1
+0071: beq.s            IL_0075
+0073: ldc.i4.1
+0074: ret
+0075: ldloc.s          6
+0077: ldc.i4.1
+0078: add
+0079: stloc.s          6
+007B: ldloc.s          6
+007D: ldarg.0
+007E: callvirt         0x0A0000AC // Int32 get_Length()
+0083: blt.s            IL_0068
+0085: call             0x0A0000A8 // System.Text.Encoding get_UTF8()
+008A: ldarg.1
+008B: callvirt         0x0A0000A9 // Byte[] GetBytes(System.String)
+0090: stloc.s          5
+0092: ldc.i4.0
+0093: stloc.s          7
+0095: br.s             IL_00AD
+0097: ldloc.s          5
+0099: ldloc.s          7
+009B: ldelem.u1
+009C: ldloc.3
+009D: ldloc.s          7
+009F: ldc.i4.s         32
+00A1: add
+00A2: ldelem.u1
+00A3: beq.s            IL_00A7
+00A5: ldc.i4.2
+00A6: ret
+00A7: ldloc.s          7
+00A9: ldc.i4.1
+00AA: add
+00AB: stloc.s          7
+00AD: ldloc.s          7
+00AF: ldloc.s          5
+00B1: ldlen
+00B2: conv.i4
+00B3: blt.s            IL_0097
+00B5: ldarg.2
+00B6: ldloc.2
+00B7: callvirt         0x0A00004B // Int64 get_Length()
+00BC: ldc.i4.s         64
+00BE: conv.i8
+00BF: sub
+00C0: conv.ovf.i
+00C1: newarr           0x01000026 // System.Byte
+00C6: stind.ref
+00C7: ldc.i4.0
+00C8: stloc.s          8
+00CA: br.s             IL_00DE
+00CC: ldarg.2
+00CD: ldind.ref
+00CE: ldloc.s          8
+00D0: ldloc.3
+00D1: ldloc.s          8
+00D3: ldc.i4.s         64
+00D5: add
+00D6: ldelem.u1
+00D7: stelem.i1
+00D8: ldloc.s          8
+00DA: ldc.i4.1
+00DB: add
+00DC: stloc.s          8
+00DE: ldloc.s          8
+00E0: conv.i8
+00E1: ldloc.2
+00E2: callvirt         0x0A00004B // Int64 get_Length()
+00E7: ldc.i4.s         64
+00E9: conv.i8
+00EA: sub
+00EB: blt.s            IL_00CC
+00ED: ldarg.2
+00EE: ldind.ref
+00EF: brfalse.s        IL_00F3
+00F1: ldc.i4.0
+00F2: stloc.0
+00F3: ldloc.2
+00F4: callvirt         0x0A000048 // Void Close()
+00F9: ldloc.0
+00FA: ret

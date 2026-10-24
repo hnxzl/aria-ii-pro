@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101316">
+  <title>Aria II Pro · WebHID Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Aria II Pro WebHID Lab">
+        <span class="brand-mark">A</span><span>ARIA <b>II PRO</b><small>WEBHID LAB</small></span>
+      </a>
+      <div class="top-actions"><span class="secure-tag" id="secureState">MEMERIKSA KONEKSI</span><span class="dot" id="statusDot"></span></div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> KONFIGURATOR BROWSER · MODE ANALISIS</div>
+        <h1>Kontrol mouse,<br><em>langsung dari browser.</em></h1>
+        <p>Hubungkan Aria II Pro melalui WebHID. Sesi ini memeriksa identitas interface dan membaca laporan HID yang masuk untuk memvalidasi protokol perangkat.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" id="connectButton"><span class="usb-icon">⌁</span> Hubungkan mouse</button>
+          <button class="button button-quiet" id="disconnectButton" disabled>Putuskan</button>
+        </div>
+        <p class="compat-note" id="compatNote">Gunakan Microsoft Edge atau Google Chrome di Windows.</p>
+      </div>
+      <div class="device-card">
+        <div class="device-art" aria-hidden="true"><div class="mouse"><div class="mouse-wheel"></div><div class="mouse-seam"></div><div class="mouse-light"></div></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><span class="art-label">XD7V2P</span></div>
+        <div class="device-card-footer"><div><span class="muted-label">PERANGKAT</span><strong id="deviceName">Belum terhubung</strong></div><span class="state-pill" id="deviceState">OFFLINE</span></div>
+      </div>
+    </section>
+
+    <section class="connection-strip">
+      <div class="connection-main"><span class="connection-icon">↔</span><div><strong id="connectionTitle">Menunggu koneksi perangkat</strong><span id="connectionDetail">WebHID belum diberi akses ke mouse.</span></div></div>
+      <div class="connection-meta"><div><span class="muted-label">VENDOR ID</span><b id="vendorId">—</b></div><div><span class="muted-label">PRODUCT ID</span><b id="productId">—</b></div><div><span class="muted-label">LAPORAN MASUK</span><b id="reportCount">0</b></div></div>
+    </section>
+
+    <section class="panel read-panel">
+      <div class="panel-heading"><div><span class="panel-index">00</span><h3>Uji baca flash</h3></div><span class="panel-caption">READ ONLY · REPORT 0x08</span></div>
+      <p class="reports-description">Permintaan baca output ke alamat 0x00004C panjang 8 byte sudah mendapat balasan HID yang cocok, sekitar 2 ms setelah dikirim pada tes Anda. Kanal Feature belum diuji. Tidak ada penulisan konfigurasi di panel ini.</p>
+      <div class="read-controls">
+        <label>Alamat (hex)<input id="readAddress" inputmode="text" value="00004C" maxlength="6" aria-label="Alamat flash heksadesimal"></label>
+        <label>Panjang (1–10 byte)<input id="readLength" type="number" min="1" max="10" value="8"></label>
+        <button class="button button-primary" id="readOutputButton" disabled>Baca via Output</button>
+        <button class="button button-quiet" id="readFeatureButton" disabled>Baca via Feature</button>
+      </div>
+      <p class="read-status" id="readStatus" role="status">Hubungkan perangkat dan pastikan deskriptor HID menyediakan output report ID 0x08.</p>
+    </section>
+
+    <section class="panel read-panel dpi-test-panel">
+      <div class="panel-heading"><div><span class="panel-index">01</span><h3>Atur DPI stage</h3></div><span class="panel-caption">UJI TULIS TERBATAS · 0x07</span></div>
+      <p class="reports-description">Pilih stage, baca nilai yang tersimpan, lalu ubah nilai DPI. Penulisan memakai frame Aria II Pro yang teramati pada aplikasi resmi; setiap klik tulis meminta konfirmasi.</p>
+      <div class="read-controls">
+        <label>STAGE<select id="dpiStage"><option value="0">Stage 1</option><option value="1">Stage 2</option><option value="2">Stage 3</option><option value="3">Stage 4</option></select></label>
+        <label>DPI TERSIMPAN<input id="dpiCurrent" type="text" readonly value="Belum dibaca"></label>
+        <label>DPI BARU<input id="dpiValue" type="number" min="50" max="26000" step="50" value="1600"></label>
+        <button class="button button-quiet" id="readDpiButton" disabled>Baca stage</button>
+        <button class="button button-primary" id="writeDpiButton" disabled>Tulis DPI stage</button>
+      </div>
+      <p class="read-status" id="dpiStatus" role="status">Hubungkan mouse, baca satu stage, lalu tulis hanya setelah nilai awal terbaca.</p>
+    </section>
+
+    <section class="panel read-panel">
+      <div class="panel-heading"><div><span class="panel-index">02</span><h3>Kontrol teramati dari capture</h3></div><span class="panel-caption">WRITEFLASHDATA · 0x07</span></div>
+      <p class="reports-description">Nilai dan label mengikuti UI aplikasi resmi serta IL yang telah dibaca. Setiap perubahan flash meminta konfirmasi, lalu dibaca balik otomatis. “Lampu mati saat diam” mengatur LED, bukan sleep sensor mouse.</p>
+      <div class="read-controls">
+        <label>Polling rate<select id="rateSetting"><option value="8">125 Hz</option><option value="4">250 Hz</option><option value="2">500 Hz</option><option value="1">1000 Hz</option><option value="16">2000 Hz</option><option value="32">4000 Hz</option><option value="64">8000 Hz</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="rate">Terapkan rate</button>
+        <label>Mode selector<select id="powerModeSetting"><option value="0">LP · Low power</option><option value="1">HP · High performance</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="powerMode">Terapkan mode</button>
+        <label>Jumlah DPI stage<select id="stageCountSetting"><option>1</option><option>2</option><option>3</option><option selected>4</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="stageCount">Terapkan jumlah</button>
+        <label>DPI stage aktif<select id="activeStageSetting"><option value="0">Stage 1</option><option value="1">Stage 2</option><option value="2">Stage 3</option><option value="3">Stage 4</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="activeStage">Kirim selector</button>
+        <label>LOD<select id="lodSetting"><option value="3">0.7 mm</option><option value="1">1 mm</option><option value="2">2 mm</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="lod">Terapkan LOD</button>
+        <label>Peak performance<select id="peakSetting"><option value="0">Off</option><option value="1">On</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="peak">Terapkan</button>
+        <label>Durasi Peak<select id="peakDurationSetting"><option value="3">30 detik</option><option value="6">1 menit</option><option value="12">2 menit</option><option value="30">5 menit</option><option value="60">10 menit</option><option value="90">15 menit</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="peakDuration">Terapkan durasi</button>
+        <label>Ripple control<select id="rippleSetting"><option value="0">Off</option><option value="1">On</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="ripple">Terapkan</button>
+        <label>Angle snapping<select id="angleSetting"><option value="0">Off</option><option value="1">On</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="angle">Terapkan</button>
+        <label>Motion sync<select id="motionSetting"><option value="0">Off</option><option value="1">On</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="motion">Terapkan</button>
+        <label>Efek DPI<select id="dpiEffectSetting"><option value="0">Off</option><option value="1">Fixed light</option><option value="2">Flicker</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="dpiEffect">Atur efek</button>
+        <label>Efek DPI aktif<select id="dpiLedEnableSetting"><option value="0">Off</option><option value="1">On</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="dpiLedEnable">Terapkan</button>
+        <label>Brightness (1–10)<input id="brightnessSetting" type="number" min="1" max="10" value="5"></label>
+        <button class="button button-quiet observed-write" data-setting="brightness">Atur brightness</button>
+        <label>Kecepatan efek (1–5)<input id="effectSpeedSetting" type="number" min="1" max="5" value="1"></label>
+        <button class="button button-quiet observed-write" data-setting="effectSpeed">Atur speed</button>
+        <label>Lampu mati saat diam<select id="sleepSetting"><option value="1">10 detik</option><option value="3">30 detik</option><option value="6">1 menit</option><option value="30">5 menit</option><option value="60">10 menit</option><option value="90">15 menit</option><option value="120">20 menit</option><option value="150">25 menit</option><option value="180">30 menit</option><option value="210">35 menit</option><option value="240">40 menit</option></select></label>
+        <button class="button button-quiet observed-write" data-setting="sleep">Terapkan sleep</button>
+      </div>
+      <p class="read-status" id="observedWriteStatus" role="status">Belum ada pengaturan yang dikirim.</p>
+    </section>
+
+    <section class="panel read-panel">
+      <div class="panel-heading"><div><span class="panel-index">03</span><h3>Profil, warna DPI & receiver</h3></div><span class="panel-caption">PERINTAH TERAMATI</span></div>
+      <p class="reports-description">Pilihan profil, RGB per stage, long-distance, dan mode LED receiver dipetakan dari IL aplikasi dan capture resmi. Perubahan flash dibaca balik otomatis. Perintah receiver tidak memiliki readback di browser, jadi periksa indikator receiver.</p>
+      <div class="read-controls">
+        <label>Profil<select id="profileSetting"><option value="0">Profile 1</option><option value="1">Profile 2</option><option value="2">Profile 3</option><option value="3">Profile 4</option></select></label>
+        <button class="button button-primary" id="profileButton">Ganti profil</button>
+        <label>Warna DPI Stage<select id="colorStage"><option value="0">Stage 1</option><option value="1">Stage 2</option><option value="2">Stage 3</option><option value="3">Stage 4</option></select></label>
+        <label>RGB<input id="dpiColor" type="color" value="#93acee"></label>
+        <button class="button button-quiet" id="writeColorButton">Tulis warna stage</button>
+        <label>Long-distance<select id="longRangeSetting"><option value="0">Off</option><option value="1">On</option></select></label>
+        <button class="button button-quiet" id="longRangeButton">Terapkan long-distance</button>
+        <label>LED receiver<select id="dongleLedSetting"><option value="2">Connection state / polling rate</option><option value="3">Battery state</option><option value="1">Low battery warning only</option></select></label>
+        <button class="button button-quiet" id="dongleLedButton">Terapkan LED receiver</button>
+      </div>
+      <p class="read-status" id="commandStatus" role="status">Perintah profil dan receiver belum dikirim.</p>
+    </section>
+
+    <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> PANEL PERANGKAT</div><h2>Informasi & laporan HID</h2></div><div class="read-only"><span class="lock">◈</span> PEMBACAAN SAJA</div></div>
+
+    <section class="dashboard-grid">
+      <article class="panel overview-panel">
+        <div class="panel-heading"><div><span class="panel-index">01</span><h3>Interface terdeteksi</h3></div><span class="panel-caption">DESKRIPSI HID</span></div>
+        <div id="interfaceList" class="empty-state"><span class="empty-symbol">⌘</span><strong>Belum ada data interface</strong><p>Hubungkan mouse untuk melihat koleksi HID, report ID, dan ukurannya.</p></div>
+      </article>
+      <article class="panel features-panel">
+        <div class="panel-heading"><div><span class="panel-index">02</span><h3>Fitur aplikasi resmi</h3></div><span class="panel-caption">PETA PROTOKOL</span></div>
+        <div class="feature-grid">
+          <div class="feature-item"><span class="feature-icon">D</span><div><b>DPI & tahapan</b><small>Read/write + readback DPI</small></div><i></i></div>
+          <div class="feature-item"><span class="feature-icon">⌁</span><div><b>Polling & sensor</b><small>Write/readback tersedia</small></div><i></i></div>
+          <div class="feature-item"><span class="feature-icon">◉</span><div><b>LOD & efek DPI</b><small>Mapping IL resmi</small></div><i></i></div>
+          <div class="feature-item"><span class="feature-icon">⌨</span><div><b>Tombol & macro</b><small>Belum direplikasi</small></div><i></i></div>
+          <div class="feature-item"><span class="feature-icon">ϟ</span><div><b>Baterai & dongle</b><small>Mode dongle tersedia</small></div><i></i></div>
+          <div class="feature-item"><span class="feature-icon">⚙</span><div><b>Profil & kalibrasi</b><small>Profile command tersedia</small></div><i></i></div>
+        </div>
+        <p class="feature-note">DPI dan beberapa kontrol flash memiliki readback otomatis. Profile, warna DPI, long-distance, serta LED receiver tersedia berdasar IL/capture, tetapi perlu verifikasi fisik. Tombol, macro, baterai, firmware, dan kalibrasi belum selesai.</p>
+      </article>
+    </section>
+
+    <section class="panel reports-panel">
+      <div class="panel-heading"><div><span class="panel-index">03</span><h3>Laporan masuk</h3></div><div class="report-actions"><span class="live-indicator"><i></i> LIVE</span><button class="text-button" id="downloadButton" disabled>Ekspor JSON ↓</button><button class="text-button" id="clearButton">Bersihkan</button></div></div>
+      <p class="reports-description">Data yang diterima ditampilkan dalam heksadesimal. Permintaan baca dan satu kontrol custom DPI tercatat bersama frame input yang cocok jika diterima.</p>
+      <div class="report-table-wrap"><table><thead><tr><th>WAKTU</th><th>REPORT ID</th><th>PANJANG</th><th>FRAME (KANDIDAT)</th><th>DATA MENTAH</th></tr></thead><tbody id="reportRows"><tr class="placeholder-row"><td colspan="5">Laporan HID akan muncul di sini setelah perangkat mengirim data.</td></tr></tbody></table></div>
+      <div class="report-footer"><span><i class="foot-dot"></i> Menangkap laporan input HID</span><span id="reportHint">Hubungkan perangkat untuk memulai.</span></div>
+    </section>
+
+    <footer><span>ARIA II PRO · WEBHID LAB</span><span>Kontrol tulis saat ini terbatas ke satu stage DPI setelah pembacaan.</span></footer>
+  </main>
+</body>
+</html>

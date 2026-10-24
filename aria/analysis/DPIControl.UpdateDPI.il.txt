@@ -1,0 +1,16 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary.DPIControl METHOD=UpdateDPI TOKEN=0x060007BB IL_BYTES=38
+0000: ldarg.0
+0001: ldarg.0
+0002: ldfld            0x0400073E // Int32 _Value
+0007: call             0x060007BC // Void ValueToDPI(Int32)
+000C: ldarg.0
+000D: call             0x060007BA // Void SetValue()
+0012: ldarg.0
+0013: ldfld            0x04000736 // System.Windows.Forms.Timer PressTimer
+0018: ldc.i4.0
+0019: callvirt         0x0A00021A // Void set_Enabled(Boolean)
+001E: ldarg.0
+001F: ldc.i4.0
+0020: stfld            0x04000741 // Int32 pressCount
+0025: ret

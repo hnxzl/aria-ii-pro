@@ -1,0 +1,28 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=UpdateFlashData TOKEN=0x06000410 IL_BYTES=92
+0000: ldarg.0
+0001: ldfld            0x040004E5 // Mouse_Drive_Beta.ComboControlLibrary.CustomKeyFunction customKeyFunction1
+0006: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+000B: callvirt         0x06000712 // Void UpdateFlash(DriverLib.FlashDataMap)
+0010: ldarg.0
+0011: ldfld            0x040004F7 // Mouse_Drive_Beta.ComboControlLibrary.DPIControl dpiControl1
+0016: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+001B: callvirt         0x060007AD // Void UpdateFlash(DriverLib.FlashDataMap)
+0020: ldsfld           0x04000453 // DeviceParam deviceParam
+0025: ldfld            0x04000649 // Int32 XIn1
+002A: ldc.i4.3
+002B: blt.s            IL_003E
+002D: ldarg.0
+002E: ldfld            0x04000506 // Mouse_Drive_Beta.ComboControlLibrary._3In1 _3In1_Main
+0033: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0038: callvirt         0x060006A1 // Void UpdateFlash(DriverLib.FlashDataMap)
+003D: ret
+003E: ldsfld           0x04000453 // DeviceParam deviceParam
+0043: ldfld            0x04000649 // Int32 XIn1
+0048: ldc.i4.2
+0049: bgt.s            IL_005B
+004B: ldarg.0
+004C: ldfld            0x04000477 // Mouse_Drive_Beta.ComboControlLibrary._2In1 _2In1_Main
+0051: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0056: callvirt         0x0600067A // Void UpdateFlash(DriverLib.FlashDataMap)
+005B: ret

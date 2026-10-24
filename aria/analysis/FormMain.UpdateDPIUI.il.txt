@@ -1,0 +1,11 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=UpdateDPIUI TOKEN=0x06000424 IL_BYTES=33
+0000: ldarg.0
+0001: ldarg.0
+0002: ldfld            0x040004F7 // Mouse_Drive_Beta.ComboControlLibrary.DPIControl dpiControl1
+0007: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+000C: ldsfld           0x04000453 // DeviceParam deviceParam
+0011: ldfld            0x04000651 // Mouse_Drive_Beta.SensorDPI SensorDPI
+0016: callvirt         0x060007AB // Boolean UpdateUI(DriverLib.FlashDataMap, Mouse_Drive_Beta.SensorDPI)
+001B: stfld            0x0400047B // Boolean dpiUpdateRes
+0020: ret

@@ -1,0 +1,16 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._3In1 METHOD=customCheckBox_MotionSync_CheckChange TOKEN=0x060006B0 IL_BYTES=40
+0000: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0005: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+000A: ldarg.0
+000B: ldfld            0x040006B4 // CustomControlLibrary.CustomCheckBox customCheckBox_MotionSync
+0010: callvirt         0x06000219 // Boolean get_Checked()
+0015: brtrue.s         IL_001A
+0017: ldc.i4.0
+0018: br.s             IL_001B
+001A: ldc.i4.1
+001B: conv.u1
+001C: stfld            0x040000DC // Byte motionSyncEnable
+0021: ldarg.0
+0022: call             0x060006AD // Void UpdateValue()
+0027: ret

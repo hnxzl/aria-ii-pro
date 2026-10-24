@@ -1,0 +1,8 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.UsbServer METHOD=ReadCurrentDPI TOKEN=0x06000174 IL_BYTES=19
+0000: call             0x060000EF // Boolean isX64System()
+0005: brfalse.s        IL_000D
+0007: call             0x0600014D // Void CS_UsbServer_ReadCurrentDPI()
+000C: ret
+000D: call             0x060001A4 // Void CS_UsbServer_ReadCurrentDPI()
+0012: ret

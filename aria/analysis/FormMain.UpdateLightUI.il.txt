@@ -1,0 +1,133 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=UpdateLightUI TOKEN=0x06000426 IL_BYTES=465
+0000: ldarg.0
+0001: ldc.i4.1
+0002: stfld            0x04000490 // Boolean UpdateLEDFlag
+0007: ldarg.0
+0008: ldfld            0x040004E0 // System.Windows.Forms.PictureBox pictureBox_LEDPreview
+000D: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0012: ldflda           0x04000104 // DriverLib.LedBar ledBar
+0017: ldfld            0x040000ED // Byte[] color
+001C: ldc.i4.0
+001D: ldelem.u1
+001E: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0023: ldflda           0x04000104 // DriverLib.LedBar ledBar
+0028: ldfld            0x040000ED // Byte[] color
+002D: ldc.i4.1
+002E: ldelem.u1
+002F: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0034: ldflda           0x04000104 // DriverLib.LedBar ledBar
+0039: ldfld            0x040000ED // Byte[] color
+003E: ldc.i4.2
+003F: ldelem.u1
+0040: call             0x0A000147 // System.Drawing.Color FromArgb(Int32, Int32, Int32)
+0045: callvirt         0x0A0000D6 // Void set_BackColor(System.Drawing.Color)
+004A: ldarg.0
+004B: ldfld            0x040004E0 // System.Windows.Forms.PictureBox pictureBox_LEDPreview
+0050: callvirt         0x0A000131 // System.Drawing.Color get_BackColor()
+0055: stloc.0
+0056: ldarg.0
+0057: ldfld            0x040004CE // Mouse_Drive_Beta.ComboControlLibrary.AdjustControl adjustControl_R
+005C: ldloca.s         0
+005E: call             0x0A0002A4 // Byte get_R()
+0063: callvirt         0x060006C0 // Void set_Value(Int32)
+0068: ldarg.0
+0069: ldfld            0x040004CD // Mouse_Drive_Beta.ComboControlLibrary.AdjustControl adjustControl_G
+006E: ldloca.s         0
+0070: call             0x0A0002A5 // Byte get_G()
+0075: callvirt         0x060006C0 // Void set_Value(Int32)
+007A: ldarg.0
+007B: ldfld            0x040004CC // Mouse_Drive_Beta.ComboControlLibrary.AdjustControl adjustControl_B
+0080: ldloca.s         0
+0082: call             0x0A0002A6 // Byte get_B()
+0087: callvirt         0x060006C0 // Void set_Value(Int32)
+008C: ldarg.0
+008D: ldfld            0x040004B1 // CustomControlLibrary.CustomTrackBar customTrackBar_LightBrightness
+0092: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0097: ldflda           0x04000104 // DriverLib.LedBar ledBar
+009C: ldfld            0x040000EF // Byte brightness
+00A1: callvirt         0x0600036F // Void set_Value(Int32)
+00A6: ldarg.0
+00A7: ldfld            0x040004B1 // CustomControlLibrary.CustomTrackBar customTrackBar_LightBrightness
+00AC: callvirt         0x0600036E // Int32 get_Value()
+00B1: ldc.i4.1
+00B2: add
+00B3: stloc.1
+00B4: ldarg.0
+00B5: ldfld            0x040004B0 // System.Windows.Forms.Label label_LightBrightnessValue
+00BA: ldloca.s         1
+00BC: call             0x0A000235 // System.String ToString()
+00C1: callvirt         0x0A000069 // Void set_Text(System.String)
+00C6: ldarg.0
+00C7: ldfld            0x040004B2 // CustomControlLibrary.CustomTrackBar customTrackBar_LightSpeed
+00CC: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+00D1: ldflda           0x04000104 // DriverLib.LedBar ledBar
+00D6: ldfld            0x040000EE // Byte speed
+00DB: callvirt         0x0600036F // Void set_Value(Int32)
+00E0: ldarg.0
+00E1: ldfld            0x040004B2 // CustomControlLibrary.CustomTrackBar customTrackBar_LightSpeed
+00E6: callvirt         0x0600036E // Int32 get_Value()
+00EB: ldc.i4.1
+00EC: add
+00ED: stloc.1
+00EE: ldarg.0
+00EF: ldfld            0x040004B3 // System.Windows.Forms.Label label_LightSpeedValue
+00F4: ldloca.s         1
+00F6: call             0x0A000235 // System.String ToString()
+00FB: callvirt         0x0A000069 // Void set_Text(System.String)
+0100: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0105: ldflda           0x04000104 // DriverLib.LedBar ledBar
+010A: ldfld            0x040000F0 // Byte enable
+010F: ldc.i4.0
+0110: ble.s            IL_0139
+0112: ldarg.0
+0113: ldfld            0x040004A8 // CustomControlLibrary.CustomComboBox customComboBox_LEDMode
+0118: ldarg.0
+0119: ldfld            0x040004A8 // CustomControlLibrary.CustomComboBox customComboBox_LEDMode
+011E: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0123: ldflda           0x04000104 // DriverLib.LedBar ledBar
+0128: ldfld            0x040000EC // Byte mode
+012D: call             0x06000519 // Int32 ValueToComboxIndex(CustomControlLibrary.CustomComboBox, Int32)
+0132: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+0137: br.s             IL_0145
+0139: ldarg.0
+013A: ldfld            0x040004A8 // CustomControlLibrary.CustomComboBox customComboBox_LEDMode
+013F: ldc.i4.0
+0140: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+0145: ldarg.0
+0146: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+014B: ldflda           0x04000104 // DriverLib.LedBar ledBar
+0150: ldfld            0x040000EC // Byte mode
+0155: call             0x06000510 // Boolean[] SetLEDMode(Int32)
+015A: call             0x06000425 // Void UpdateLightModeUI(Boolean[])
+015F: ldarg.0
+0160: ldfld            0x040004A6 // CustomControlLibrary.CustomCheckBox customCheckBox_MovingCloseLight
+0165: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+016A: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+016F: ldfld            0x040000E0 // Byte moveOffLedEnable
+0174: ldc.i4.0
+0175: cgt
+0177: callvirt         0x0600021A // Void set_Checked(Boolean)
+017C: ldsfld           0x04000453 // DeviceParam deviceParam
+0181: ldfld            0x0400065B // Boolean DisplayLight
+0186: brfalse.s        IL_01AF
+0188: ldarg.0
+0189: ldfld            0x040004B4 // CustomControlLibrary.CustomComboBox customComboBox_PowerSaveTime
+018E: ldarg.0
+018F: ldfld            0x040004B4 // CustomControlLibrary.CustomComboBox customComboBox_PowerSaveTime
+0194: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0199: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+019E: ldfld            0x040000DD // Byte allLedOffTime
+01A3: call             0x06000519 // Int32 ValueToComboxIndex(CustomControlLibrary.CustomComboBox, Int32)
+01A8: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+01AD: br.s             IL_01C9
+01AF: ldarg.0
+01B0: ldfld            0x04000511 // Mouse_Drive_Beta.ComboControlLibrary.CustomSetting customSetting1
+01B5: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+01BA: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+01BF: ldfld            0x040000DD // Byte allLedOffTime
+01C4: callvirt         0x06000737 // Void set_PowerSaveTime(Int32)
+01C9: ldarg.0
+01CA: ldc.i4.0
+01CB: stfld            0x04000490 // Boolean UpdateLEDFlag
+01D0: ret

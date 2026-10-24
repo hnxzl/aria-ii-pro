@@ -1,0 +1,6 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary.CustomKeyFunction METHOD=UpdateFlash TOKEN=0x06000712 IL_BYTES=8
+0000: ldarg.0
+0001: ldarg.1
+0002: stfld            0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+0007: ret

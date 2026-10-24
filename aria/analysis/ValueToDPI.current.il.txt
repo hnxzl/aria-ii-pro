@@ -1,0 +1,221 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary.DPIControl METHOD=ValueToDPI TOKEN=0x060007BC IL_BYTES=532
+0000: ldc.i4.2
+0001: newarr           0x01000026 // System.Byte
+0006: pop
+0007: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+000C: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+0011: brtrue.s         IL_001A
+0013: ldarg.0
+0014: call             0x060007AF // Void UpdateValue()
+0019: ret
+001A: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+001F: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+0024: ldarg.0
+0025: ldfld            0x04000738 // Int32 SelectIndex
+002A: ldelema          0x02000024 // DriverLib.DPIConfig
+002F: ldfld            0x040000E6 // Byte DPIex
+0034: stloc.0
+0035: ldc.i4.1
+0036: stloc.1
+0037: ldloc.0
+0038: ldc.i4.s         34
+003A: and
+003B: ldc.i4.0
+003C: ble.s            IL_0040
+003E: ldc.i4.0
+003F: stloc.1
+0040: ldloc.1
+0041: brtrue.s         IL_0047
+0043: ldc.i4.s         100
+0045: br.s             IL_0049
+0047: ldc.i4.s         50
+0049: stloc.2
+004A: ldarg.1
+004B: ldloc.2
+004C: div
+004D: stloc.3
+004E: ldc.i4.0
+004F: stloc.0
+0050: ldarg.1
+0051: stloc.s          4
+0053: ldc.i4.1
+0054: stloc.s          5
+0056: ldarg.0
+0057: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+005C: ldfld            0x040003B8 // Int32 DPIex
+0061: ldc.i4.s         51
+0063: bne.un.s         IL_00CC
+0065: ldc.i4.0
+0066: stloc.s          6
+0068: ldarg.0
+0069: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+006E: ldfld            0x040003BB // System.Collections.Generic.List`1[System.Int32] Step
+0073: callvirt         0x0A000250 // Int32 get_Count()
+0078: ldc.i4.1
+0079: sub
+007A: stloc.s          7
+007C: br.s             IL_00A0
+007E: ldloc.s          4
+0080: ldarg.0
+0081: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0086: ldfld            0x040003B9 // System.Collections.Generic.List`1[System.Int32] Min
+008B: ldloc.s          7
+008D: callvirt         0x0A0000E1 // Int32 get_Item(Int32)
+0092: blt.s            IL_009A
+0094: ldloc.s          7
+0096: stloc.s          6
+0098: br.s             IL_00A5
+009A: ldloc.s          7
+009C: ldc.i4.1
+009D: sub
+009E: stloc.s          7
+00A0: ldloc.s          7
+00A2: ldc.i4.0
+00A3: bge.s            IL_007E
+00A5: ldloc.s          6
+00A7: ldc.i4.3
+00A8: bne.un.s         IL_00B2
+00AA: ldc.i4.s         51
+00AC: stloc.0
+00AD: ldc.i4.4
+00AE: stloc.s          5
+00B0: br.s             IL_010E
+00B2: ldloc.s          6
+00B4: ldc.i4.2
+00B5: bne.un.s         IL_00BF
+00B7: ldc.i4.s         17
+00B9: stloc.0
+00BA: ldc.i4.2
+00BB: stloc.s          5
+00BD: br.s             IL_010E
+00BF: ldloc.s          6
+00C1: ldc.i4.1
+00C2: bne.un.s         IL_010E
+00C4: ldc.i4.s         34
+00C6: stloc.0
+00C7: ldc.i4.2
+00C8: stloc.s          5
+00CA: br.s             IL_010E
+00CC: ldarg.0
+00CD: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+00D2: ldfld            0x040003B8 // Int32 DPIex
+00D7: ldc.i4.s         34
+00D9: beq.s            IL_00EA
+00DB: ldarg.0
+00DC: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+00E1: ldfld            0x040003B8 // Int32 DPIex
+00E6: ldc.i4.s         17
+00E8: bne.un.s         IL_010E
+00EA: ldloc.s          4
+00EC: ldarg.0
+00ED: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+00F2: ldfld            0x040003BA // System.Collections.Generic.List`1[System.Int32] Max
+00F7: ldc.i4.0
+00F8: callvirt         0x0A0000E1 // Int32 get_Item(Int32)
+00FD: ble.s            IL_010E
+00FF: ldarg.0
+0100: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0105: ldfld            0x040003B8 // Int32 DPIex
+010A: stloc.0
+010B: ldc.i4.2
+010C: stloc.s          5
+010E: ldarg.0
+010F: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0114: ldfld            0x040003BE // Boolean Discord
+0119: brfalse.s        IL_016E
+011B: ldloc.s          4
+011D: ldloc.s          5
+011F: div
+0120: stloc.s          4
+0122: ldc.i4.0
+0123: stloc.s          8
+0125: br.s             IL_0158
+0127: ldarg.0
+0128: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+012D: ldfld            0x040003BC // System.Collections.Generic.List`1[System.Int32] DPIList
+0132: ldloc.s          8
+0134: callvirt         0x0A0000E1 // Int32 get_Item(Int32)
+0139: ldloc.s          4
+013B: bne.un.s         IL_0152
+013D: ldarg.0
+013E: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0143: ldfld            0x040003BD // System.Collections.Generic.List`1[System.Int32] DPIValueList
+0148: ldloc.s          8
+014A: callvirt         0x0A0000E1 // Int32 get_Item(Int32)
+014F: stloc.3
+0150: br.s             IL_01B9
+0152: ldloc.s          8
+0154: ldc.i4.1
+0155: add
+0156: stloc.s          8
+0158: ldloc.s          8
+015A: ldarg.0
+015B: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0160: ldfld            0x040003BC // System.Collections.Generic.List`1[System.Int32] DPIList
+0165: callvirt         0x0A000250 // Int32 get_Count()
+016A: blt.s            IL_0127
+016C: br.s             IL_01B9
+016E: ldc.i4.s         50
+0170: ldloc.s          5
+0172: mul
+0173: stloc.2
+0174: ldarg.1
+0175: ldloc.2
+0176: div
+0177: ldc.i4.1
+0178: sub
+0179: stloc.3
+017A: ldarg.0
+017B: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0180: ldfld            0x040003B7 // System.String Type
+0185: ldstr            0x70007673 // 3395
+018A: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+018F: brtrue.s         IL_01A8
+0191: ldarg.0
+0192: ldflda           0x04000739 // Mouse_Drive_Beta.SensorDPI Sensor
+0197: ldfld            0x040003B7 // System.String Type
+019C: ldstr            0x70006ECF // 3950
+01A1: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+01A6: brfalse.s        IL_01B9
+01A8: ldloc.3
+01A9: ldc.i4.8
+01AA: shr
+01AB: stloc.s          9
+01AD: ldloc.0
+01AE: ldloc.s          9
+01B0: ldc.i4.2
+01B1: shl
+01B2: ldloc.s          9
+01B4: ldc.i4.6
+01B5: shl
+01B6: or
+01B7: or
+01B8: stloc.0
+01B9: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+01BE: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+01C3: ldarg.0
+01C4: ldfld            0x04000738 // Int32 SelectIndex
+01C9: ldelema          0x02000024 // DriverLib.DPIConfig
+01CE: ldloc.3
+01CF: conv.u1
+01D0: stfld            0x040000E4 // Byte xDPI
+01D5: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+01DA: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+01DF: ldarg.0
+01E0: ldfld            0x04000738 // Int32 SelectIndex
+01E5: ldelema          0x02000024 // DriverLib.DPIConfig
+01EA: ldloc.3
+01EB: conv.u1
+01EC: stfld            0x040000E5 // Byte yDPI
+01F1: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+01F6: ldfld            0x04000102 // DriverLib.DPIConfig[] dpiConfig
+01FB: ldarg.0
+01FC: ldfld            0x04000738 // Int32 SelectIndex
+0201: ldelema          0x02000024 // DriverLib.DPIConfig
+0206: ldloc.0
+0207: conv.u1
+0208: stfld            0x040000E6 // Byte DPIex
+020D: ldarg.0
+020E: call             0x060007AF // Void UpdateValue()
+0213: ret

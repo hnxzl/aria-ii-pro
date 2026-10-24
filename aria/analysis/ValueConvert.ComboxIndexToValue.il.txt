@@ -1,0 +1,34 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ValueConvert METHOD=ComboxIndexToValue TOKEN=0x06000518 IL_BYTES=84
+0000: ldc.i4.0
+0001: stloc.0
+0002: ldc.i4.0
+0003: stloc.1
+0004: br.s             IL_0045
+0006: ldarg.0
+0007: callvirt         0x0A0000D4 // System.String get_Name()
+000C: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0011: ldloc.1
+0012: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0017: ldfld            0x04000049 // System.String Name
+001C: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+0021: brfalse.s        IL_0041
+0023: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0028: ldloc.1
+0029: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+002E: ldfld            0x0400004B // System.Collections.Generic.List`1[System.Int32] Values
+0033: ldarg.0
+0034: callvirt         0x06000232 // Int32 get_SelectIndex()
+0039: callvirt         0x0A0000E1 // Int32 get_Item(Int32)
+003E: stloc.0
+003F: br.s             IL_0052
+0041: ldloc.1
+0042: ldc.i4.1
+0043: add
+0044: stloc.1
+0045: ldloc.1
+0046: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+004B: callvirt         0x0A0000E2 // Int32 get_Count()
+0050: blt.s            IL_0006
+0052: ldloc.0
+0053: ret

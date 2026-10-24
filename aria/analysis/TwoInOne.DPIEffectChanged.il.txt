@@ -1,0 +1,32 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._2In1 METHOD=customComboBox_DPIEffect_OnSelectedIndexChanged TOKEN=0x0600067D IL_BYTES=93
+0000: ldarg.0
+0001: ldfld            0x04000698 // CustomControlLibrary.CustomComboBox customComboBox_DPIEffect
+0006: callvirt         0x06000232 // Int32 get_SelectIndex()
+000B: stloc.0
+000C: ldarg.0
+000D: ldloc.0
+000E: call             0x0600050F // Boolean[] SetDPIEffect(Int32)
+0013: call             0x0600067C // Void UpdateDPIEffectUI(Boolean[])
+0018: ldarg.0
+0019: ldfld            0x04000686 // Boolean UpdateUIFlag
+001E: brtrue.s         IL_005C
+0020: ldloc.0
+0021: brtrue.s         IL_0035
+0023: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0028: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+002D: ldc.i4.0
+002E: stfld            0x040000EB // Byte enable
+0033: br.s             IL_0056
+0035: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+003A: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+003F: ldc.i4.1
+0040: stfld            0x040000EB // Byte enable
+0045: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+004A: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+004F: ldloc.0
+0050: conv.u1
+0051: stfld            0x040000E8 // Byte mode
+0056: ldarg.0
+0057: call             0x06000682 // Void UpdateValue()
+005C: ret

@@ -1,0 +1,9 @@
+# Fantech Aria II Pro XD7v2P — WebHID Device Access Rules
+# For Arch Linux / systemd-based Linux distributions
+# Grants the active desktop seat user read/write access via uaccess tag.
+
+# Wireless 2.4 GHz StrikeSpeed Receiver (VID: 0x3554, PID: 0xf523 - Confirmed on Hardware)
+ACTION!="remove", SUBSYSTEM=="hidraw", KERNEL=="hidraw*", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f523", MODE="0660", TAG+="uaccess"
+
+# Wired USB Cable Connection (VID: 0x3554, PID: 0xf5a5 - Candidate ID)
+ACTION!="remove", SUBSYSTEM=="hidraw", KERNEL=="hidraw*", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f5a5", MODE="0660", TAG+="uaccess"

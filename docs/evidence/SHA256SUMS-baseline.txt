@@ -1,0 +1,199 @@
+# SHA-256 baseline of the workspace taken 2026-10-23 (Asia/Jakarta evening) BEFORE this audit wrote any file.
+# Excludes .ghidra-appdata/.ghidra-local style caches (none present). Ghidra DB internals (*.gbf, *.prp, ~index*) are included for change detection.
+b231b01c94f816b63ebb78bba7f7b1e531874ee146de774c88a7dbc887835a63  ./AUDIT-REPORT.md
+27b48797b97bf2b88c28d53f1d789e63931f737bf3fa5962c68de764ab19c0a5  ./HANDOFF_REPORT.md
+3a62df140556a46ecbbaf35e13d1e4e7fe53ae3f22abed82dc16c5ea378f1d3b  ./OLD-README.md
+72766df4d1f36bc70d68962aca152db1f5a7df9d8b201c882f1d8e59deb47bf5  ./README.md
+0a0f2458ad7fa5e0a056d2ea582e077cb0b4288e360045785b5cfb64273c674f  ./aria/README-NEXT-AGENT.md
+88f9b8cd4cc8fe6711b769bb3c398220c487809312df0c203330bef4075befcc  ./aria/WINDOWS-CAPTURE-CHECKLIST.md
+b0dccd63a60fc4632c5d58bdb23a1b0fdbdaa8a7aaf56ed7f5185a2f02ef5790  ./aria/adv settings battery state.pcapng
+56f8751d03163f45e41a668ccaf5d216c20218c3c7a4c030bed9f36d2e0731b0  ./aria/adv settings connection state and report rate.pcapng
+0475b6f181dc0266da002e4ae74b51c41fe2841bd8910e781f07415aee314dd2  ./aria/adv settings only battery warning.pcapng
+d88435391c6723370e2458cd37650a2e42c59e27da15750e74fcf193014cd391  ./aria/analysis/Advanced.DongleLEDChanged.il.txt
+d88435391c6723370e2458cd37650a2e42c59e27da15750e74fcf193014cd391  ./aria/analysis/Advanced.DongleRGB_LEDChange.il.txt
+001792d013d0c34ad3975f748abe6cd2db42668e24ef31c7fc2d78985c7b09f2  ./aria/analysis/Advanced.LongRange.Click.il.txt
+001792d013d0c34ad3975f748abe6cd2db42668e24ef31c7fc2d78985c7b09f2  ./aria/analysis/Advanced.LongRangeChanged.il.txt
+03659ff91d2f616c06e49d69bdaa4cc8825d6def7096b7b61510e9e27fe9c72a  ./aria/analysis/ByteToFlashDataMap.il.txt
+07ae2e3ea11daaee35bb4b6b2337e50240cdcfd6de0ab20594487d959e9c6849  ./aria/analysis/CustomKeyFunction.ButtonClick.il.txt
+e9cc4fa970af9858b983c725300b87ab928bdae922d37b2b529aa6b285636bf8  ./aria/analysis/CustomKeyFunction.UpdateFlash.il.txt
+ab611da0d8cd723baf7541a4395e36e360b432d5b90be7e72d7ce52df16594c6  ./aria/analysis/CustomKeyFunction.UpdateMacro.il.txt
+a072cf7f371db49923cb939844ff1027aba5103f9ed7945e6b618ad9d867c683  ./aria/analysis/DPIControl.ColorChange.il.txt
+051e7da9d92f66defd37a17157621826cb9735e55b930ae08e85948c5c837956  ./aria/analysis/DPIControl.StageChanged.il.txt
+c2289af9a8ae9c453b1394ef464a3702c7961517458903bfcc34b688f2ead95d  ./aria/analysis/DPIControl.UpdateDPI.il.txt
+ee0a1a5e7f0b62fde4b43f454f69c93017d77fcbbd34a41724c7041139049079  ./aria/analysis/DPIControl.UpdateFlash.il.txt
+5e403574824204f678c8c14e907379665017c03a2e74034b73103f5fbe5d58b5  ./aria/analysis/DataParser.BatteryStatus.il.txt
+272368310742f2dc5e8f7b477024e678179147f81a49c9ed6ffdb8e647b99604  ./aria/analysis/DataParser.ProtocolParser.il.txt
+bed6ee1987189e03ad3581da140477b6919ea432b2ed14aea95f507d805697f9  ./aria/analysis/DataParser.Update.il.txt
+6d3bb123a1591c9ca4faa2b945bf6308df34bb5d2aec7c1bd2ff8513aa9090b7  ./aria/analysis/ExportConfigFile.il.txt
+1f9032c737bd757c60d3a40a0adb7209f936c3a8601b6a32f7c892e441fb17f8  ./aria/analysis/FlashDataMapToByte.il.txt
+e4106ed9567ec064e6a7b3c09ca2b860b4af6e9cc59ede66d1b4a9b62241474b  ./aria/analysis/FlashDataMap_ValueChange.il.txt
+98dce84cb27d00f1431f126f9269ceb354615f8a280196784c3f30cddf01ce5e  ./aria/analysis/FormAdvancedSetting_AdvancedChange.il.txt
+98dce84cb27d00f1431f126f9269ceb354615f8a280196784c3f30cddf01ce5e  ./aria/analysis/FormMain.AdvancedChanged.il.txt
+b0830e53592dc9bae73c2d7334e972ff131999dfe7d5348cfa7d4066c25e585f  ./aria/analysis/FormMain.LEDModeChanged.il.txt
+fd03078f3f4a66168481dcccd5c5c89db8cd60515f24e0f0d7e3cacd097f31fb  ./aria/analysis/FormMain.LightBrightnessChanged.il.txt
+f0872dfac1d6d41e021b799b2e6b27253cd89668eb3bb6103acf23c7d7760794  ./aria/analysis/FormMain.LightColorChange.il.txt
+1386f3056e2d42693ada3acc1ca2a58999f7c83995b22cd99e3450c14401862a  ./aria/analysis/FormMain.LightSpeedChanged.il.txt
+80ca1b7fe889ba0772c641cb852938e3266150febc63e02d06ed5ee217bed414  ./aria/analysis/FormMain.MovingCloseLightChanged.il.txt
+beb26cf6542d921b83aa8b99d8ce8ca4cf26a175d8c7901052ffb42de0318d12  ./aria/analysis/FormMain.ProfileChanged.il.txt
+bceecaf8990b485e0617644c9af37ebdd8755b3d69d9220b0482e1ecb538f2e5  ./aria/analysis/FormMain.SleepChanged.il.txt
+398b84ee18e28f08aa32391c771cc62e5b6f996616ae4b9337ccdbb476b3efb6  ./aria/analysis/FormMain.UpdateDPIUI.il.txt
+c14ad34a3c41a278a579a364ecb147d4897de7f97d78f2c29ec803e6c6905937  ./aria/analysis/FormMain.UpdateLEDPreview.il.txt
+6632d208d82cfad5be3bfb9612947362b059187bcf83486c7c17242d66fd4971  ./aria/analysis/FormMain.UpdateLightModeUI.il.txt
+348055655d8dfe394dd2fa3db40508c4d0f89a12be2750b904ddf27f04d16114  ./aria/analysis/FormMain.UpdateLightUI.il.txt
+5e403574824204f678c8c14e907379665017c03a2e74034b73103f5fbe5d58b5  ./aria/analysis/GetDeviceBatteryStatus.il.txt
+9ed37d8fc3d7890977aef981e72a301801cebea20ef84f500d9f28d0a353b4fc  ./aria/analysis/GetDeviceInfo.il.txt
+1effcb598d6ad9f631ddd289e2cda39d1fc7e0536eac8c919d2afd031a81f80c  ./aria/analysis/ImportConfigFile.il.txt
+272368310742f2dc5e8f7b477024e678179147f81a49c9ed6ffdb8e647b99604  ./aria/analysis/ProtocolParser.il.txt
+2e215edfb74fe6e748f944a533f0d9557a06e68b558778bfbea605711d77a2f8  ./aria/analysis/ReadAllFlashData.il.txt
+0e79f5d17df80b50ccca79187d1b26c9a81c7d4763ffff9a8299c11c8a1183d2  ./aria/analysis/ReadBatteryLevel.il.txt
+45e05f6d2ef9c744c7fa8d4859cf4687ad37a0931a4dca2cf53a8e6822fdab5e  ./aria/analysis/ReadConfig.il.txt
+860c91110a5c413c6b7cd7f4b759cafa6d75df8cbdc52cc2ce506790bf7cebae  ./aria/analysis/ReadCurrentDPI.il.txt
+c43ce0eb8f881361b78e9321330436f2e84cf24c33fd05819175e3a4b0b17647  ./aria/analysis/ReadFalshData.il.txt
+2ad7e5725b45834aeace8f64382537fa2ff7b45103689b4313fc36124a6c95d4  ./aria/analysis/ReadReportRate.il.txt
+4523736f2bc6f2e620e37f67dddceb097e523585536e1a86b4d2e6188b5e70d1  ./aria/analysis/SetAdvSetting.il.txt
+94ee9609015dc590adf30d0ff4cbce29425c7b40332fbb082c25e683a61d1ef9  ./aria/analysis/SetCurrentConfig.il.txt
+a7a769ce4f526ee0703fcd3dc5cc2a2f53b88b2d3e66658f5c04ccdb2b0210fe  ./aria/analysis/SetDllProtocolData.il.txt
+393b9ff1880d0cdbf495d459c7eaa6451f9d6738da752a5d40cd793c1b65cbf3  ./aria/analysis/ThreeInOne.AddLODItems.il.txt
+7c7b2ef2f7b21801c80817e5c705ea64135c4d6c8e9165f85f541f8bff47c04e  ./aria/analysis/ThreeInOne.AngleSnapChanged.il.txt
+c4803b7df39383a1e1f481618d3f0436e2fa937a8fb5d36b4264b7ee5e06787b  ./aria/analysis/ThreeInOne.BrightnessChanged.il.txt
+a8f2ba4440fb4f8df03b4e06c42121f3d07b6dc78e8186dd30994e4f86545de1  ./aria/analysis/ThreeInOne.DPIEffectChanged.il.txt
+78d7851341d1f606ff747b17742b21b34358a74ec6a6e5619a730bd1381df7a6  ./aria/analysis/ThreeInOne.LODChanged.il.txt
+75e92dd90be50b172b8f943860c7af83fb5d2b6727390f102c7191488d42e9d5  ./aria/analysis/ThreeInOne.ModeSelectChanged.il.txt
+42131cbaecce35069e77c7165094b0c65b34a6ab279d504ddc7ffcee65ec7797  ./aria/analysis/ThreeInOne.MotionSyncChanged.il.txt
+8cbcd3eb90651ce086e55946053c9279b221e2ae121d155566a63aaad735814c  ./aria/analysis/ThreeInOne.PeakChanged.il.txt
+8ed9fb2945c1e7acc6c866c1dc695285aef83a2caf1cf62c91e2f92d7c5a478f  ./aria/analysis/ThreeInOne.PeakDurationChanged.il.txt
+a3f789079828777b971da385c3719b8fdf761f5e5b1e08bd6c4307314a9ec06f  ./aria/analysis/ThreeInOne.ReportRateClick.il.txt
+ec3aa0fc09fbaaa539d6c4b1e49a7a8459efa09929c7e117db344b22105d263c  ./aria/analysis/ThreeInOne.RippleChanged.il.txt
+4d10edc23cb892bf84c2dd12dccaae1f836379a40fb9c9189af8e0a56368194d  ./aria/analysis/ThreeInOne.SpeedChanged.il.txt
+87487ea642180fa467ccdb3fe0e5fbcf82c9ace4ee217c95e69c112650e8b460  ./aria/analysis/ThreeInOne.UpdateDPIEffect.il.txt
+9c9b0f49bf382692756514fba16fa7ea057c24d6820eb68ef95b1d4a734551e0  ./aria/analysis/ThreeInOne.UpdateFlash.il.txt
+f7661878f19079e2bc80fa23d2deedd821d9eb9da9726d582dc4c864254648f9  ./aria/analysis/ThreeInOne.UpdateModeSelect.il.txt
+91725c7b7d1e64b3cca44ff447e76eb56e7544cc8b624968ca51bc79ccd60513  ./aria/analysis/ThreeInOne.UpdateValue.il.txt
+b3c74db067c7d4325715ed790753e5df88c32a2aa51ce813ad2524b35ec4904d  ./aria/analysis/TwoInOne.BrightnessChanged.il.txt
+a3e2743f2d3f90fd5c243c8971da4d043fbb85451ce591651bee953340f6df8a  ./aria/analysis/TwoInOne.DPIEffectChanged.il.txt
+8e4f35e7177ccadeeae5174b3b754ec99566d5bceccae96bc9bdab0c229109f0  ./aria/analysis/TwoInOne.ReportRateClick.il.txt
+a6c565735d156a862a20a725d5a95bd215c781edf786ce472a54bbfac21a29d8  ./aria/analysis/TwoInOne.SpeedChanged.il.txt
+98bac5429ff4e7915313233c222ca577106e46199b0dfb26eecd6c08c030221a  ./aria/analysis/TwoInOne.UpdateFlash.il.txt
+10b2623ce3ae9406ce9baf67038819a723ab832ae94b1d30813a8a7de1cdbdcb  ./aria/analysis/UpdataUSBData.current.il.txt
+10b2623ce3ae9406ce9baf67038819a723ab832ae94b1d30813a8a7de1cdbdcb  ./aria/analysis/UpdataUSBData.il.txt
+bed6ee1987189e03ad3581da140477b6919ea432b2ed14aea95f507d805697f9  ./aria/analysis/Update.il.txt
+c2289af9a8ae9c453b1394ef464a3702c7961517458903bfcc34b688f2ead95d  ./aria/analysis/UpdateDPI.current.il.txt
+e9cc4fa970af9858b983c725300b87ab928bdae922d37b2b529aa6b285636bf8  ./aria/analysis/UpdateFlash.il.txt
+0a816f70f115ddb2e354dc3365aaf3ace13dc9d318ae2f776307559b92fc2622  ./aria/analysis/UpdateFlashData.il.txt
+5b8a7d03926c795c611e90eb9f474d80c61cbd88f9a43ac7178d9866ee7f61cd  ./aria/analysis/UpdateFlashDataMap_ValueChange.current.il.txt
+5b8a7d03926c795c611e90eb9f474d80c61cbd88f9a43ac7178d9866ee7f61cd  ./aria/analysis/UpdateFlashDataMap_ValueChange.il.txt
+c7c13dcabd332adf43dfec73087a9774f7b9fc4338b6fed38778a1e7aad5b109  ./aria/analysis/UsbServer.GetDongleRGB.il.txt
+f02a564ffed41e4cb73007b3c6fab15a57da37bc5e89a9409f5c60c7c4245ed3  ./aria/analysis/UsbServer.GetLongRange.il.txt
+0e79f5d17df80b50ccca79187d1b26c9a81c7d4763ffff9a8299c11c8a1183d2  ./aria/analysis/UsbServer.ReadBattery.il.txt
+74a5422b49fd626e085235fa35d58dc44737e10e92ebe9e3251fe2375f4ec716  ./aria/analysis/UsbServer.ReadPairStatus.il.txt
+8790133cd9dd713a226cc1e94908029d0acb6e05602a28293c7d3815251429f5  ./aria/analysis/UsbServer.ReadVersion.il.txt
+36b542bb9f3f9d5b4cb875e43a6ea077690057a52c67cfb8950f1abd161ea2b9  ./aria/analysis/UsbServer.SetDongleRGB.il.txt
+9866a4192eb97657b611bfaf50293d956017d4d6a15c501193deca10e48451ad  ./aria/analysis/UsbServer.SetLongRange.il.txt
+44cdba5f536ee2baf1d7f74f469e3db896e9590d416917af4a24d36baaacedcf  ./aria/analysis/ValueConvert.ComboxIndexToValue.il.txt
+b2bd79ccdc2e73a6836fd9e4211e28be65913c234ce93fbbbd1935901e30b312  ./aria/analysis/ValueConvert.DPIBrightnessToIndex.il.txt
+5589b9fc39116d47d159a7901d308a421ea311514c7fa11e7eeebd8acbbd4afb  ./aria/analysis/ValueConvert.DPIIndexToBrightness.il.txt
+8a18cc5465a39dc465782e021a28e80ecf36915218560856021258785f06a9a0  ./aria/analysis/ValueConvert.IntToStruct.il.txt
+ce7cf176df9d9c4b8821de391e67b650d61100aa9b3585a080c3269ad5381355  ./aria/analysis/ValueConvert.SetDPIEffect.il.txt
+bb97a3cbac4c6c324e254707248b1afacd7de26e956b862e6cdee36427c7900b  ./aria/analysis/ValueConvert.SetLEDMode.il.txt
+50fd93dffb95aec831dc67649af0cc551cf774383f37843bcdb61696e2237e95  ./aria/analysis/ValueConvert.StructToInt.il.txt
+f1b0d70f2699a7645f5506f19af13f780db477fac05c3225283608ac02ad7fa8  ./aria/analysis/ValueConvert.ValueToComboxIndex.il.txt
+953ab48d469efd902180735e99cf12b9c6543d650f05d3f04a605d2fae197591  ./aria/analysis/ValueToDPI.current.il.txt
+98dce84cb27d00f1431f126f9269ceb354615f8a280196784c3f30cddf01ce5e  ./aria/analysis/ValueToDPI.il.txt
+25d5a981e919e5fe44e6be4be5710a81454125ad55abb9f4ba9f06d533b0092b  ./aria/analysis/allcapture-nwex-analysis.md
+e418bfcdd922a1398447dd97465b1c7b0ccb1fca6b8a30c8e260f95cb21b1fcc  ./aria/analysis/aria-ii-pro-hid-observation.md
+98f2a9d24a0769ad1bdf262d2aefe20d9f7c0bf466ad20ffb12c1585dc770385  ./aria/analysis/customButton_Export_Click.il.txt
+9a8e18f82901b188c729171834d36589213ca2437bf6bf305ca1226324875864  ./aria/analysis/customButton_Import_Click.il.txt
+a895d1480b22f57aab20c77a6179748d05da8546219bf2c44efea806c425ed75  ./aria/analysis/customButton_Save_Click.il.txt
+80ca1b7fe889ba0772c641cb852938e3266150febc63e02d06ed5ee217bed414  ./aria/analysis/customCheckBox_MovingCloseLight_CheckChange.il.txt
+beb26cf6542d921b83aa8b99d8ce8ca4cf26a175d8c7901052ffb42de0318d12  ./aria/analysis/customComboBox_Config_OnSelectedIndexChanged.il.txt
+3ac38e90367273c4968490b115ca999fc2d05b9646bb30da8d0c81032fa5312a  ./aria/analysis/dump-feature-il.ps1
+2242ba357be5b1f99bd40265f8aa7493e2995b1f6ed89bf2bff8c8ed12c12af2  ./aria/analysis/dump-managed-il.ps1
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32-verified.gpr
+c70f1c4cc900a95fa5943b42e41cd6d3f5648a8f1ceb47e3e8d547aed13b0cec  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32-verified.rep/idata/00/00000000.prp
+f37699961cf62a562fe070b8faeac98c3ab3c082d5cce1e90107fb23b2595b9a  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32-verified.rep/idata/00/~00000000.db/db.1.gbf
+9e9866d20d95f0800bb3943a7ac112a1ba045fccc7d20cf5e047a9c93798d81d  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32-verified.rep/idata/00/~00000000.db/db.2.gbf
+249a8e72de296177de573bc43efa22a91e26e6aaa31f03ff259947189740c5c6  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32-verified.rep/project.prp
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32.gpr
+8f64bb746d65a9c91cb373c3f0f8fec7fbee1cf433753f98b7089d505c97bc5f  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32.rep/idata/00/00000000.prp
+0016a48e49abdefd009af623814da3527ed7e7ccd0ff8b98ca470b511e06a17f  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32.rep/idata/00/~00000000.db/db.6.gbf
+5f66e1ba700651480f8f2b83203419db44f55776d057cba2db8c9787b36683cf  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32.rep/idata/00/~00000000.db/db.7.gbf
+249a8e72de296177de573bc43efa22a91e26e6aaa31f03ff259947189740c5c6  ./aria/analysis/ghidra/AriaIIPro-HIDUsb32.rep/project.prp
+c44ef7c81557502c309495e14775b05285691267d65c52b3f5447375f7ddbe78  ./aria/analysis/ghidra/ExportEvidence.java
+c44ef7c81557502c309495e14775b05285691267d65c52b3f5447375f7ddbe78  ./aria/analysis/ghidra/ghidra_scripts/ExportEvidence.java
+74ddef8ca7e3bdd73331a9186d7dc43b15e89662731560d62bc526bcba4daf8d  ./aria/analysis/ghidra/ghidra_scripts/ExportEvidence.py
+9d17dbb8ac20d9b000d975fdc327c4d5da958997ca277478683d91cea4ce4e6a  ./aria/analysis/ghidra/script-run.log
+856de48a8f524e75adbe592913f44c5e5a9f38b597473c8f12fe6fa5da10ddea  ./aria/analysis/observation-2-export-bin.md
+4d159937d65d0212dc58f8f0dbb0dff50527d6b55849ff5b83365c3a6b0d630a  ./aria/aria 2 pro.exe
+a8df25c08bc8ec176141c614b665e7a05c64549e4ce5ad154cbdca477c05df51  ./aria/aria-ii-pro-capture-2026-10-23-rev2/before/before edit.bin
+56e511f84354636575f798fadefcaecf04ec66a82e81c6b8b2ea20c3c478aa39  ./aria/aria-ii-pro-capture-2026-10-23-rev2/before/button remap.bin
+7e00ef6a18dd2d63d1e920fbd1957f1b3c4767a8e90a8d7e1c4b17697555c9f2  ./aria/aria-ii-pro-capture-2026-10-23-rev2/before/debounce.bin
+e47146871b7891fc308550558df282fe366f46ade5208feafbd3a2f10b8c8895  ./aria/aria-ii-pro-webhid/README.md
+b587f0e383590ed0c58ad43e3f7720fcaa98b727a4b3cf7cf035d4b8e6ace53f  ./aria/aria-ii-pro-webhid/app.js
+53793daa0f063630138e9b8f6b547d2559e006926bb13c1f66b17fa4c28e0e9d  ./aria/aria-ii-pro-webhid/index.html
+6b4f9cb1b81207c491b550fe86dfbc9fbccb39cbc9112f89698833a05f0178ad  ./aria/aria-ii-pro-webhid/serve.cjs
+e181c135f77ca0efd17c3df5f240a827c4e574854f14a970988bfd65bc2152bc  ./aria/aria-ii-pro-webhid/style.css
+d2602dc44c43cdaef58019d6793c97ff432f643f06e954c91ec46bb8fe2427b0  ./aria/button remap.pcapng
+ba7d72ced5c59115b4580cb9c51c45ba0eea4ce403679d1f51dc8561243fbea3  ./aria/costura64.hidusb.dll.txt
+53ff3f214121d8d04446237b9f9af6c9848dca5921d531dd3f6158fd4796a520  ./aria/costuraassemblyloader.txt
+9963e226d49d3582c3a282f21751d6cc4ae3344c23a094f8b492beb07a031419  ./aria/cycle until key pressed + cycle until this key pressed.pcapng
+c85db53e155fb0c01506e1648162b6b4bec3bea6b97dec1c76fd6a0af6f86b46  ./aria/dataparser32.txt
+0e1c18b88fffc7456741c9070faf93da5ed2014ddd7b83438b75f65c2d499cd2  ./aria/debounce.pcapng
+c9829af290b7c087b9814000bb01dcbdc47a1ebf133e72d8b942d3440caf9e3f  ./aria/dpi color from red blue red again.pcapng
+088ccbe31b24881f11d9b720a464ed282bb838fc5f272d9c78fc3eaaaa6307a9  ./aria/dpi stages with colors changes.pcapng
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.gpr
+c9fdd6d2f1f7cb78db64f1768db71e6e50e80237dace7808d221cfb1284b9977  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/idata/00/00000000.prp
+ec5bc2a63c270b59e09d7bfd61dcf9b53c29ab2e43d0430e6c6911ecfe434397  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/idata/00/00000001.prp
+13203a13a222ee5dbd04fb6010ebd39208a5fa6b7e714c60fc071323664f4fd8  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/idata/00/~00000000.db/db.1.gbf
+fe8d9b553e634c62acb4c6757c33cf0b2628a31983968a138e543a1478af8652  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/idata/00/~00000001.db/db.1.gbf
+249a8e72de296177de573bc43efa22a91e26e6aaa31f03ff259947189740c5c6  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/project.prp
+8ea7f8d57b0d8574a6408faec4b40974387e97c0fe60182e099b96effe8e2e24  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/projectState
+70959239eb300c3492dee332ec01288a27a3b68a2aa4eea49d83e6d2ef2b12fe  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/user/00/00000000.prp
+9cc076c48337e04482c03892d163e6e93c4be177a9bda83f88e8e00f31ced406  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/user/00/00000001.prp
+a2c0d29c4fbe30d331131c41aea6d12245c00b6ae110236b86308267e4e40954  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/user/00/~00000000.db/db.1.gbf
+0ea5d1b15e01c49498b3c4df1f3f063dad59fa27cdd6ec7e030cf193de93526f  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/user/00/~00000000.db/db.2.gbf
+2fcf0fe12067d57d1c4fe34a294080e33ba65e3208d764de1d181f6cad31f81c  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/user/00/~00000001.db/db.2.gbf
+96c19410bf4c8db885e4caf24197451af363433a8b9109d933207f163e5aabb2  ./aria/ghidra manual/Aria-II-Pro-ReverseEngineering.rep/user/00/~00000001.db/db.3.gbf
+e4dc87436966ebfd9ec814f3e4116971632ad0a7d93573dd5e2441d672e86c99  ./aria/ghidra manual/Mouse-Drive-Beta.cs
+09bb39ac086ddba379fcb9caf4bae88afb3033117075af9c8fbba4a6ee6720fc  ./aria/ghidra manual/costura32.hidusb32.dll
+abbc0a8175fe91471ae6e082abacd69137ac725f22079104478e6ff0b7a9e6e1  ./aria/ghidra manual/costura64.hidusb.dll
+2667b79cbc29b9d1d457957b9bcfc53e0834d9f29b4777bfc75cb01cc539f5d0  ./aria/ghidra manual/mouse driver exe.csv
+670da80cd7d4f4449b200a9a873b569350e40ce2438362db5033840cfea5e589  ./aria/macro autoclick cycle until release.pcapng
+cf9e9c3ebb5fe006ff3a4b4c93ef1431efff718b884dd315948361609e04c097  ./aria/macrokeydriver.txt
+e8ecfb9e9e83ddfb5cc90984606f1dcf296e804fe5237063e674dfb53387c4c6  ./aria/screenshoots/Screenshot 2026-10-23 192641.png
+6ab087c9c31f28b9b6025b6b0f1457f7ba4fccef5db61f744eceb2c4cbc2b49b  ./aria/screenshoots/Screenshot 2026-10-23 192648.png
+a3a7a825bae73770ab48b4918755e2975fa5d6217d96cb4f03f2d6611af19896  ./aria/screenshoots/Screenshot 2026-10-23 192659.png
+1f459eb7351dc06574389b40c08f0187e7b15f89dd492d8fee5e03cf8331837a  ./aria/screenshoots/Screenshot 2026-10-23 192707.png
+6b09598ce8c7fcfbe901acf78563e42965fd8ede03bb8648e1d46083e8923ca4  ./aria/usbfinder.txt
+900ed0260ff7e66c21ff12862f6e7f796d688066ba0731c68284f581dc83705a  ./aria/usbserver.txt
+bae70cf31e828eda9b756629dfe371b267b53076599acabbb1957c1aebbd95a7  ./assets/aria2banner-readable.webp
+dc82887f252a7548f7d8763e017bdcd14d316edac27c9dbe5df49d40862b1f47  ./assets/button.webp
+976a06cc50eb77181d9f9c96e153a148f7ef90fa7fb135d2077d1cbcbea4bd41  ./assets/fantech-logo.webp
+1577326e5d7454a66afaafe58f781feff16ab8f30ea99f58175e6399043d2519  ./assets/fav.ico
+836f0b15c5c29cf1b896987982afbeefd1949ea4f4f26b8dd7860971833d7fa2  ./assets/front.webp
+836f0b15c5c29cf1b896987982afbeefd1949ea4f4f26b8dd7860971833d7fa2  ./assets/mouse1.webp
+35225545e9401508fe3691379bd261cde1912657d92f5c721cbe373b9707043f  ./assets/topography.svg
+7396a7ab5094c0ad0058e0ef3e5310235b4f4f32826da35840f57b0b01d622cc  ./docs/linux-setup.md
+cff21c4e12f23f2c1cf13d7faf3b203f891696f4c7115cdbd8e22ab33a739c2e  ./docs/protocol-analysis.md
+c4ed2a3a05f2536481a6dc1fa101d70b328933f5ac38c78cb3801926cbf74cc9  ./index.html
+66332c165e9d7ce41949da272052ae8bc7ad37792d8149a30df905cb5306057d  ./index.html.bak
+ca79314d6105fa55a6db79f283244058ae29af8a7218cbfe327472b22b1b123a  ./styles.css
+9917725f96c09fdbea3ace78a9905df13a9eaa35154aa4d0c3a365484316551e  ./udev/99-fantech-aria-ii-pro.rules
+d028e55e184e30f2ab3db3144376908a623c36a3ced0857a76d1ead5b1e1fd70  ./windows-capture/notes/ui.png
+3cb2b2f474c1fa6a9a27fc8ed51a772c294adcb23386b22a9b88436719576473  ./windows-capture/screenshots/Screenshot 2026-10-23 062054.png
+2be779307ebc933967ad4ed31f56c9af3203352742aa430c43586b64619b95de  ./windows-capture/screenshots/Screenshot 2026-10-23 062347.png
+fdaae7ff2dd1d147c363409a285fafc24e8a7d1b5e3e7f99ddc1c3f6cc7730a3  ./windows-capture/screenshots/Screenshot 2026-10-23 062404.png
+284b6c947d49e66cbaa3094faf5d66f02e2b8cafe17dfeab8b3ed645448c34f7  ./windows-capture/screenshots/Screenshot 2026-10-23 062505.png
+d614b46c764eb83306f5c5edaa2aa2c6c887019c424c8c73a976642673114e86  ./windows-capture/screenshots/Screenshot 2026-10-23 062548.png
+b955d0ef4763d54815c5589e2c90d61792d3aaef1d2776e3de960b7f3d7cabb9  ./windows-capture/screenshots/Screenshot 2026-10-23 070719.png
+c11d860f0eda727ac7b7c03b4128f24fba4a87b10923c60b598f0b0e821433bf  ./windows-capture/screenshots/Screenshot 2026-10-23 070759.png
+2964d9fd5f9157da5f8cd8764ed484fbd0df7988cba7865dbf9d3133992b9d41  ./windows-capture/screenshots/Screenshot 2026-10-23 070820.png
+8bd117dd50c41d5fed7fb00873c71258456e50270aa4c6dac00ac5b80eb0a651  ./windows-capture/usb-captures/advanced-settings.pcapng
+fcf2b273b352f616b3c5a334ffdf6c180aeb24d79d5ac8eeb71f6abc200a9b7b  ./windows-capture/usb-captures/all-settings-experiment.pcapng
+aa0a08120eac4c44012afcc8d309cee890c26219b3e44797972e098c5d73d581  ./windows-capture/usb-captures/button-remap.pcapng
+02d7c7406cd8f121ab3d7309af584afaef440703bdc969c7bf1b9980bc4869db  ./windows-capture/usb-captures/debounce.pcapng
+f3ecf5596148271697e4396ad54b8f526bef0e26b78e03cd0ee7b05a820d3873  ./windows-capture/usb-captures/macro-manager.pcapng
+99fb37e4852f62ab290c9dd206f1858b227ab1935f06b3febbdd64b667d38307  ./windows-capture/usb-captures/mode-lp-hp.pcapng
+28fda836cafb585b435483ff24a8cdb7331083c27985f95375efc417ea73b4d3  ./windows-capture/usb-captures/peak-performance-duration.pcapng
+81e303462d7b689659379eb95ae87f1a2cd393cdd9df58b7ccd40d0b0cc7e460  ./windows-capture/usb-captures/peak-performance-toggle.pcapng
+73816fa2655971db8dbbf9a0f8341e77ded0d74a4b6166bc25e212e0ab1ab4a0  ./windows-capture/usb-captures/profiles-config.pcapng
+cab01ee4a88c7229f85331c40499e94fc7141202202533f3e75255c8bfd12190  ./windows-capture/usb-captures/wireshark.pcapng

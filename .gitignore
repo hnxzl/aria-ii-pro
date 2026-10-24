@@ -1,0 +1,31 @@
+# Dependencies and generated output
+node_modules/
+coverage/
+dist/
+build/
+.cache/
+
+# Local server, test, and debug output
+*.log
+*.tmp
+*.temp
+*.trace
+*.wire.json
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.idea/
+.vscode/*.log
+
+# Local reverse-engineering binaries and generated captures
+/export.bin
+/nwex.bin
+/aria/aria 2 pro.exe
+/aria/ghidra manual/*.dll
+/aria/ghidra manual/*.rep/
+/aria/analysis/ghidra/*.gpr
+/aria/analysis/ghidra/*.rep/
+/aria/aria-ii-pro-capture-*/
+*.pcapng

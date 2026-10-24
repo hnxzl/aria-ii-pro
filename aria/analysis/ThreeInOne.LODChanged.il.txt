@@ -1,0 +1,19 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._3In1 METHOD=customComboBox_LOD_OnSelectedIndexChanged TOKEN=0x060006AC IL_BYTES=51
+0000: ldarg.0
+0001: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+0006: call             0x06000518 // Int32 ComboxIndexToValue(CustomControlLibrary.CustomComboBox)
+000B: stloc.0
+000C: ldarg.0
+000D: ldfld            0x0400069C // Boolean UpdateUIFlag
+0012: brtrue.s         IL_0032
+0014: ldsfld           0x04000478 // Boolean SetLanguage
+0019: brtrue.s         IL_0032
+001B: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0020: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+0025: ldloc.0
+0026: conv.u1
+0027: stfld            0x040000DA // Byte silenceHeight
+002C: ldarg.0
+002D: call             0x060006AD // Void UpdateValue()
+0032: ret

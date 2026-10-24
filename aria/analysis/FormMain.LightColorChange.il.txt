@@ -1,0 +1,12 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=Light_Color_Change TOKEN=0x06000437 IL_BYTES=23
+0000: ldarg.0
+0001: call             0x0600040C // Boolean GetDeviceOnline()
+0006: brfalse.s        IL_0016
+0008: ldarg.1
+0009: isinst           0x010000A1 // System.Windows.Forms.PictureBox
+000E: stloc.0
+000F: ldarg.0
+0010: ldloc.0
+0011: call             0x06000436 // Void UpdateLEDPreview(System.Windows.Forms.PictureBox)
+0016: ret

@@ -1,0 +1,8 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.UsbServer METHOD=ReadConfig TOKEN=0x0600016F IL_BYTES=19
+0000: call             0x060000EF // Boolean isX64System()
+0005: brfalse.s        IL_000D
+0007: call             0x06000141 // Void CS_UsbServer_ReadConfig()
+000C: ret
+000D: call             0x06000198 // Void CS_UsbServer_ReadConfig()
+0012: ret

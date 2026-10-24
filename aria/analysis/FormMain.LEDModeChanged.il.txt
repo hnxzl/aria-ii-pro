@@ -1,0 +1,42 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=customComboBox_LEDMode_OnSelectedIndexChanged TOKEN=0x06000440 IL_BYTES=120
+0000: ldarg.0
+0001: ldfld            0x04000490 // Boolean UpdateLEDFlag
+0006: brfalse.s        IL_0009
+0008: ret
+0009: ldarg.0
+000A: call             0x0600040C // Boolean GetDeviceOnline()
+000F: brfalse.s        IL_0077
+0011: ldarg.0
+0012: ldfld            0x040004A8 // CustomControlLibrary.CustomComboBox customComboBox_LEDMode
+0017: call             0x06000518 // Int32 ComboxIndexToValue(CustomControlLibrary.CustomComboBox)
+001C: stloc.0
+001D: ldloc.0
+001E: ldc.i4.0
+001F: ble.s            IL_0044
+0021: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0026: ldflda           0x04000104 // DriverLib.LedBar ledBar
+002B: ldc.i4.1
+002C: stfld            0x040000F0 // Byte enable
+0031: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0036: ldflda           0x04000104 // DriverLib.LedBar ledBar
+003B: ldloc.0
+003C: conv.u1
+003D: stfld            0x040000EC // Byte mode
+0042: br.s             IL_0065
+0044: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0049: ldflda           0x04000104 // DriverLib.LedBar ledBar
+004E: ldc.i4.0
+004F: stfld            0x040000F0 // Byte enable
+0054: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0059: ldflda           0x04000104 // DriverLib.LedBar ledBar
+005E: ldloc.0
+005F: conv.u1
+0060: stfld            0x040000EC // Byte mode
+0065: ldarg.0
+0066: ldloc.0
+0067: call             0x06000510 // Boolean[] SetLEDMode(Int32)
+006C: call             0x06000425 // Void UpdateLightModeUI(Boolean[])
+0071: ldarg.0
+0072: call             0x0600040E // Void UpdataUSBData()
+0077: ret

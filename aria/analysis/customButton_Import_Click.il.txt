@@ -1,0 +1,198 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=customButton_Import_Click TOKEN=0x06000443 IL_BYTES=595
+0000: ldarg.0
+0001: call             0x0600040C // Boolean GetDeviceOnline()
+0006: brfalse          IL_0252
+000B: ldc.i4.s         10
+000D: newarr           0x01000026 // System.Byte
+0012: stloc.0
+0013: ldc.i4.0
+0014: stloc.1
+0015: ldstr            0x70002B0D // Compx Inc
+001A: ldsfld           0x04000453 // DeviceParam deviceParam
+001F: ldfld            0x0400064D // System.String Sensor
+0024: stloc.2
+0025: ldloc.2
+0026: ldloca.s         0
+0028: call             0x0600003D // Int32 ImportConfigFile(System.String, System.String, Byte[] ByRef)
+002D: stloc.1
+002E: ldarg.0
+002F: ldfld            0x04000462 // System.Windows.Forms.Timer ImportConfigTimer
+0034: ldc.i4.1
+0035: callvirt         0x0A00021A // Void set_Enabled(Boolean)
+003A: ldloc.0
+003B: call             0x06000041 // DriverLib.FlashDataMap ByteToFlashDataMap(Byte[])
+0040: stloc.3
+0041: ldloc.3
+0042: ldfld            0x04000101 // DriverLib.MouseConfig mouseConfig
+0047: ldfld            0x040000D6 // Byte maxDPI
+004C: ldsfld           0x04000453 // DeviceParam deviceParam
+0051: ldfld            0x0400064C // Int32 DPIMaxGrade
+0056: conv.u1
+0057: ble.s            IL_005B
+0059: ldc.i4.1
+005A: stloc.1
+005B: ldc.i4.1
+005C: stloc.s          4
+005E: ldc.i4.0
+005F: stloc.s          5
+0061: ldsflda          0x0400045E // Mouse_Drive_Beta.DeviceAllInfo ConnectedDeviceInfo
+0066: ldflda           0x040003AB // DriverLib.DeviceInfo deviceInfo
+006B: ldfld            0x040000CD // Byte DeviceType
+0070: stloc.s          6
+0072: ldloca.s         6
+0074: constrained.     0x02000079 // Mouse_Drive_Beta.DeviceType
+007A: callvirt         0x0A0000CC // System.String ToString()
+007F: ldstr            0x70002B21 // 1K
+0084: callvirt         0x0A0000D5 // Boolean Contains(System.String)
+0089: brfalse.s        IL_008E
+008B: ldc.i4.1
+008C: stloc.s          4
+008E: ldloca.s         6
+0090: constrained.     0x02000079 // Mouse_Drive_Beta.DeviceType
+0096: callvirt         0x0A0000CC // System.String ToString()
+009B: ldstr            0x7000197B // 2K
+00A0: callvirt         0x0A0000D5 // Boolean Contains(System.String)
+00A5: brfalse.s        IL_00AE
+00A7: ldloc.s          4
+00A9: ldc.i4.4
+00AA: shl
+00AB: conv.u1
+00AC: stloc.s          4
+00AE: ldloca.s         6
+00B0: constrained.     0x02000079 // Mouse_Drive_Beta.DeviceType
+00B6: callvirt         0x0A0000CC // System.String ToString()
+00BB: ldstr            0x70001981 // 4K
+00C0: callvirt         0x0A0000D5 // Boolean Contains(System.String)
+00C5: brfalse.s        IL_00CE
+00C7: ldloc.s          4
+00C9: ldc.i4.5
+00CA: shl
+00CB: conv.u1
+00CC: stloc.s          4
+00CE: ldloca.s         6
+00D0: constrained.     0x02000079 // Mouse_Drive_Beta.DeviceType
+00D6: callvirt         0x0A0000CC // System.String ToString()
+00DB: ldstr            0x70001987 // 8K
+00E0: callvirt         0x0A0000D5 // Boolean Contains(System.String)
+00E5: brfalse.s        IL_00EE
+00E7: ldloc.s          4
+00E9: ldc.i4.6
+00EA: shl
+00EB: conv.u1
+00EC: stloc.s          4
+00EE: ldloc.3
+00EF: ldfld            0x04000101 // DriverLib.MouseConfig mouseConfig
+00F4: ldfld            0x040000D5 // Byte reportRate
+00F9: ldc.i4.s         16
+00FB: blt.s            IL_010F
+00FD: ldloc.s          4
+00FF: ldloc.3
+0100: ldfld            0x04000101 // DriverLib.MouseConfig mouseConfig
+0105: ldfld            0x040000D5 // Byte reportRate
+010A: bge.s            IL_010F
+010C: ldc.i4.1
+010D: stloc.s          5
+010F: ldloc.1
+0110: brtrue           IL_0219
+0115: ldc.i4.0
+0116: stloc.s          7
+0118: br.s             IL_014E
+011A: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+011F: ldfld            0x04000106 // DriverLib.ShortCutKey[] shortCutKey
+0124: ldloc.s          7
+0126: ldc.i4.0
+0127: newobj           0x060000A4 // Void .ctor(Int32)
+012C: stelem           0x02000027 // DriverLib.ShortCutKey
+0131: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0136: ldfld            0x04000107 // DriverLib.MacroKey[] macroKey
+013B: ldloc.s          7
+013D: ldc.i4.0
+013E: newobj           0x060000A6 // Void .ctor(Int32)
+0143: stelem           0x02000029 // DriverLib.MacroKey
+0148: ldloc.s          7
+014A: ldc.i4.1
+014B: add
+014C: stloc.s          7
+014E: ldloc.s          7
+0150: ldc.i4.s         16
+0152: blt.s            IL_011A
+0154: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0159: call             0x0600009F // Void Update(DriverLib.FlashDataMap)
+015E: ldloc.0
+015F: call             0x06000041 // DriverLib.FlashDataMap ByteToFlashDataMap(Byte[])
+0164: stsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0169: ldloc.s          5
+016B: brfalse.s        IL_017E
+016D: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0172: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+0177: ldloc.s          4
+0179: stfld            0x040000D5 // Byte reportRate
+017E: ldarg.0
+017F: call             0x0600040E // Void UpdataUSBData()
+0184: ldarg.0
+0185: ldc.i4.1
+0186: stfld            0x04000472 // Boolean UIInitFlag
+018B: ldarg.0
+018C: ldfld            0x040004A9 // System.Windows.Forms.Label label_Title
+0191: ldsfld           0x04000453 // DeviceParam deviceParam
+0196: ldfld            0x04000648 // System.String DeviceName
+019B: callvirt         0x0A000069 // Void set_Text(System.String)
+01A0: ldarg.0
+01A1: ldsfld           0x04000453 // DeviceParam deviceParam
+01A6: ldfld            0x0400064A // Int32 KeyNumber
+01AB: call             0x060003FE // Void ButtonFunctionInit(Int32)
+01B0: ldarg.0
+01B1: call             0x060003FD // Void DPIInit()
+01B6: ldarg.0
+01B7: call             0x06000402 // Void XIn1Init()
+01BC: ldarg.0
+01BD: ldfld            0x040004E5 // Mouse_Drive_Beta.ComboControlLibrary.CustomKeyFunction customKeyFunction1
+01C2: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+01C7: ldsfld           0x04000451 // FileManager.LanguageFile languageFile
+01CC: ldsfld           0x04000453 // DeviceParam deviceParam
+01D1: ldfld            0x04000651 // Mouse_Drive_Beta.SensorDPI SensorDPI
+01D6: callvirt         0x0600070F // Void UpdateUI(DriverLib.FlashDataMap, FileManager.LanguageFile, Mouse_Drive_Beta.SensorDPI)
+01DB: ldarg.0
+01DC: call             0x06000423 // Void UpdateXIn1UI()
+01E1: ldarg.0
+01E2: call             0x06000424 // Void UpdateDPIUI()
+01E7: ldarg.0
+01E8: call             0x06000426 // Void UpdateLightUI()
+01ED: ldarg.0
+01EE: ldc.i4.0
+01EF: stfld            0x04000472 // Boolean UIInitFlag
+01F4: ldarg.0
+01F5: ldsfld           0x0400005C // System.Collections.Generic.List`1[System.String] Dialogs
+01FA: ldc.i4.s         25
+01FC: callvirt         0x0A0000DE // System.String get_Item(Int32)
+0201: ldc.i4.0
+0202: newobj           0x060003AD // Void .ctor(System.String, Mouse_Drive_Beta.DialogButtons)
+0207: stfld            0x04000458 // Mouse_Drive_Beta.FormDialog ImportConfigDialog
+020C: ldarg.0
+020D: ldfld            0x04000458 // Mouse_Drive_Beta.FormDialog ImportConfigDialog
+0212: callvirt         0x0A000206 // System.Windows.Forms.DialogResult ShowDialog()
+0217: pop
+0218: ret
+0219: ldloc.1
+021A: ldc.i4.1
+021B: bne.un.s         IL_0236
+021D: ldsfld           0x0400005C // System.Collections.Generic.List`1[System.String] Dialogs
+0222: ldc.i4.s         26
+0224: callvirt         0x0A0000DE // System.String get_Item(Int32)
+0229: ldc.i4.1
+022A: newobj           0x060003AD // Void .ctor(System.String, Mouse_Drive_Beta.DialogButtons)
+022F: call             0x0A000206 // System.Windows.Forms.DialogResult ShowDialog()
+0234: pop
+0235: ret
+0236: ldloc.1
+0237: ldc.i4.2
+0238: bne.un.s         IL_0252
+023A: ldsfld           0x0400005C // System.Collections.Generic.List`1[System.String] Dialogs
+023F: ldc.i4.s         27
+0241: callvirt         0x0A0000DE // System.String get_Item(Int32)
+0246: ldc.i4.1
+0247: newobj           0x060003AD // Void .ctor(System.String, Mouse_Drive_Beta.DialogButtons)
+024C: call             0x0A000206 // System.Windows.Forms.DialogResult ShowDialog()
+0251: pop
+0252: ret

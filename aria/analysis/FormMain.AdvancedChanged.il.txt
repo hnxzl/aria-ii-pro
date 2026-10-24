@@ -1,0 +1,23 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=FormAdvancedSetting_AdvancedChange TOKEN=0x06000435 IL_BYTES=51
+0000: ldarg.0
+0001: call             0x0600040C // Boolean GetDeviceOnline()
+0006: brfalse.s        IL_0032
+0008: ldarg.2
+0009: ldc.i4.1
+000A: bne.un.s         IL_0032
+000C: ldloca.s         0
+000E: initobj          0x0200003F // DriverLib.DongleRGB
+0014: ldloca.s         0
+0016: ldarg.3
+0017: conv.u1
+0018: stfld            0x0400014F // Byte mode
+001D: ldarg.0
+001E: ldfld            0x0400047F // Byte[] dongleRGB
+0023: ldc.i4.0
+0024: ldloc.0
+0025: ldfld            0x0400014F // Byte mode
+002A: stelem.i1
+002B: ldloca.s         0
+002D: call             0x0600017E // Void Set4KDongleRGB(DriverLib.DongleRGB ByRef)
+0032: ret

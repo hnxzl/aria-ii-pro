@@ -1,0 +1,20 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._3In1 METHOD=customTrackBar_DPIBrightness_ValueChanged TOKEN=0x060006A8 IL_BYTES=63
+0000: ldarg.0
+0001: ldfld            0x040006C0 // System.Windows.Forms.Label label_DPIBrightnessValue
+0006: ldarg.0
+0007: ldfld            0x040006C1 // CustomControlLibrary.CustomTrackBar customTrackBar_DPIBrightness
+000C: callvirt         0x0600036E // Int32 get_Value()
+0011: stloc.0
+0012: ldloca.s         0
+0014: call             0x0A000235 // System.String ToString()
+0019: callvirt         0x0A000069 // Void set_Text(System.String)
+001E: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0023: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+0028: ldarg.0
+0029: ldfld            0x040006C1 // CustomControlLibrary.CustomTrackBar customTrackBar_DPIBrightness
+002E: callvirt         0x0600036E // Int32 get_Value()
+0033: call             0x0600050D // Int32 DPIIndexToBrightness(Int32)
+0038: conv.u1
+0039: stfld            0x040000E9 // Byte brightness
+003E: ret

@@ -1,0 +1,187 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._3In1 METHOD=UpdateModeSelect TOKEN=0x0600069A IL_BYTES=606
+0000: ldarg.0
+0001: ldc.i4.1
+0002: stfld            0x0400069C // Boolean UpdateUIFlag
+0007: ldarg.0
+0008: call             0x0600069F // Void GetCordedString()
+000D: ldarg.1
+000E: brfalse          IL_00D7
+0013: ldarg.0
+0014: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+0019: callvirt         0x06000234 // ObjectCollection get_Item()
+001E: callvirt         0x0A0000E9 // Int32 get_Count()
+0023: ldc.i4.2
+0024: bne.un           IL_00A9
+0029: ldarg.0
+002A: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+002F: callvirt         0x06000234 // ObjectCollection get_Item()
+0034: ldarg.0
+0035: ldfld            0x040006A1 // System.String corded
+003A: callvirt         0x0A0000DF // Int32 Add(System.Object)
+003F: pop
+0040: ldc.i4.0
+0041: stloc.0
+0042: br.s             IL_009C
+0044: ldarg.0
+0045: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+004A: callvirt         0x0A0000D4 // System.String get_Name()
+004F: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0054: ldloc.0
+0055: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+005A: ldfld            0x04000049 // System.String Name
+005F: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+0064: brfalse.s        IL_0098
+0066: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+006B: ldloc.0
+006C: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0071: ldfld            0x0400004A // System.Collections.Generic.List`1[System.String] Items
+0076: ldarg.0
+0077: ldfld            0x040006A1 // System.String corded
+007C: callvirt         0x0A0000E8 // Void Add(System.String)
+0081: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0086: ldloc.0
+0087: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+008C: ldfld            0x0400004B // System.Collections.Generic.List`1[System.Int32] Values
+0091: ldc.i4.s         10
+0093: callvirt         0x0A0000EB // Void Add(Int32)
+0098: ldloc.0
+0099: ldc.i4.1
+009A: add
+009B: stloc.0
+009C: ldloc.0
+009D: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+00A2: callvirt         0x0A0000E2 // Int32 get_Count()
+00A7: blt.s            IL_0044
+00A9: ldarg.0
+00AA: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+00AF: ldc.i4.0
+00B0: callvirt         0x0A0002C9 // Void set_Enabled(Boolean)
+00B5: ldarg.0
+00B6: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+00BB: ldarg.0
+00BC: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+00C1: callvirt         0x06000234 // ObjectCollection get_Item()
+00C6: callvirt         0x0A0000E9 // Int32 get_Count()
+00CB: ldc.i4.1
+00CC: sub
+00CD: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+00D2: br               IL_018F
+00D7: ldarg.0
+00D8: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+00DD: callvirt         0x06000234 // ObjectCollection get_Item()
+00E2: callvirt         0x0A0000E9 // Int32 get_Count()
+00E7: ldc.i4.3
+00E8: bne.un.s         IL_015E
+00EA: ldarg.0
+00EB: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+00F0: callvirt         0x06000234 // ObjectCollection get_Item()
+00F5: ldc.i4.2
+00F6: callvirt         0x0A000358 // Void RemoveAt(Int32)
+00FB: ldc.i4.0
+00FC: stloc.1
+00FD: br.s             IL_0151
+00FF: ldarg.0
+0100: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+0105: callvirt         0x0A0000D4 // System.String get_Name()
+010A: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+010F: ldloc.1
+0110: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0115: ldfld            0x04000049 // System.String Name
+011A: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+011F: brfalse.s        IL_014D
+0121: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0126: ldloc.1
+0127: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+012C: ldfld            0x0400004A // System.Collections.Generic.List`1[System.String] Items
+0131: ldc.i4.2
+0132: callvirt         0x0A000359 // Void RemoveAt(Int32)
+0137: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+013C: ldloc.1
+013D: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0142: ldfld            0x0400004B // System.Collections.Generic.List`1[System.Int32] Values
+0147: ldc.i4.2
+0148: callvirt         0x0A000254 // Void RemoveAt(Int32)
+014D: ldloc.1
+014E: ldc.i4.1
+014F: add
+0150: stloc.1
+0151: ldloc.1
+0152: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0157: callvirt         0x0A0000E2 // Int32 get_Count()
+015C: blt.s            IL_00FF
+015E: ldarg.0
+015F: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+0164: ldc.i4.1
+0165: callvirt         0x0A0002C9 // Void set_Enabled(Boolean)
+016A: ldarg.0
+016B: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+0170: ldarg.0
+0171: ldfld            0x040006B2 // CustomControlLibrary.CustomComboBox customComboBox_ModeSelect
+0176: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+017B: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+0180: ldfld            0x040000E3 // Byte sensorPowerSavingModeEnable
+0185: call             0x06000519 // Int32 ValueToComboxIndex(CustomControlLibrary.CustomComboBox, Int32)
+018A: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+018F: ldsfld           0x04000453 // DeviceParam deviceParam
+0194: ldfld            0x0400064D // System.String Sensor
+0199: ldstr            0x70006ECF // 3950
+019E: call             0x0A0000E4 // Boolean op_Inequality(System.String, System.String)
+01A3: brfalse          IL_0231
+01A8: ldarg.0
+01A9: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+01AE: callvirt         0x06000234 // ObjectCollection get_Item()
+01B3: callvirt         0x0A0000E9 // Int32 get_Count()
+01B8: ldc.i4.3
+01B9: bne.un.s         IL_0231
+01BB: ldarg.0
+01BC: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+01C1: callvirt         0x06000234 // ObjectCollection get_Item()
+01C6: ldc.i4.0
+01C7: callvirt         0x0A000358 // Void RemoveAt(Int32)
+01CC: ldc.i4.0
+01CD: stloc.2
+01CE: br.s             IL_0224
+01D0: ldarg.0
+01D1: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+01D6: callvirt         0x0A0000D4 // System.String get_Name()
+01DB: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+01E0: ldloc.2
+01E1: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+01E6: ldfld            0x04000049 // System.String Name
+01EB: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+01F0: brfalse.s        IL_0220
+01F2: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+01F7: ldloc.2
+01F8: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+01FD: ldfld            0x0400004A // System.Collections.Generic.List`1[System.String] Items
+0202: ldc.i4.0
+0203: callvirt         0x0A000359 // Void RemoveAt(Int32)
+0208: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+020D: ldloc.2
+020E: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0213: ldfld            0x0400004B // System.Collections.Generic.List`1[System.Int32] Values
+0218: ldc.i4.0
+0219: callvirt         0x0A000254 // Void RemoveAt(Int32)
+021E: br.s             IL_0231
+0220: ldloc.2
+0221: ldc.i4.1
+0222: add
+0223: stloc.2
+0224: ldloc.2
+0225: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+022A: callvirt         0x0A0000E2 // Int32 get_Count()
+022F: blt.s            IL_01D0
+0231: ldarg.0
+0232: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+0237: ldarg.0
+0238: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+023D: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0242: ldflda           0x04000101 // DriverLib.MouseConfig mouseConfig
+0247: ldfld            0x040000DA // Byte silenceHeight
+024C: call             0x06000519 // Int32 ValueToComboxIndex(CustomControlLibrary.CustomComboBox, Int32)
+0251: callvirt         0x06000233 // Void set_SelectIndex(Int32)
+0256: ldarg.0
+0257: ldc.i4.0
+0258: stfld            0x0400069C // Boolean UpdateUIFlag
+025D: ret

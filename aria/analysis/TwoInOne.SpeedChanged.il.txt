@@ -1,0 +1,17 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._2In1 METHOD=customTrackBar_DPISpeed_ValueChanged TOKEN=0x0600067E IL_BYTES=59
+0000: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0005: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+000A: ldarg.0
+000B: ldfld            0x04000695 // CustomControlLibrary.CustomTrackBar customTrackBar_DPISpeed
+0010: callvirt         0x0600036E // Int32 get_Value()
+0015: conv.u1
+0016: stfld            0x040000EA // Byte breathSpeed
+001B: ldarg.0
+001C: ldfld            0x04000694 // System.Windows.Forms.Label label_DPISpeedValue
+0021: ldsflda          0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+0026: ldflda           0x04000103 // DriverLib.DPILed dpiLed
+002B: ldflda           0x040000EA // Byte breathSpeed
+0030: call             0x0A000241 // System.String ToString()
+0035: callvirt         0x0A000069 // Void set_Text(System.String)
+003A: ret

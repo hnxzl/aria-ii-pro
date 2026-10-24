@@ -1,0 +1,9 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary._3In1 METHOD=AddLODItems TOKEN=0x060006A4 IL_BYTES=19
+0000: ldarg.0
+0001: ldfld            0x040006B1 // CustomControlLibrary.CustomComboBox customComboBox_LOD
+0006: callvirt         0x06000234 // ObjectCollection get_Item()
+000B: ldarg.1
+000C: callvirt         0x0A0000DF // Int32 Add(System.Object)
+0011: pop
+0012: ret

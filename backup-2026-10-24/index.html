@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>Aria II Pro Configurator</title>
+  <link rel="icon" href="assets/fav.ico">
+  <link rel="preload" as="image" href="assets/front.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/button.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/aria2banner-readable.webp" type="image/webp">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js" defer onerror="document.documentElement.classList.add('no-pickr')"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stage" id="stage">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Aria II Pro">
+        <img src="assets/aria2banner-readable.webp" alt="Aria II Pro" class="brand-banner-img">
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language / Bahasa">
+        <button type="button" class="lang-btn active" data-lang="en" title="English">EN</button>
+        <button type="button" class="lang-btn" data-lang="id" title="Bahasa Indonesia">ID</button>
+      </div>
+    </header>
+
+    <!-- Center Window: Mouse Customization -->
+    <section class="win win-center" aria-label="Customize">
+      <h2 class="win-title" data-i18n="customize">Customize</h2>
+      <div class="panel panel-center" id="panelCenter">
+        <!-- Battery -->
+        <div class="battery" id="battRing">
+          <svg class="batt-icon" viewBox="0 0 30 15" aria-hidden="true">
+            <rect class="batt-shell" x="1" y="1" width="24" height="13" rx="3.5" />
+            <rect class="batt-tip" x="26.5" y="5" width="2.5" height="5" rx="1" />
+            <rect id="battArc" class="batt-fill" x="3.2" y="3.2" width="0" height="8.6" rx="1.8" />
+          </svg>
+          <span class="batt-val" id="battPct">--</span>
+        </div>
+
+        <!-- Mouse Stage -->
+        <div class="mouse-stage" id="mouseStage">
+          <img src="assets/button.webp" alt="Aria II Pro XD7v2P" class="mouse-render" width="1080" height="1080" draggable="false" onerror="this.style.display = 'none'" />
+          <svg class="btn-lines" id="btnLines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="btn-pills" id="btnPills"></div>
+        </div>
+
+        <!-- Fantech Logo -->
+        <img src="assets/fantech-logo.webp" alt="Fantech" class="center-logo" width="40" height="36" onerror="this.style.display = 'none'" />
+
+        <!-- Button Picker Overlay -->
+        <div class="btn-picker" id="btnPicker" hidden></div>
+
+        <!-- Connect Box (when disconnected) -->
+        <div class="connect-box" id="connectBox">
+          <h1 class="hero-title" id="heroTitle">ARIA II PRO</h1>
+          <p class="hero-subtitle" id="heroSubtitle" data-i18n="web_configurator">Web Configurator</p>
+          <button class="btn-connect" id="btnPair" type="button" data-i18n="connect_device">Connect Device</button>
+        </div>
+        <div class="status-indicator" id="statusInfo" hidden></div>
+      </div>
+    </section>
+
+    <!-- Right Window: Performance & Settings -->
+    <section class="win win-right" aria-label="Performance">
+      <h2 class="win-title" data-i18n="performance">Performance</h2>
+      <div class="panel panel-right" id="panelRight">
+
+        <!-- DPI Stages -->
+        <div class="p-row p-dpi-head">
+          <span class="p-label" data-i18n="dpi_stages">DPI Stages</span>
+          <div class="stepper sm">
+            <button type="button" onclick="app.changeStages(-1)" aria-label="Fewer stages" data-i18n="fewer">−</button>
+            <input type="number" id="stageCount" value="4" readonly aria-label="DPI Stages" min="1" max="4" />
+            <button type="button" onclick="app.changeStages(1)" aria-label="More stages" data-i18n="more">+</button>
+          </div>
+        </div>
+        <div class="dpi-list" id="dpiStagesContainer"></div>
+
+        <!-- Polling Rate -->
+        <div class="p-row">
+          <span class="p-label" data-i18n="polling_rate">Polling Rate</span>
+          <div class="segmented" id="pollingRate"></div>
+        </div>
+
+        <!-- Peak Performance -->
+        <div class="p-row">
+          <span class="p-label" data-i18n="peak_perf">Peak Performance</span>
+          <label class="check"><input type="checkbox" id="peakPerf" onchange="app.setPeakPerformance(this.checked)" /><span data-i18n="enable">Enable</span></label>
+          <select id="peakDuration" onchange="app.setPeakDuration(this.value)" aria-label="Peak Performance Duration">
+            <option value="3">30 sec</option>
+            <option value="6">1 min</option>
+            <option value="12">2 min</option>
+            <option value="30">5 min</option>
+            <option value="60">10 min</option>
+            <option value="90">15 min</option>
+          </select>
+        </div>
+
+        <!-- Mode Select (LP/HP/Corded) -->
+        <div class="p-row">
+          <span class="p-label" data-i18n="mode_select">Mode Select</span>
+          <div class="segmented" id="modeSelect">
+            <button class="seg-btn active" data-mode="lp" onclick="app.setModeSelect('lp')"><span class="mode-icon">🔋</span><span data-i18n="low_power">Low Power</span></button>
+            <button class="seg-btn" data-mode="hp" onclick="app.setModeSelect('hp')"><span class="mode-icon">⚡</span><span data-i18n="high_perf">High Performance</span></button>
+            <button class="seg-btn disabled" data-mode="corded" id="modeCordedBtn" disabled><span class="mode-icon">🔌</span><span data-i18n="corded_mode">Corded</span></button>
+          </div>
+        </div>
+
+        <!-- Debounce Time -->
+        <div class="p-row">
+          <span class="p-label" data-i18n="debounce">Debounce Time</span>
+          <label class="check"><input type="checkbox" id="debounceEnabled" checked onchange="app.setDebounceEnabled(this.checked)" /><span data-i18n="enable_debounce">Enable</span></label>
+          <div class="stepper sm">
+            <button type="button" onclick="app.changeDebounce(-1)" aria-label="Decrease debounce">−</button>
+            <input type="number" id="debounceVal" value="5" onchange="app.setDebounceManual(this.value)" aria-label="Debounce Time" min="0" max="20" />
+            <button type="button" onclick="app.changeDebounce(1)" aria-label="Increase debounce">+</button>
+          </div>
+          <span class="p-num" id="debounceLabel">ms</span>
+        </div>
+
+        <!-- Sensor Toggles -->
+        <div class="p-row checks">
+          <label class="check"><input type="checkbox" id="motionSync" onchange="app.setToggle('motionSync', this.checked)" /><span data-i18n="motion_sync">Motion Sync</span></label>
+          <label class="check"><input type="checkbox" id="rippleCtrl" onchange="app.setToggle('rippleCtrl', this.checked)" /><span data-i18n="ripple_ctrl">Ripple Control</span></label>
+          <label class="check"><input type="checkbox" id="angleSnap" onchange="app.setToggle('angleSnap', this.checked)" /><span data-i18n="angle_snap">Angle Snapping</span></label>
+        </div>
+
+        <!-- LOD (1mm/2mm only) -->
+        <div class="p-row">
+          <span class="p-label" data-i18n="lift_off">Lift-Off Distance</span>
+          <div class="segmented" id="lodControl">
+            <button class="seg-btn active" data-val="1" onclick="app.setLOD(1)">1 mm</button>
+            <button class="seg-btn" data-val="2" onclick="app.setLOD(2)">2 mm</button>
+          </div>
+        </div>
+
+        <!-- LED Idle-Off (Sleep Timer) -->
+        <div class="p-row stack">
+          <span class="p-label" data-i18n="led_idle_off">LED Idle-Off Timeout</span>
+          <div class="segmented seg-fill" id="sleepTimer">
+            <button class="seg-btn" data-val="1" onclick="app.setSleepTimeout(1)">10s</button>
+            <button class="seg-btn" data-val="3" onclick="app.setSleepTimeout(3)">30s</button>
+            <button class="seg-btn active" data-val="6" onclick="app.setSleepTimeout(6)">1m</button>
+            <button class="seg-btn" data-val="30" onclick="app.setSleepTimeout(30)">5m</button>
+            <button class="seg-btn" data-val="60" onclick="app.setSleepTimeout(60)">10m</button>
+            <button class="seg-btn" data-val="90" onclick="app.setSleepTimeout(90)">15m</button>
+            <button class="seg-btn" data-val="120" onclick="app.setSleepTimeout(120)">20m</button>
+            <button class="seg-btn" data-val="150" onclick="app.setSleepTimeout(150)">25m</button>
+            <button class="seg-btn" data-val="180" onclick="app.setSleepTimeout(180)">30m</button>
+            <button class="seg-btn" data-val="210" onclick="app.setSleepTimeout(210)">35m</button>
+            <button class="seg-btn" data-val="240" onclick="app.setSleepTimeout(240)">40m</button>
+          </div>
+        </div>
+
+        <!-- Receiver Settings (wireless only) -->
+        <div class="p-row" id="receiverSettings" style="display:none;">
+          <span class="p-label" data-i18n="receiver_settings">Receiver Settings</span>
+        </div>
+        <div class="p-row" id="longDistanceRow" style="display:none;">
+          <span class="p-label" data-i18n="long_distance">Long Distance</span>
+          <div class="segmented">
+            <button class="seg-btn active" data-val="0" onclick="app.setLongDistance(0)">Off</button>
+            <button class="seg-btn" data-val="1" onclick="app.setLongDistance(1)">On</button>
+          </div>
+        </div>
+        <div class="p-row" id="receiverLedRow" style="display:none;">
+          <span class="p-label" data-i18n="receiver_led">Receiver LED Mode</span>
+          <div class="segmented">
+            <button class="seg-btn" data-val="1" onclick="app.setReceiverLedMode(1)">Connection + Rate</button>
+            <button class="seg-btn active" data-val="2" onclick="app.setReceiverLedMode(2)">Battery State</button>
+            <button class="seg-btn" data-val="3" onclick="app.setReceiverLedMode(3)">Battery Warning</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Status Bar -->
+    <footer class="statusbar">
+      <div class="conn-chip" id="connChip"><i class="dot"></i><span class="conn-text" data-i18n="not_connected">Not connected</span></div>
+      <button type="button" class="link-btn" onclick="app.openDiagnostics()" data-i18n="diagnostics">Diagnostics</button>
+      <div class="fab-container">
+        <div class="fab-menu" id="fabMenu" role="menu">
+          <div class="fab-profile">Profile: <span id="profileLabel" class="editable" contenteditable="true" aria-label="Profile name" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur();app.renameProfile(this.textContent)}" onblur="app.renameProfile(this.textContent)">Profile</span></div>
+          <button class="fab-action" onclick="app.openProfileImport()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span data-i18n="import_profile">Import profile…</span>
+          </button>
+          <button class="fab-action" onclick="app.exportProfile()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg>
+            <span data-i18n="export_profile">Export profile</span>
+          </button>
+          <button class="fab-action" onclick="app.applyProfileToMouse()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span data-i18n="apply_profile">Apply profile to mouse</span>
+          </button>
+          <button class="fab-action danger" onclick="app.restoreDefaults()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9A9 9 0 0 1 21 11.08"/><path d="M20.49 15A9 9 0 0 1 3 12.92"/></svg>
+            <span data-i18n="restore_defaults">Restore defaults</span>
+          </button>
+          <div class="fab-foot">
+            <a href="https://tako.id/hnxzl" target="_blank" rel="noopener" class="fab-coffee" data-i18n="support_me">Support me ↗</a>
+            <span data-i18n="made_by">Made by <b>HNXZL</b></span>
+          </div>
+        </div>
+        <button type="button" class="fab-btn" id="fabBtn" aria-label="Profile actions" aria-expanded="false" aria-controls="fabMenu"
+          onclick="this.setAttribute('aria-expanded', document.getElementById('fabMenu').classList.toggle('active') ? 'true' : 'false')">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          <span data-i18n="profile">Profile</span>
+        </button>
+      </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-area" id="toastContainer"></div>
+  </div>
+
+  <!-- Diagnostics Dialog -->
+  <dialog class="diag" id="diagDialog" aria-labelledby="diagTitle" onclick="if (event.target === this) app.closeDiagnostics()">
+    <div class="diag-card">
+      <header class="diag-head">
+        <h3 id="diagTitle" data-i18n="device_diagnostics">Device diagnostics</h3>
+        <button type="button" class="pick-close" onclick="app.closeDiagnostics()" aria-label="Close">&times;</button>
+      </header>
+      <div class="diag-grid" id="diagRows"></div>
+
+      <p class="diag-label" data-i18n="candidates_list">Every candidate the browser offered, best match first:</p>
+      <ul class="diag-cands" id="diagCandidates"></ul>
+      <div class="diag-actions">
+        <button type="button" class="setup-btn ghost" onclick="app.pairAll()" data-i18n="list_all_hid">Device not showing up? List all HID devices</button>
+        <button type="button" class="setup-btn ghost" onclick="app.rescanDevices()" data-i18n="rescan">Re-scan</button>
+        <button type="button" class="setup-btn ghost" onclick="app.copyDiagnostics()" data-i18n="copy_report">Copy report</button>
+      </div>
+
+      <p class="diag-label" data-i18n="memory_dump_desc">Onboard memory dump (includes DPI, buttons, macros). Takes a minute over Bluetooth.</p>
+      <div class="diag-actions">
+        <button type="button" class="setup-btn" id="diagDumpBtn" onclick="app.dumpMemory()" data-i18n="dump_memory">Dump memory</button>
+        <span class="diag-dump" id="diagDump" data-i18n="not_dumped">Not dumped yet.</span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Profile Import Input -->
+  <input type="file" id="profileFileInput" accept=".json,application/json" hidden />
+  <div id="pickr-anchor" style="position: fixed; left: -9999px"></div>
+
+  <!-- i18n and App Scripts -->
+  <script src="i18n.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

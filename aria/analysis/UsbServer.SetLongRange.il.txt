@@ -1,0 +1,10 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.UsbServer METHOD=SetLongRangeMode TOKEN=0x06000180 IL_BYTES=21
+0000: call             0x060000EF // Boolean isX64System()
+0005: brfalse.s        IL_000E
+0007: ldarg.0
+0008: call             0x06000159 // Void CS_UsbServer_SetLongRangeMode(Boolean)
+000D: ret
+000E: ldarg.0
+000F: call             0x060001B0 // Void CS_UsbServer_SetLongRangeMode(Boolean)
+0014: ret

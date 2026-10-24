@@ -1,0 +1,52 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormAdvancedSetting METHOD=customCheckBox_LongRange_Click TOKEN=0x0600039C IL_BYTES=140
+0000: ldarg.0
+0001: ldfld            0x040003D5 // Boolean isUsb
+0006: brfalse.s        IL_0042
+0008: ldarg.0
+0009: ldfld            0x040003D3 // Boolean longRangeMode
+000E: brtrue.s         IL_003A
+0010: ldsfld           0x0400005C // System.Collections.Generic.List`1[System.String] Dialogs
+0015: ldc.i4.s         63
+0017: callvirt         0x0A0000DE // System.String get_Item(Int32)
+001C: ldc.i4.1
+001D: ldc.r4           12
+0022: newobj           0x060003AE // Void .ctor(System.String, Mouse_Drive_Beta.DialogButtons, Single)
+0027: callvirt         0x0A000206 // System.Windows.Forms.DialogResult ShowDialog()
+002C: pop
+002D: ldarg.0
+002E: ldfld            0x040003E4 // CustomControlLibrary.CustomCheckBox customCheckBox_LongRange
+0033: ldc.i4.1
+0034: callvirt         0x0600021A // Void set_Checked(Boolean)
+0039: ret
+003A: ldarg.0
+003B: ldc.i4.0
+003C: stfld            0x040003D3 // Boolean longRangeMode
+0041: ret
+0042: ldarg.0
+0043: ldfld            0x040003D3 // Boolean longRangeMode
+0048: brtrue.s         IL_0084
+004A: ldsfld           0x0400005C // System.Collections.Generic.List`1[System.String] Dialogs
+004F: ldc.i4.s         64
+0051: callvirt         0x0A0000DE // System.String get_Item(Int32)
+0056: ldc.i4.2
+0057: ldc.r4           8
+005C: newobj           0x060003AE // Void .ctor(System.String, Mouse_Drive_Beta.DialogButtons, Single)
+0061: dup
+0062: callvirt         0x0A000206 // System.Windows.Forms.DialogResult ShowDialog()
+0067: pop
+0068: ldfld            0x040003F0 // Boolean resault
+006D: brfalse.s        IL_0077
+006F: ldarg.0
+0070: ldc.i4.1
+0071: stfld            0x040003D3 // Boolean longRangeMode
+0076: ret
+0077: ldarg.0
+0078: ldfld            0x040003E4 // CustomControlLibrary.CustomCheckBox customCheckBox_LongRange
+007D: ldc.i4.1
+007E: callvirt         0x0600021A // Void set_Checked(Boolean)
+0083: ret
+0084: ldarg.0
+0085: ldc.i4.0
+0086: stfld            0x040003D3 // Boolean longRangeMode
+008B: ret

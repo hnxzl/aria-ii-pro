@@ -1,0 +1,11 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=UpdataUSBData TOKEN=0x0600040E IL_BYTES=26
+0000: ldarg.0
+0001: ldfld            0x04000472 // Boolean UIInitFlag
+0006: brfalse.s        IL_0009
+0008: ret
+0009: ldsfld           0x0400045B // DriverLib.FlashDataMap gFlashDataMap
+000E: call             0x0600009F // Void Update(DriverLib.FlashDataMap)
+0013: ldarg.0
+0014: call             0x06000410 // Void UpdateFlashData()
+0019: ret

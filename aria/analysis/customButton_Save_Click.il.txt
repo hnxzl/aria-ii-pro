@@ -1,0 +1,142 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=customButton_Save_Click TOKEN=0x0600045C IL_BYTES=455
+0000: ldarg.0
+0001: call             0x06000461 // Boolean IsRecordingMacro()
+0006: brfalse.s        IL_0009
+0008: ret
+0009: ldloca.s         0
+000B: ldc.i4.0
+000C: call             0x060000A5 // Void .ctor(Int32)
+0011: ldc.i4.0
+0012: stloc.1
+0013: ldarg.0
+0014: ldfld            0x040004BE // CustomControlLibrary.CustomRadioButton customRadioButton_CycleTimes
+0019: callvirt         0x0A000187 // Boolean get_Checked()
+001E: brfalse.s        IL_0075
+0020: ldarg.0
+0021: ldfld            0x040004E7 // System.Windows.Forms.TextBox textBox_CycleTimes
+0026: callvirt         0x0A000068 // System.String get_Text()
+002B: ldstr            0x70000001 //
+0030: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+0035: brtrue.s         IL_004E
+0037: ldarg.0
+0038: ldfld            0x040004E7 // System.Windows.Forms.TextBox textBox_CycleTimes
+003D: callvirt         0x0A000068 // System.String get_Text()
+0042: ldstr            0x7000035B // 0
+0047: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+004C: brfalse.s        IL_0062
+004E: ldarg.0
+004F: ldfld            0x040004E7 // System.Windows.Forms.TextBox textBox_CycleTimes
+0054: ldc.i4.1
+0055: stloc.2
+0056: ldloca.s         2
+0058: call             0x0A000235 // System.String ToString()
+005D: callvirt         0x0A000069 // Void set_Text(System.String)
+0062: ldarg.0
+0063: ldfld            0x040004E7 // System.Windows.Forms.TextBox textBox_CycleTimes
+0068: callvirt         0x0A000068 // System.String get_Text()
+006D: call             0x0A000242 // Byte ToByte(System.String)
+0072: stloc.1
+0073: br.s             IL_00B2
+0075: ldarg.0
+0076: ldfld            0x040004BF // CustomControlLibrary.CustomRadioButton customRadioButton_UntilKeyPressed
+007B: callvirt         0x0A000187 // Boolean get_Checked()
+0080: brfalse.s        IL_008A
+0082: ldc.i4           255
+0087: stloc.1
+0088: br.s             IL_00B2
+008A: ldarg.0
+008B: ldfld            0x040004BD // CustomControlLibrary.CustomRadioButton customRadioButton_UntilKeyReleased
+0090: callvirt         0x0A000187 // Boolean get_Checked()
+0095: brfalse.s        IL_009F
+0097: ldc.i4           254
+009C: stloc.1
+009D: br.s             IL_00B2
+009F: ldarg.0
+00A0: ldfld            0x0400050E // CustomControlLibrary.CustomRadioButton customRadioButton_UntilThisKeyPressed
+00A5: callvirt         0x0A000187 // Boolean get_Checked()
+00AA: brfalse.s        IL_00B2
+00AC: ldc.i4           253
+00B1: stloc.1
+00B2: ldarg.0
+00B3: ldfld            0x04000487 // DriverLib.MacroKeyDriver macroKeyDriver
+00B8: ldfld            0x04000108 // DriverLib.MacroKey macroKey
+00BD: ldloca.s         0
+00BF: ldarg.0
+00C0: ldfld            0x040004AA // CustomControlLibrary.CustomListView customListView_Macro
+00C5: callvirt         0x0A0002B8 // SelectedListViewItemCollection get_SelectedItems()
+00CA: ldc.i4.0
+00CB: callvirt         0x0A0002BA // System.Windows.Forms.ListViewItem get_Item(Int32)
+00D0: callvirt         0x0A0001A4 // System.String get_Text()
+00D5: ldloc.1
+00D6: call             0x060000CC // Void Copy(DriverLib.MacroKey, DriverLib.MacroKeyAndCycle ByRef, System.String, Byte)
+00DB: ldsfld           0x04000485 // System.Collections.Generic.List`1[DriverLib.MacroKeyAndCycle] MacroKeyAndCycleList
+00E0: ldarg.0
+00E1: ldfld            0x040004AA // CustomControlLibrary.CustomListView customListView_Macro
+00E6: callvirt         0x0A0002B8 // SelectedListViewItemCollection get_SelectedItems()
+00EB: ldc.i4.0
+00EC: callvirt         0x0A0002BA // System.Windows.Forms.ListViewItem get_Item(Int32)
+00F1: callvirt         0x0A0002BB // Int32 get_Index()
+00F6: callvirt         0x0A000299 // Void RemoveAt(Int32)
+00FB: ldsfld           0x04000485 // System.Collections.Generic.List`1[DriverLib.MacroKeyAndCycle] MacroKeyAndCycleList
+0100: ldarg.0
+0101: ldfld            0x040004AA // CustomControlLibrary.CustomListView customListView_Macro
+0106: callvirt         0x0A0002B8 // SelectedListViewItemCollection get_SelectedItems()
+010B: ldc.i4.0
+010C: callvirt         0x0A0002BA // System.Windows.Forms.ListViewItem get_Item(Int32)
+0111: callvirt         0x0A0002BB // Int32 get_Index()
+0116: ldloc.0
+0117: callvirt         0x0A0002CA // Void Insert(Int32, DriverLib.MacroKeyAndCycle)
+011C: ldarg.0
+011D: ldloc.0
+011E: call             0x0600044E // Void LoadMacroKeyContext(DriverLib.MacroKeyAndCycle)
+0123: ldarg.0
+0124: ldc.i4.0
+0125: call             0x06000463 // Void SetSaveButton(Boolean)
+012A: ldsfld           0x04000451 // FileManager.LanguageFile languageFile
+012F: ldfld            0x04000055 // System.Collections.Generic.List`1[System.Collections.Generic.List`1[Mouse_Drive_Beta.KeyFunctionStruct]] KeyFunctionSubStructs
+0134: ldc.i4.6
+0135: callvirt         0x0A000105 // System.Collections.Generic.List`1[Mouse_Drive_Beta.KeyFunctionStruct] get_Item(Int32)
+013A: callvirt         0x0A0000FD // Void Clear()
+013F: ldc.i4.0
+0140: stloc.3
+0141: br.s             IL_0183
+0143: ldloca.s         4
+0145: initobj          0x02000075 // Mouse_Drive_Beta.KeyFunctionStruct
+014B: ldloca.s         4
+014D: ldarg.0
+014E: ldfld            0x040004AA // CustomControlLibrary.CustomListView customListView_Macro
+0153: callvirt         0x0A0001A0 // ListViewItemCollection get_Items()
+0158: ldloc.3
+0159: callvirt         0x0A0001A1 // System.Windows.Forms.ListViewItem get_Item(Int32)
+015E: callvirt         0x0A0001A4 // System.String get_Text()
+0163: stfld            0x04000321 // System.String name
+0168: ldsfld           0x04000451 // FileManager.LanguageFile languageFile
+016D: ldfld            0x04000055 // System.Collections.Generic.List`1[System.Collections.Generic.List`1[Mouse_Drive_Beta.KeyFunctionStruct]] KeyFunctionSubStructs
+0172: ldc.i4.6
+0173: callvirt         0x0A000105 // System.Collections.Generic.List`1[Mouse_Drive_Beta.KeyFunctionStruct] get_Item(Int32)
+0178: ldloc.s          4
+017A: callvirt         0x0A0000FF // Void Add(Mouse_Drive_Beta.KeyFunctionStruct)
+017F: ldloc.3
+0180: ldc.i4.1
+0181: add
+0182: stloc.3
+0183: ldloc.3
+0184: ldarg.0
+0185: ldfld            0x040004AA // CustomControlLibrary.CustomListView customListView_Macro
+018A: callvirt         0x0A0001A0 // ListViewItemCollection get_Items()
+018F: callvirt         0x0A0001A3 // Int32 get_Count()
+0194: blt.s            IL_0143
+0196: ldarg.0
+0197: ldfld            0x040004E5 // Mouse_Drive_Beta.ComboControlLibrary.CustomKeyFunction customKeyFunction1
+019C: ldsfld           0x04000451 // FileManager.LanguageFile languageFile
+01A1: ldarg.0
+01A2: ldfld            0x040004AA // CustomControlLibrary.CustomListView customListView_Macro
+01A7: callvirt         0x0A0002B8 // SelectedListViewItemCollection get_SelectedItems()
+01AC: ldc.i4.0
+01AD: callvirt         0x0A0002BA // System.Windows.Forms.ListViewItem get_Item(Int32)
+01B2: callvirt         0x0A0002BB // Int32 get_Index()
+01B7: callvirt         0x06000713 // Void UpdateMacro(FileManager.LanguageFile, Int32)
+01BC: ldsfld           0x04000485 // System.Collections.Generic.List`1[DriverLib.MacroKeyAndCycle] MacroKeyAndCycleList
+01C1: call             0x0600063D // Void SaveLocalMacroKey(System.Collections.Generic.List`1[DriverLib.MacroKeyAndCycle])
+01C6: ret

@@ -1,0 +1,39 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=SetAdvSetting TOKEN=0x06000433 IL_BYTES=123
+0000: call             0x0A000202 // System.AppDomain get_CurrentDomain()
+0005: callvirt         0x0A000203 // System.String get_BaseDirectory()
+000A: stloc.0
+000B: ldarg.0
+000C: ldfld            0x040004C8 // CustomControlLibrary.CustomButton customButton_SystemMouse
+0011: ldloc.0
+0012: ldarg.1
+0013: brtrue.s         IL_001C
+0015: ldstr            0x70000985 // \res\2Button\adv_nr.png
+001A: br.s             IL_0021
+001C: ldstr            0x700009B5 // \res\2Button\adv_ld.png
+0021: call             0x0A0000BC // System.String Concat(System.String, System.String)
+0026: newobj           0x0A000054 // Void .ctor(System.String)
+002B: callvirt         0x0600020E // Void set_NormalImage(System.Drawing.Image)
+0030: ldarg.0
+0031: ldfld            0x040004C8 // CustomControlLibrary.CustomButton customButton_SystemMouse
+0036: ldloc.0
+0037: ldarg.1
+0038: brtrue.s         IL_0041
+003A: ldstr            0x70000985 // \res\2Button\adv_nr.png
+003F: br.s             IL_0046
+0041: ldstr            0x700009B5 // \res\2Button\adv_ld.png
+0046: call             0x0A0000BC // System.String Concat(System.String, System.String)
+004B: newobj           0x0A000054 // Void .ctor(System.String)
+0050: callvirt         0x0600020C // Void set_MouseDownImage(System.Drawing.Image)
+0055: ldarg.0
+0056: ldfld            0x040004C8 // CustomControlLibrary.CustomButton customButton_SystemMouse
+005B: ldloc.0
+005C: ldarg.1
+005D: brtrue.s         IL_0066
+005F: ldstr            0x70000985 // \res\2Button\adv_nr.png
+0064: br.s             IL_006B
+0066: ldstr            0x700009B5 // \res\2Button\adv_ld.png
+006B: call             0x0A0000BC // System.String Concat(System.String, System.String)
+0070: newobj           0x0A000054 // Void .ctor(System.String)
+0075: callvirt         0x0600020A // Void set_MouseEnterImage(System.Drawing.Image)
+007A: ret

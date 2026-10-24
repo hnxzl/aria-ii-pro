@@ -1,0 +1,135 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ComboControlLibrary.CustomKeyFunction METHOD=UpdateMacro TOKEN=0x06000713 IL_BYTES=387
+0000: ldarg.0
+0001: ldarg.1
+0002: stfld            0x040006E6 // FileManager.LanguageFile gLanguageFile
+0007: ldc.i4.0
+0008: stloc.0
+0009: br               IL_0176
+000E: ldarg.0
+000F: ldfld            0x040006E7 // Int32[] MacroIndex
+0014: ldloc.0
+0015: ldelem.i4
+0016: ldarg.2
+0017: bne.un           IL_0172
+001C: ldsfld           0x04000485 // System.Collections.Generic.List`1[DriverLib.MacroKeyAndCycle] MacroKeyAndCycleList
+0021: ldarg.2
+0022: callvirt         0x0A000296 // DriverLib.MacroKeyAndCycle get_Item(Int32)
+0027: stloc.1
+0028: ldarg.0
+0029: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+002E: ldfld            0x04000105 // DriverLib.KeyFunMap[] keys
+0033: ldloc.0
+0034: ldelema          0x0200002B // DriverLib.KeyFunMap
+0039: ldc.i4.6
+003A: stfld            0x040000FE // Byte type
+003F: ldarg.0
+0040: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+0045: ldfld            0x04000105 // DriverLib.KeyFunMap[] keys
+004A: ldloc.0
+004B: ldelema          0x0200002B // DriverLib.KeyFunMap
+0050: ldloc.0
+0051: conv.u1
+0052: stfld            0x040000FF // Byte param1
+0057: ldarg.0
+0058: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+005D: ldfld            0x04000105 // DriverLib.KeyFunMap[] keys
+0062: ldloc.0
+0063: ldelema          0x0200002B // DriverLib.KeyFunMap
+0068: ldloc.1
+0069: ldfld            0x040000F4 // Byte CycleTimes
+006E: stfld            0x04000100 // Byte param2
+0073: ldarg.0
+0074: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+0079: ldfld            0x04000107 // DriverLib.MacroKey[] macroKey
+007E: ldloc.0
+007F: ldelema          0x02000029 // DriverLib.MacroKey
+0084: ldloc.1
+0085: ldfld            0x040000F3 // DriverLib.MacroKey macroKey
+008A: ldfld            0x040000F6 // Byte nameLength
+008F: stfld            0x040000F6 // Byte nameLength
+0094: ldc.i4.0
+0095: stloc.3
+0096: br.s             IL_00C1
+0098: ldarg.0
+0099: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+009E: ldfld            0x04000107 // DriverLib.MacroKey[] macroKey
+00A3: ldloc.0
+00A4: ldelema          0x02000029 // DriverLib.MacroKey
+00A9: ldfld            0x040000F7 // Byte[] name
+00AE: ldloc.3
+00AF: ldloc.1
+00B0: ldfld            0x040000F3 // DriverLib.MacroKey macroKey
+00B5: ldfld            0x040000F7 // Byte[] name
+00BA: ldloc.3
+00BB: ldelem.u1
+00BC: stelem.i1
+00BD: ldloc.3
+00BE: ldc.i4.1
+00BF: add
+00C0: stloc.3
+00C1: ldloc.3
+00C2: ldloc.1
+00C3: ldfld            0x040000F3 // DriverLib.MacroKey macroKey
+00C8: ldfld            0x040000F6 // Byte nameLength
+00CD: blt.s            IL_0098
+00CF: ldarg.0
+00D0: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+00D5: ldfld            0x04000107 // DriverLib.MacroKey[] macroKey
+00DA: ldloc.0
+00DB: ldelema          0x02000029 // DriverLib.MacroKey
+00E0: ldloc.1
+00E1: ldfld            0x040000F3 // DriverLib.MacroKey macroKey
+00E6: ldfld            0x040000F8 // Byte contextCount
+00EB: stfld            0x040000F8 // Byte contextCount
+00F0: ldc.i4.0
+00F1: stloc.s          4
+00F3: br.s             IL_012A
+00F5: ldarg.0
+00F6: ldflda           0x040006E1 // DriverLib.FlashDataMap gFlashDataMap
+00FB: ldfld            0x04000107 // DriverLib.MacroKey[] macroKey
+0100: ldloc.0
+0101: ldelema          0x02000029 // DriverLib.MacroKey
+0106: ldfld            0x040000F9 // DriverLib.MacroContext[] context
+010B: ldloc.s          4
+010D: ldloc.1
+010E: ldfld            0x040000F3 // DriverLib.MacroKey macroKey
+0113: ldfld            0x040000F9 // DriverLib.MacroContext[] context
+0118: ldloc.s          4
+011A: ldelem           0x0200002A // DriverLib.MacroContext
+011F: stelem           0x0200002A // DriverLib.MacroContext
+0124: ldloc.s          4
+0126: ldc.i4.1
+0127: add
+0128: stloc.s          4
+012A: ldloc.s          4
+012C: ldloc.1
+012D: ldfld            0x040000F3 // DriverLib.MacroKey macroKey
+0132: ldfld            0x040000F8 // Byte contextCount
+0137: blt.s            IL_00F5
+0139: ldarg.0
+013A: call             0x060006E7 // Void UpdateValue()
+013F: ldsfld           0x04000485 // System.Collections.Generic.List`1[DriverLib.MacroKeyAndCycle] MacroKeyAndCycleList
+0144: ldarg.2
+0145: callvirt         0x0A000296 // DriverLib.MacroKeyAndCycle get_Item(Int32)
+014A: ldfld            0x040000F5 // System.String name
+014F: stloc.2
+0150: ldarg.0
+0151: ldfld            0x040006DE // System.Collections.Generic.List`1[CustomControlLibrary.CustomRadioButton] CustomRadioButtons
+0156: ldloc.0
+0157: callvirt         0x0A000360 // CustomControlLibrary.CustomRadioButton get_Item(Int32)
+015C: ldarg.0
+015D: ldfld            0x040006EC // System.String MacroString
+0162: ldstr            0x7000035F // -
+0167: ldloc.2
+0168: call             0x0A0000B1 // System.String Concat(System.String, System.String, System.String)
+016D: callvirt         0x060002A0 // Void set_TextString(System.String)
+0172: ldloc.0
+0173: ldc.i4.1
+0174: add
+0175: stloc.0
+0176: ldloc.0
+0177: ldarg.0
+0178: ldfld            0x040006F3 // Int32 _ButtonCount
+017D: blt              IL_000E
+0182: ret

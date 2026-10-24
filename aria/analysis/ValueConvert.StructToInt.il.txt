@@ -1,0 +1,28 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ValueConvert METHOD=StructToInt TOKEN=0x06000511 IL_BYTES=62
+0000: ldc.i4.4
+0001: newarr           0x01000062 // System.Int32
+0006: stloc.0
+0007: ldtoken          0x1B000017 // <unresolved>
+000C: call             0x0A0000B2 // System.Type GetTypeFromHandle(System.RuntimeTypeHandle)
+0011: call             0x0A0000B3 // Int32 SizeOf(System.Type)
+0016: stloc.1
+0017: ldloc.1
+0018: call             0x0A0000B4 // IntPtr AllocHGlobal(Int32)
+001D: stloc.2
+001E: ldarg.0
+001F: ldloc.2
+0020: ldc.i4.1
+0021: call             0x2B000012 // <unresolved>
+0026: ldloc.1
+0027: newarr           0x01000062 // System.Int32
+002C: stloc.0
+002D: ldloc.2
+002E: ldloc.0
+002F: ldc.i4.0
+0030: ldloc.1
+0031: call             0x0A000304 // Void Copy(IntPtr, Int32[], Int32, Int32)
+0036: ldloc.2
+0037: call             0x0A0000B7 // Void FreeHGlobal(IntPtr)
+003C: ldloc.0
+003D: ret

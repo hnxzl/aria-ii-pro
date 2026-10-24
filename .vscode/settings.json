@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^node -e \"const fs=require\\('fs'\\); const s=fs\\.readFileSync\\('index\\.html','utf8'\\); const scripts=\\[\\.\\.\\.s\\.matchAll\\(/<script>\\(\\[\\\\\\\\s\\\\\\\\S\\]\\*\\?\\)<\\\\\\\\/script>/g\\)\\]\\.map\\(m=>m\\[1\\]\\); if\\(!scripts\\.length\\) throw new Error\\('no inline script'\\); fs\\.writeFileSync\\('/tmp/aria-ii-pro-inline\\.js', scripts\\.join\\('\\\\\\\\n'\\)\\);\" && node --check /tmp/aria-ii-pro-inline\\.js$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

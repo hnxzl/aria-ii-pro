@@ -1,0 +1,112 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormAdvancedSetting METHOD=DongleRGB_LEDChange TOKEN=0x06000397 IL_BYTES=266
+0000: ldloca.s         0
+0002: initobj          0x0200003F // DriverLib.DongleRGB
+0008: ldloca.s         0
+000A: ldc.i4.3
+000B: newarr           0x01000026 // System.Byte
+0010: stfld            0x04000150 // Byte[] color1
+0015: ldloca.s         0
+0017: ldc.i4.3
+0018: newarr           0x01000026 // System.Byte
+001D: stfld            0x04000151 // Byte[] color2
+0022: ldloca.s         0
+0024: ldc.i4.3
+0025: newarr           0x01000026 // System.Byte
+002A: stfld            0x04000152 // Byte[] color3
+002F: ldloca.s         0
+0031: ldarg.2
+0032: conv.u1
+0033: stfld            0x0400014F // Byte mode
+0038: ldloc.0
+0039: ldfld            0x04000150 // Byte[] color1
+003E: ldc.i4.0
+003F: ldarg.0
+0040: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+0045: callvirt         0x060006D4 // Byte[] get_Data()
+004A: ldc.i4.1
+004B: ldelem.u1
+004C: stelem.i1
+004D: ldloc.0
+004E: ldfld            0x04000150 // Byte[] color1
+0053: ldc.i4.1
+0054: ldarg.0
+0055: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+005A: callvirt         0x060006D4 // Byte[] get_Data()
+005F: ldc.i4.2
+0060: ldelem.u1
+0061: stelem.i1
+0062: ldloc.0
+0063: ldfld            0x04000150 // Byte[] color1
+0068: ldc.i4.2
+0069: ldarg.0
+006A: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+006F: callvirt         0x060006D4 // Byte[] get_Data()
+0074: ldc.i4.3
+0075: ldelem.u1
+0076: stelem.i1
+0077: ldloc.0
+0078: ldfld            0x04000151 // Byte[] color2
+007D: ldc.i4.0
+007E: ldarg.0
+007F: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+0084: callvirt         0x060006D4 // Byte[] get_Data()
+0089: ldc.i4.4
+008A: ldelem.u1
+008B: stelem.i1
+008C: ldloc.0
+008D: ldfld            0x04000151 // Byte[] color2
+0092: ldc.i4.1
+0093: ldarg.0
+0094: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+0099: callvirt         0x060006D4 // Byte[] get_Data()
+009E: ldc.i4.5
+009F: ldelem.u1
+00A0: stelem.i1
+00A1: ldloc.0
+00A2: ldfld            0x04000151 // Byte[] color2
+00A7: ldc.i4.2
+00A8: ldarg.0
+00A9: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+00AE: callvirt         0x060006D4 // Byte[] get_Data()
+00B3: ldc.i4.6
+00B4: ldelem.u1
+00B5: stelem.i1
+00B6: ldloc.0
+00B7: ldfld            0x04000152 // Byte[] color3
+00BC: ldc.i4.0
+00BD: ldarg.0
+00BE: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+00C3: callvirt         0x060006D4 // Byte[] get_Data()
+00C8: ldc.i4.7
+00C9: ldelem.u1
+00CA: stelem.i1
+00CB: ldloc.0
+00CC: ldfld            0x04000152 // Byte[] color3
+00D1: ldc.i4.1
+00D2: ldarg.0
+00D3: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+00D8: callvirt         0x060006D4 // Byte[] get_Data()
+00DD: ldc.i4.8
+00DE: ldelem.u1
+00DF: stelem.i1
+00E0: ldloc.0
+00E1: ldfld            0x04000152 // Byte[] color3
+00E6: ldc.i4.2
+00E7: ldarg.0
+00E8: ldfld            0x040003D7 // Mouse_Drive_Beta.ComboControlLibrary.CustomDongleRGB dongleRGB
+00ED: callvirt         0x060006D4 // Byte[] get_Data()
+00F2: ldc.i4.s         9
+00F4: ldelem.u1
+00F5: stelem.i1
+00F6: ldarg.0
+00F7: ldfld            0x040003D8 // AdvancedChangeEventHandler AdvancedChange
+00FC: dup
+00FD: brtrue.s         IL_0101
+00FF: pop
+0100: ret
+0101: ldarg.0
+0102: ldc.i4.1
+0103: ldarg.2
+0104: callvirt         0x060003A2 // Void Invoke(System.Object, Int32, Int32)
+0109: ret

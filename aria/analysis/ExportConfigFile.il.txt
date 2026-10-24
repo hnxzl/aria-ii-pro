@@ -1,0 +1,109 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=FileManager.ConfigFile METHOD=ExportConfigFile TOKEN=0x0600003C IL_BYTES=213
+0000: newobj           0x0A0000A3 // Void .ctor()
+0005: stloc.0
+0006: ldloc.0
+0007: ldstr            0x70000049 // 导出配置
+000C: callvirt         0x0A0000A4 // Void set_Title(System.String)
+0011: ldloc.0
+0012: ldstr            0x70000053 // bin文件|*.bin
+0017: callvirt         0x0A0000A5 // Void set_Filter(System.String)
+001C: ldloc.0
+001D: callvirt         0x0A0000A6 // System.Windows.Forms.DialogResult ShowDialog()
+0022: ldc.i4.1
+0023: bne.un           IL_00D4
+0028: ldloc.0
+0029: callvirt         0x0A0000A7 // System.String get_FileName()
+002E: ldc.i4.2
+002F: newobj           0x0A000046 // Void .ctor(System.String, System.IO.FileMode)
+0034: stloc.1
+0035: ldarg.2
+0036: call             0x06000040 // Byte[] FlashDataMapToByte(DriverLib.FlashDataMap)
+003B: stloc.2
+003C: ldloc.2
+003D: ldlen
+003E: conv.i4
+003F: ldc.i4.s         64
+0041: add
+0042: newarr           0x01000026 // System.Byte
+0047: stloc.3
+0048: call             0x0A0000A8 // System.Text.Encoding get_UTF8()
+004D: ldarg.0
+004E: callvirt         0x0A0000A9 // Byte[] GetBytes(System.String)
+0053: stloc.s          4
+0055: ldc.i4.0
+0056: stloc.s          6
+0058: br.s             IL_0069
+005A: ldloc.3
+005B: ldloc.s          6
+005D: ldloc.s          4
+005F: ldloc.s          6
+0061: ldelem.u1
+0062: stelem.i1
+0063: ldloc.s          6
+0065: ldc.i4.1
+0066: add
+0067: stloc.s          6
+0069: ldloc.s          6
+006B: ldloc.s          4
+006D: ldlen
+006E: conv.i4
+006F: blt.s            IL_005A
+0071: call             0x0A0000A8 // System.Text.Encoding get_UTF8()
+0076: ldarg.1
+0077: callvirt         0x0A0000A9 // Byte[] GetBytes(System.String)
+007C: stloc.s          5
+007E: ldc.i4.0
+007F: stloc.s          7
+0081: br.s             IL_0095
+0083: ldloc.3
+0084: ldloc.s          7
+0086: ldc.i4.s         32
+0088: add
+0089: ldloc.s          5
+008B: ldloc.s          7
+008D: ldelem.u1
+008E: stelem.i1
+008F: ldloc.s          7
+0091: ldc.i4.1
+0092: add
+0093: stloc.s          7
+0095: ldloc.s          7
+0097: ldloc.s          5
+0099: ldlen
+009A: conv.i4
+009B: blt.s            IL_0083
+009D: ldc.i4.0
+009E: stloc.s          8
+00A0: br.s             IL_00B3
+00A2: ldloc.3
+00A3: ldloc.s          8
+00A5: ldc.i4.s         64
+00A7: add
+00A8: ldloc.2
+00A9: ldloc.s          8
+00AB: ldelem.u1
+00AC: stelem.i1
+00AD: ldloc.s          8
+00AF: ldc.i4.1
+00B0: add
+00B1: stloc.s          8
+00B3: ldloc.s          8
+00B5: ldloc.2
+00B6: ldlen
+00B7: conv.i4
+00B8: blt.s            IL_00A2
+00BA: ldloc.3
+00BB: brfalse.s        IL_00C8
+00BD: ldloc.1
+00BE: ldloc.3
+00BF: ldc.i4.0
+00C0: ldloc.3
+00C1: ldlen
+00C2: conv.i4
+00C3: callvirt         0x0A00004E // Void Write(Byte[], Int32, Int32)
+00C8: ldloc.1
+00C9: callvirt         0x0A0000AA // Void Flush()
+00CE: ldloc.1
+00CF: callvirt         0x0A000048 // Void Close()
+00D4: ret

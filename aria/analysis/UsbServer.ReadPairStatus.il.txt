@@ -1,0 +1,8 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.UsbServer METHOD=ReadDonglePairStatus TOKEN=0x06000167 IL_BYTES=19
+0000: call             0x060000EF // Boolean isX64System()
+0005: brfalse.s        IL_000D
+0007: call             0x06000145 // Void CS_UsbServer_ReadDonglePairStatus()
+000C: ret
+000D: call             0x0600019C // Void CS_UsbServer_ReadDonglePairStatus()
+0012: ret

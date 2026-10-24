@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantech Aria II Pro XD7v2P</title>
+    <link rel="icon" href="fav.ico" type="image/x-icon" />
+    <link rel="preload" as="image" href="aria_bg.webp" type="image/webp" />
+    <link rel="preload" as="image" href="aria2pro.webp" type="image/webp" />
+    <link rel="preload" as="image" href="button.webp" type="image/webp" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js" defer onerror="document.documentElement.classList.add('no-pickr')"></script>
+  </head>
+
+  <body>
+    <div class="stage" id="stage">
+      <header class="topbar">
+        <span></span>
+        <div class="lang-switch" role="group" aria-label="Language / Bahasa">
+          <button type="button" data-lang="en" title="English" data-no-i18n>EN</button>
+          <button type="button" data-lang="id" title="Bahasa Indonesia" data-no-i18n>ID</button>
+        </div>
+        <div class="variant-switch" role="group" aria-label="Mouse variant">
+          <button type="button" class="variant-btn active" data-variant="xd7" title="Aria II Pro XD7v2P">
+            <span class="variant-name">XD7</span>
+          </button>
+          <button type="button" class="variant-btn" data-variant="pro" title="Aria II Pro XD7V2P">
+            <span class="variant-name">Pro</span>
+          </button>
+        </div>
+        <img id="proBanner" src="aria2pro.webp" alt="Aria II Pro — Pro-Wireless Gaming Mouse" class="pro-banner" hidden />
+      </header>
+
+      <section class="win win-center" aria-label="Customize">
+        <h2 class="win-title">Customize</h2>
+        <div class="panel panel-center" id="panelCenter">
+          <div class="battery" id="battRing">
+            <svg class="batt-icon" viewBox="0 0 30 15" aria-hidden="true">
+              <rect class="batt-shell" x="1" y="1" width="24" height="13" rx="3.5" />
+              <rect class="batt-tip" x="26.5" y="5" width="2.5" height="5" rx="1" />
+              <rect id="battArc" class="batt-fill" x="3.2" y="3.2" width="0" height="8.6" rx="1.8" />
+            </svg>
+            <span class="batt-val" id="battPct">--</span>
+          </div>
+
+          <div class="mouse-stage" id="mouseStage">
+            <img src="button.webp" alt="Aria II Pro XD7v2P" class="mouse-render" width="1080" height="1080" draggable="false" onerror="this.style.display = 'none'" />
+            <svg class="btn-lines" id="btnLines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div class="btn-pills" id="btnPills"></div>
+          </div>
+          <img src="fantech.webp" alt="Fantech" class="center-logo" width="40" height="36" onerror="this.style.display = 'none'" />
+          <div class="btn-picker" id="btnPicker" hidden></div>
+
+          <div class="connect-box">
+            <h1 class="hero-title" id="heroTitle">ARIA II PRO</h1>
+            <p class="hero-subtitle" id="heroSubtitle">Web Configurator</p>
+            <button class="btn-connect" id="btnPair" onclick="app.pair()">Connect Device</button>
+          </div>
+          <div class="status-indicator" id="statusInfo" hidden></div>
+        </div>
+      </section>
+
+      <section class="win win-right" aria-label="Performance">
+        <h2 class="win-title">Performance</h2>
+        <div class="panel panel-right" id="panelRight">
+          <div class="p-row p-dpi-head">
+            <span class="p-label">DPI</span>
+            <div class="stepper sm">
+              <button onclick="app.changeStages(-1)" aria-label="Fewer stages">−</button>
+              <input type="number" id="stageCount" value="7" readonly aria-label="DPI Stages" />
+              <button onclick="app.changeStages(1)" aria-label="More stages">+</button>
+            </div>
+          </div>
+          <div class="dpi-list" id="dpiStagesContainer"></div>
+
+          <div class="p-row">
+            <span class="p-label">Polling Rate</span>
+            <div class="segmented" id="pollingRate"></div>
+          </div>
+
+          <div class="p-row">
+            <span class="p-label">Lift-Off Distance</span>
+            <div class="segmented" id="lodControl">
+              <button class="seg-btn active" data-val="1">1 mm</button>
+              <button class="seg-btn" data-val="2">2 mm</button>
+            </div>
+          </div>
+
+          <div class="p-row">
+            <span class="p-label">Debounce Time</span>
+            <div class="stepper sm">
+              <button onclick="app.changeDebounce(-1)" aria-label="Decrease debounce">−</button>
+              <input type="number" id="debounceVal" value="3" onchange="app.setDebounceManual(this.value)" aria-label="Debounce Time" />
+              <button onclick="app.changeDebounce(1)" aria-label="Increase debounce">+</button>
+            </div>
+          </div>
+
+          <div class="p-row stack">
+            <span class="p-label">Sleep Timer</span>
+            <div class="segmented seg-fill" id="sleepTimer">
+              <button class="seg-btn" data-val="1">10s</button>
+              <button class="seg-btn" data-val="2">20s</button>
+              <button class="seg-btn" data-val="3">30s</button>
+              <button class="seg-btn active" data-val="6">1m</button>
+              <button class="seg-btn" data-val="12">2m</button>
+              <button class="seg-btn" data-val="30">5m</button>
+              <button class="seg-btn" data-val="60">10m</button>
+            </div>
+          </div>
+
+          <div class="p-row checks">
+            <label class="check"><input type="checkbox" id="motionSync" onchange="app.setToggle('motionSync', this.checked)" /><span>Motion Sync</span></label>
+            <label class="check"><input type="checkbox" id="angleSnap" onchange="app.setToggle('angleSnap', this.checked)" /><span>Angle Snapping</span></label>
+            <label class="check"><input type="checkbox" id="ripple" onchange="app.setToggle('ripple', this.checked)" /><span>Ripple Control</span></label>
+          </div>
+
+          <div class="p-row">
+            <span class="p-label">Lighting</span>
+            <div class="segmented" id="ledEffect">
+              <button class="seg-btn" data-val="0">Off</button>
+              <button class="seg-btn active" data-val="1">Steady</button>
+              <button class="seg-btn" data-val="2">Breathing</button>
+            </div>
+          </div>
+          <div class="p-row slim" id="brightnessGroup">
+            <span class="p-sub">Brightness</span>
+            <div class="slider-wrap">
+              <div class="slider-track" id="brightnessTrack" style="width: 55%"></div>
+              <input type="range" id="brightnessRange" min="1" max="10" value="6" aria-label="Brightness" onchange="app.updateEffectSlider()" oninput="app.slidePreview(this, 'brightness')" />
+            </div>
+            <span class="p-num" id="brightnessLabel">6</span>
+          </div>
+          <div class="p-row slim" id="speedGroup" style="display: none">
+            <span class="p-sub">Speed</span>
+            <div class="slider-wrap">
+              <div class="slider-track" id="speedTrack" style="width: 75%"></div>
+              <input type="range" id="speedRange" min="1" max="5" value="4" aria-label="Speed" onchange="app.updateEffectSlider()" oninput="app.slidePreview(this, 'speed')" />
+            </div>
+            <span class="p-num" id="speedLabel">4</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="statusbar">
+        <div class="conn-chip" id="connChip"><i class="dot"></i><span class="conn-text">Not connected</span></div>
+        <button type="button" class="link-btn" onclick="app.openDiagnostics()">Diagnostics</button>
+        <div class="fab-container">
+            <div class="fab-menu" id="fabMenu" role="menu">
+              <div class="fab-profile">Profile: <span id="profileLabel" class="editable" contenteditable="true" aria-label="Profile name" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur();app.renameProfile(this.textContent)}" onblur="app.renameProfile(this.textContent)">Profile</span></div>
+              <button class="fab-action" onclick="app.openProfileImport()">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+                Import profile…
+              </button>
+              <button class="fab-action" onclick="app.exportProfile()">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg>
+                Export profile
+              </button>
+              <button class="fab-action" onclick="app.applyProfileToMouse()">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Apply profile to mouse
+              </button>
+              <button class="fab-action danger" onclick="app.restoreDefaults()">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9A9 9 0 0 1 21 11.08"/><path d="M20.49 15A9 9 0 0 1 3 12.92"/></svg>
+                Restore defaults
+              </button>
+              <div class="fab-foot">
+                <a href="https://tako.id/hnxzl" target="_blank" rel="noopener" class="fab-coffee">Buy me a coffee</a>
+                <span>Made by <b>Eben</b></span>
+              </div>
+            </div>
+            <button type="button" class="fab-btn" id="fabBtn" aria-label="Profile actions" aria-expanded="false" aria-controls="fabMenu"
+              onclick="this.setAttribute('aria-expanded', document.getElementById('fabMenu').classList.toggle('active') ? 'true' : 'false')">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <span>Profile</span>
+            </button>
+        </div>
+      </footer>
+
+      <div class="toast-area" id="toastContainer"></div>
+    </div>
+
+    <dialog class="diag" id="diagDialog" aria-labelledby="diagTitle" onclick="if (event.target === this) app.closeDiagnostics()">
+      <div class="diag-card">
+        <header class="diag-head">
+          <h3 id="diagTitle">Device diagnostics</h3>
+          <button type="button" class="pick-close" onclick="app.closeDiagnostics()" aria-label="Close">&times;</button>
+        </header>
+        <div class="diag-grid" id="diagRows"></div>
+
+        <p class="diag-label">Every candidate the browser offered, best match first:</p>
+        <ul class="diag-cands" id="diagCandidates"></ul>
+        <div class="diag-actions">
+          <button type="button" class="setup-btn ghost" onclick="app.pairAll()">Device not showing up? List all HID devices</button>
+          <button type="button" class="setup-btn ghost" onclick="app.rescanDevices()">Re-scan</button>
+          <button type="button" class="setup-btn ghost" onclick="app.copyDiagnostics()">Copy report</button>
+        </div>
+
+        <div class="diag-bt">
+          <p>Bluetooth needs the mouse to be paired in the operating system first. On Linux, Chromium can reach a Bluetooth mouse through <code>hidraw</code> just like the cable — run <code>./linux/install-udev.sh</code> once if the device fails to open.</p>
+          <p>Pairing alone does not bring the mouse back after it sleeps. Mark it as trusted once:</p>
+          <pre class="setup-cmd">bluetoothctl trust <MAC></pre>
+          <p class="setup-dim">If the candidate list shows only usage pages 0x1 / 0xc and no 0xff00, this Bluetooth link does not carry the configuration channel — use the cable or the dongle for settings.</p>
+        </div>
+
+        <p class="diag-label">Onboard memory (0x0000–0x1FFF), including the 16 macro slots. Dumping takes a while — the protocol returns 10 bytes per request (a minute or two over Bluetooth). The file is downloaded when it finishes.</p>
+        <div class="diag-actions">
+          <button type="button" class="setup-btn" id="diagDumpBtn" onclick="app.dumpMemory()">Dump memory</button>
+          <span class="diag-dump" id="diagDump">Not dumped yet.</span>
+        </div>
+      </div>
+    </dialog>
+
+    <input type="file" id="profileFileInput" accept=".json,application/json" hidden />
+    <div id="pickr-anchor" style="position: fixed; left: -9999px"></div>
+
+    <script src="i18n.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

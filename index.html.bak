@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>Aria II Pro Configurator</title>
+  <link rel="icon" href="assets/fav.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ═══════════ DISCONNECT / CONNECT SCREEN ═══════════ -->
+  <main class="connect-screen" id="connect-view">
+    <div class="connect-glass">
+      <header class="connect-header">
+        <a class="brand" href="#" aria-label="Aria II Pro">
+          <img src="assets/aria2banner-readable.webp" alt="Aria II Pro" class="brand-banner-img">
+        </a>
+        <div class="header-actions">
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Language">EN</button>
+          <span class="connection-state"><i></i> <span data-i18n="not_connected">DEVICE NOT CONNECTED</span></span>
+        </div>
+      </header>
+
+      <section class="connect-content">
+        <div class="connect-copy">
+          <p class="eyebrow" data-i18n="eyebrow">WEB CONFIGURATOR · ARIA II PRO</p>
+          <h1 data-i18n="hero_title">Precision.<br><span>Under your control.</span></h1>
+          <p class="intro" data-i18n="hero_desc">Connect your Aria II Pro to configure performance, sensor behavior, buttons, macros, and profiles in one focused workspace.</p>
+          <button class="connect-button" id="connect-button" type="button">
+            <span class="usb-icon">↯</span> <span data-i18n="connect_btn">Connect device</span> <span class="button-arrow">↗</span>
+          </button>
+          <p class="connect-note" data-i18n="connect_note">USB / Wireless receiver · WebHID-compatible browser required</p>
+          <p class="connect-subnote"><span data-i18n="linux_hint">Linux users (Arch / Hyprland): requires udev rule.</span> <a href="docs/linux-setup.md" target="_blank" rel="noopener noreferrer">docs/linux-setup.md ↗</a></p>
+        </div>
+        <div class="connect-product">
+          <div class="product-orbit"></div>
+          <img src="assets/front.webp" alt="Fantech Aria II Pro mouse" class="connect-mouse-img" onerror="this.style.display='none';document.getElementById('mouse-fallback').hidden=false">
+          <div class="mouse-fallback" id="mouse-fallback" hidden>
+            <div class="mouse-placeholder">
+              <div class="mouse-shell"></div><div class="mouse-top"></div>
+              <div class="mouse-wheel"></div><div class="mouse-led"></div><div class="mouse-side"></div>
+            </div>
+            <span>Place official product image at <code>assets/mouse1.webp</code></span>
+          </div>
+          <div class="product-label"><span class="status-dot off"></span><span>ARIA II PRO</span><small>UP TO 8K · SUBJECT TO MODE</small></div>
+        </div>
+      </section>
+
+      <footer class="connect-footer">
+        <span>DESIGNED & BUILT BY <strong>HNXZL</strong></span>
+        <span class="made-love" data-i18n="made_love">Made with <span aria-label="love">♥</span> for the community</span>
+        <a href="https://tako.id/hnxzl" target="_blank" rel="noopener noreferrer">Support me <span>↗</span></a>
+      </footer>
+    </div>
+    <div class="ambient-label">ARIA II PRO <span>·</span> COMMUNITY CONFIGURATOR</div>
+  </main>
+
+  <!-- ═══════════ CONNECTED APP SHELL ═══════════ -->
+  <div class="app-shell" id="home-view" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#" onclick="showPage('home')" aria-label="Aria II Pro"><img src="assets/aria2banner-readable.webp" alt="Aria II Pro" class="brand-banner-img"></a>
+      <nav class="nav" id="nav-menu">
+        <a class="nav-item active" href="#" data-page="home" onclick="showPage('home')"><span class="nav-icon">⌂</span><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-item" href="#" data-page="performance" onclick="showPage('performance')"><span class="nav-icon">◈</span><span data-i18n="nav_perf">Performance</span></a>
+        <a class="nav-item" href="#" data-page="sensor" onclick="showPage('sensor')"><span class="nav-icon">◉</span><span data-i18n="nav_sensor">Sensor Settings</span></a>
+        <a class="nav-item" href="#" data-page="buttons" onclick="showPage('buttons')"><span class="nav-icon">⌁</span><span data-i18n="nav_buttons">Button Mapping</span></a>
+        <a class="nav-item" href="#" data-page="profiles" onclick="showPage('profiles')"><span class="nav-icon">♧</span><span data-i18n="nav_profiles">Profiles</span></a>
+        <a class="nav-item" href="#" data-page="guide" onclick="showPage('guide')"><span class="nav-icon">📖</span><span data-i18n="nav_guide">Feature Guide</span></a>
+        <a class="nav-item" href="#" data-page="about" onclick="showPage('about')"><span class="nav-icon">⚙</span><span data-i18n="nav_about">About</span></a>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span data-i18n="device_connected">Device connected</span>
+        <button class="disconnect-btn" id="disconnect-btn" type="button" data-i18n="disconnect">Disconnect</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="windowbar">
+        <div class="connection-pill"><span class="status-dot"></span> <span id="connected-label">ARIA II PRO CONNECTED</span></div>
+        <div class="windowbar-right">
+          <button class="lang-toggle" id="lang-toggle-2" type="button" aria-label="Language">EN</button>
+          <span class="fw-label" id="fw-label"></span>
+        </div>
+      </header>
+
+      <!-- ═══════ PAGE: HOME ═══════ -->
+      <div class="page active" id="page-home">
+        <div class="dashboard">
+          <section class="center-column">
+            <div class="hero panel">
+              <div class="hero-top">
+                <div><img src="assets/aria2banner-readable.webp" alt="Aria II Pro" class="hero-banner-img"></div>
+                <div class="transport-toggle" aria-label="Connection mode">
+                  <div class="transport active"><span>◉</span><b>8K</b><small>Wireless</small></div>
+                </div>
+              </div>
+              <div class="mouse-stage" id="home-mouse-stage">
+                <div class="mouse-halo"></div>
+                <div class="mouse-interactive-wrap">
+                  <img class="connected-mouse-image" id="home-mouse-img" src="assets/button.webp" alt="Connected Aria II Pro">
+                  <button class="pin pin-1 active" type="button" data-btn="1" onclick="selectButton(1)" title="1: Left Button">1</button>
+                  <button class="pin pin-2" type="button" data-btn="2" onclick="selectButton(2)" title="2: Right Button">2</button>
+                  <button class="pin pin-3" type="button" data-btn="3" onclick="selectButton(3)" title="3: Middle Button">3</button>
+                  <button class="pin pin-4" type="button" data-btn="4" onclick="selectButton(4)" title="4: Forward Button">4</button>
+                  <button class="pin pin-5" type="button" data-btn="5" onclick="selectButton(5)" title="5: Back Button">5</button>
+                  <button class="pin pin-6" type="button" data-btn="6" onclick="selectButton(6)" title="6: DPI Loop">6</button>
+                </div>
+                <div class="stage-caption"><span class="status-dot"></span> Aria II Pro <span class="muted">· Connected</span></div>
+              </div>
+            </div>
+          </section>
+          <aside class="right-column">
+            <section class="panel status-panel">
+              <div class="section-heading"><h2 data-i18n="device_status">Device Status</h2><span class="live-label">CONNECTED</span></div>
+              <div class="device-line"><span class="status-dot"></span><div><strong>Aria II Pro XD7v2P</strong><small data-i18n="wireless_receiver">Wireless Receiver</small></div></div>
+              <div class="stat-grid">
+                <div class="stat clickable" onclick="showPage('performance'); scrollToCard('dpi-config-card')" title="Configure DPI"><span class="stat-icon">◉</span><div><strong id="home-dpi">1600 DPI</strong><small data-i18n="current_dpi">Current DPI (Stage 3) ↗</small></div></div>
+                <div class="stat"><span class="stat-icon">◎</span><div><strong id="home-poll">— Hz</strong><small data-i18n="polling_rate">Polling Rate</small></div></div>
+                <div class="stat"><span class="stat-icon">⚡</span><div><strong id="home-mode">LP</strong><small data-i18n="mode_select">Mode Select</small></div></div>
+              </div>
+            </section>
+            <section class="panel quick-panel">
+              <div class="section-heading"><h2 data-i18n="quick_settings">Quick Settings</h2></div>
+              <div class="setting-row" id="quick-dpi-row">
+                <div><strong data-i18n="dpi_stage">DPI Stage</strong><small id="quick-dpi-sub">Stage 3 · 1600 DPI</small></div>
+                <select id="quick-dpi-select" onchange="setDPIStage(parseInt(this.value))">
+                  <option value="0">Stage 1 (400 DPI)</option>
+                  <option value="1">Stage 2 (800 DPI)</option>
+                  <option value="2" selected>Stage 3 (1600 DPI)</option>
+                  <option value="3">Stage 4 (3200 DPI)</option>
+                  <option value="4">Stage 5 (3200 DPI)</option>
+                  <option value="5">Stage 6 (6400 DPI)</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div><strong data-i18n="polling_rate">Polling Rate</strong><small id="quick-poll-val">—</small></div>
+                <select id="quick-poll-select" onchange="setPollingRate(this.value)">
+                  <option value="0x01">125 Hz</option>
+                  <option value="0x02">250 Hz</option>
+                  <option value="0x04">500 Hz</option>
+                  <option value="0x08">1000 Hz</option>
+                  <option value="0x10">2000 Hz</option>
+                  <option value="0x20">4000 Hz</option>
+                  <option value="0x40">8000 Hz</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div><strong data-i18n="peak_perf">Peak Performance</strong><small data-i18n="peak_perf_desc">Boost sensor performance</small></div>
+                <label class="switch"><input type="checkbox" id="quick-peak" onchange="setPeakPerformance(this.checked)"><span></span></label>
+              </div>
+              <div class="setting-row" id="quick-mode-row">
+                <div><strong data-i18n="mode_select">Mode Select</strong><small id="quick-mode-sub" data-i18n="lp_hp_desc">High Performance vs Low Power</small></div>
+                <div id="quick-mode-control" style="display:flex;align-items:center;gap:8px;">
+                  <label class="switch" id="quick-hp-switch"><input type="checkbox" id="quick-hp" onchange="setHPMode(this.checked)"><span></span></label>
+                  <span class="badge-corded" id="quick-corded-badge" hidden>CORDED</span>
+                </div>
+              </div>
+            </section>
+            <section class="panel profiles-panel">
+              <div class="section-heading"><h2 data-i18n="profiles">Profiles</h2></div>
+              <div class="profile-cards" id="profile-cards">
+                <button class="profile-card active" onclick="selectProfile(0)">01<small data-i18n="active">Active</small></button>
+                <button class="profile-card" onclick="selectProfile(1)">02<small>Profile</small></button>
+                <button class="profile-card" onclick="selectProfile(2)">03<small>Profile</small></button>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ═══════ PAGE: PERFORMANCE ═══════ -->
+      <div class="page" id="page-performance">
+        <div class="page-content">
+          <h1 class="page-title" data-i18n="nav_perf">Performance</h1>
+          <p class="page-desc" data-i18n="perf_desc">Configure polling rate, peak performance, and power mode. All settings are written directly to the device.</p>
+
+          <div class="settings-grid">
+            <!-- DPI Stages & Configuration -->
+            <section class="panel settings-card" id="dpi-config-card">
+              <div class="card-header-flex">
+                <div>
+                  <h2 data-i18n="dpi_config">DPI Stages & Configuration</h2>
+                  <p class="card-desc" data-i18n="dpi_config_desc">Select active DPI stage and set stage count. Stage select (CMD 0x16) and count (CMD 0x14) are hardware-verified.</p>
+                </div>
+                <div class="dpi-current-pill">
+                  <span class="status-dot"></span>
+                  <span id="perf-dpi-val">1600 DPI</span>
+                  <small id="perf-dpi-stage-tag">Stage 3</small>
+                </div>
+              </div>
+
+              <div class="dpi-stage-row-label">
+                <span data-i18n="active_stages">Active Stages:</span>
+                <div class="stage-count-buttons" id="stage-count-buttons">
+                  <button type="button" class="stage-cnt-btn" data-count="1" onclick="setDPIStageCount(1)">1</button>
+                  <button type="button" class="stage-cnt-btn" data-count="2" onclick="setDPIStageCount(2)">2</button>
+                  <button type="button" class="stage-cnt-btn" data-count="3" onclick="setDPIStageCount(3)">3</button>
+                  <button type="button" class="stage-cnt-btn" data-count="4" onclick="setDPIStageCount(4)">4</button>
+                  <button type="button" class="stage-cnt-btn" data-count="5" onclick="setDPIStageCount(5)">5</button>
+                  <button type="button" class="stage-cnt-btn active" data-count="6" onclick="setDPIStageCount(6)">6</button>
+                </div>
+              </div>
+
+              <div class="dpi-stages-grid" id="dpi-stages-grid">
+                <div class="dpi-stage-card" data-stage="0" onclick="setDPIStage(0)">
+                  <div class="dpi-stage-top"><span class="dpi-stage-dot" style="background:#ff3333"></span><span>Stage 1</span></div>
+                  <strong class="dpi-stage-num">400</strong>
+                  <small>DPI</small>
+                </div>
+                <div class="dpi-stage-card" data-stage="1" onclick="setDPIStage(1)">
+                  <div class="dpi-stage-top"><span class="dpi-stage-dot" style="background:#3388ff"></span><span>Stage 2</span></div>
+                  <strong class="dpi-stage-num">800</strong>
+                  <small>DPI</small>
+                </div>
+                <div class="dpi-stage-card active" data-stage="2" onclick="setDPIStage(2)">
+                  <div class="dpi-stage-top"><span class="dpi-stage-dot" style="background:#00e879"></span><span>Stage 3</span></div>
+                  <strong class="dpi-stage-num">1600</strong>
+                  <small>DPI</small>
+                </div>
+                <div class="dpi-stage-card" data-stage="3" onclick="setDPIStage(3)">
+                  <div class="dpi-stage-top"><span class="dpi-stage-dot" style="background:#ffd700"></span><span>Stage 4</span></div>
+                  <strong class="dpi-stage-num">3200</strong>
+                  <small>DPI</small>
+                </div>
+                <div class="dpi-stage-card" data-stage="4" onclick="setDPIStage(4)">
+                  <div class="dpi-stage-top"><span class="dpi-stage-dot" style="background:#00e5ff"></span><span>Stage 5</span></div>
+                  <strong class="dpi-stage-num">3200</strong>
+                  <small>DPI</small>
+                </div>
+                <div class="dpi-stage-card" data-stage="5" onclick="setDPIStage(5)">
+                  <div class="dpi-stage-top"><span class="dpi-stage-dot" style="background:#b044ff"></span><span>Stage 6</span></div>
+                  <strong class="dpi-stage-num">6400</strong>
+                  <small>DPI</small>
+                </div>
+              </div>
+
+              <div class="evidence-tag" data-i18n="evidence_dpi_stage">✓ Active Stage (CMD 0x16) and Stage Count (CMD 0x14) verified in official captures</div>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="polling_rate">Polling Rate</h2>
+              <p class="card-desc" data-i18n="poll_desc">Report rate from mouse to PC. Higher = lower latency, more CPU usage.</p>
+              <div class="poll-grid" id="poll-grid">
+                <button class="poll-btn" data-val="0x01" onclick="setPollingRate('0x01')">125 Hz<small>8ms</small></button>
+                <button class="poll-btn" data-val="0x02" onclick="setPollingRate('0x02')">250 Hz<small>4ms</small></button>
+                <button class="poll-btn" data-val="0x04" onclick="setPollingRate('0x04')">500 Hz<small>2ms</small></button>
+                <button class="poll-btn" data-val="0x08" onclick="setPollingRate('0x08')">1000 Hz<small>1ms</small></button>
+                <button class="poll-btn" data-val="0x10" onclick="setPollingRate('0x10')">2000 Hz<small>0.5ms</small></button>
+                <button class="poll-btn" data-val="0x20" onclick="setPollingRate('0x20')">4000 Hz<small>0.25ms</small></button>
+                <button class="poll-btn" data-val="0x40" onclick="setPollingRate('0x40')">8000 Hz<small>0.125ms</small></button>
+              </div>
+              <div class="evidence-tag" data-i18n="evidence_high">✓ Protocol fully decoded from capture evidence</div>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="peak_perf">Peak Performance</h2>
+              <p class="card-desc" data-i18n="peak_desc">Temporarily boost sensor processing. Drains battery faster.</p>
+              <div class="setting-row">
+                <div><strong data-i18n="enable">Enable</strong></div>
+                <label class="switch"><input type="checkbox" id="perf-peak" onchange="setPeakPerformance(this.checked)"><span></span></label>
+              </div>
+              <div class="setting-row">
+                <div><strong data-i18n="peak_duration">Duration</strong><small data-i18n="peak_dur_desc">Auto-disable after this period</small></div>
+                <select id="perf-peak-dur" onchange="setPeakDuration(this.value)">
+                  <option value="3">3 min</option>
+                  <option value="5">5 min</option>
+                  <option value="10">10 min</option>
+                  <option value="15">15 min</option>
+                  <option value="30">30 min</option>
+                  <option value="60">60 min</option>
+                  <option value="90">90 min</option>
+                </select>
+              </div>
+              <div class="evidence-tag" data-i18n="evidence_high">✓ Protocol fully decoded from capture evidence</div>
+            </section>
+
+            <section class="panel settings-card" id="mode-select-card">
+              <div class="card-header-flex">
+                <div>
+                  <h2 data-i18n="mode_select">Mode Select</h2>
+                  <p class="card-desc" id="mode-desc" data-i18n="mode_select_desc">Power &amp; tracking profile. 125–1000 Hz supports LP / HP. 2000–8000 Hz operates exclusively in Corded mode.</p>
+                </div>
+                <span class="mode-badge" id="mode-active-badge">LP</span>
+              </div>
+              <div class="mode-toggle" id="mode-toggle">
+                <button class="mode-btn active" data-mode="lp" onclick="setHPMode(false)" type="button">
+                  <span class="mode-icon">🔋</span>
+                  <div class="mode-info">
+                    <strong data-i18n="low_power">Low Power (LP)</strong>
+                    <small data-i18n="lp_detail">Standard tracking · Battery saving (125–1000 Hz)</small>
+                  </div>
+                </button>
+                <button class="mode-btn" data-mode="hp" onclick="setHPMode(true)" type="button">
+                  <span class="mode-icon">⚡</span>
+                  <div class="mode-info">
+                    <strong data-i18n="high_perf">High Performance (HP)</strong>
+                    <small data-i18n="hp_detail">Maximum tracking stability (125–1000 Hz)</small>
+                  </div>
+                </button>
+                <div class="mode-btn mode-corded disabled" data-mode="corded" id="btn-corded">
+                  <span class="mode-icon">🔌</span>
+                  <div class="mode-info">
+                    <strong data-i18n="corded_mode">Corded</strong>
+                    <small data-i18n="corded_detail">Required for 2000–8000 Hz · Max throughput profile</small>
+                  </div>
+                </div>
+              </div>
+              <div class="mode-lock-notice" id="mode-lock-notice" hidden>
+                <span class="notice-icon">ℹ</span>
+                <span data-i18n="mode_locked_notice">Polling rate is set to 2000–8000 Hz. Device operates in Corded mode; LP/HP selection is disabled.</span>
+              </div>
+              <div class="evidence-tag" data-i18n="evidence_mode">✓ Mode Select rules verified against official software captures</div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PAGE: SENSOR ═══════ -->
+      <div class="page" id="page-sensor">
+        <div class="page-content">
+          <h1 class="page-title" data-i18n="nav_sensor">Sensor Settings</h1>
+          <p class="page-desc" data-i18n="sensor_desc">Configure debounce filtering and sensor behavior toggles. Toggle register-to-label mapping is based on capture order analysis and may need physical verification.</p>
+
+          <div class="settings-grid">
+            <section class="panel settings-card">
+              <h2 data-i18n="debounce">Debounce Time</h2>
+              <p class="card-desc" data-i18n="debounce_desc">Click filtering delay. Lower = faster response, higher = prevents double-clicks.</p>
+              <div class="debounce-grid" id="debounce-grid">
+                <button class="poll-btn" data-val="0" onclick="setDebounce(0)">0 ms</button>
+                <button class="poll-btn" data-val="1" onclick="setDebounce(1)">1 ms</button>
+                <button class="poll-btn" data-val="2" onclick="setDebounce(2)">2 ms</button>
+                <button class="poll-btn" data-val="3" onclick="setDebounce(3)">3 ms</button>
+                <button class="poll-btn" data-val="4" onclick="setDebounce(4)">4 ms</button>
+                <button class="poll-btn" data-val="5" onclick="setDebounce(5)">5 ms</button>
+                <button class="poll-btn" data-val="10" onclick="setDebounce(10)">10 ms</button>
+                <button class="poll-btn" data-val="15" onclick="setDebounce(15)">15 ms</button>
+                <button class="poll-btn" data-val="20" onclick="setDebounce(20)">20 ms</button>
+              </div>
+              <div class="evidence-tag" data-i18n="evidence_high">✓ Protocol fully decoded from capture evidence</div>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="sensor_toggles">Sensor Toggles</h2>
+              <p class="card-desc" data-i18n="sensor_toggles_desc">Toggle sensor features. Labels are best-effort mapping from capture analysis.</p>
+              <div class="setting-row">
+                <div><strong data-i18n="motion_sync">Motion Sync</strong><small data-i18n="motion_sync_desc">Synchronize sensor data with polling</small></div>
+                <label class="switch"><input type="checkbox" id="sensor-b1" onchange="setSensorToggle(0xB1, this.checked)"><span></span></label>
+              </div>
+              <div class="setting-row">
+                <div><strong data-i18n="ripple_ctrl">Ripple Control</strong><small data-i18n="ripple_desc">Filter sensor ripple/jitter</small></div>
+                <label class="switch"><input type="checkbox" id="sensor-af" onchange="setSensorToggle(0xAF, this.checked)"><span></span></label>
+              </div>
+              <div class="setting-row">
+                <div><strong data-i18n="angle_snap">Angle Snapping</strong><small data-i18n="angle_snap_desc">Straighten diagonal movements</small></div>
+                <label class="switch"><input type="checkbox" id="sensor-ab" onchange="setSensorToggle(0xAB, this.checked)"><span></span></label>
+              </div>
+              <div class="evidence-tag warn" data-i18n="evidence_label_uncertain">⚠ Toggles confirmed; label-to-register mapping needs device verification</div>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="sleep_lod">Sleep / LOD</h2>
+              <p class="card-desc" data-i18n="sleep_desc">Register 0xAD02 — purpose not fully determined. Values observed: 1, 30, 60, 210, 240. May be sleep timeout (seconds) or lift-off distance.</p>
+              <div class="setting-row">
+                <div><strong data-i18n="sleep_value">Value</strong></div>
+                <select id="sensor-ad" onchange="setSleepLOD(parseInt(this.value))">
+                  <option value="1">1 (shortest / lowest)</option>
+                  <option value="30">30</option>
+                  <option value="60">60</option>
+                  <option value="210">210</option>
+                  <option value="240">240 (longest / highest)</option>
+                </select>
+              </div>
+              <div class="evidence-tag warn" data-i18n="evidence_partial">⚠ Register confirmed; value meaning needs device verification</div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PAGE: BUTTONS ═══════ -->
+      <div class="page" id="page-buttons">
+        <div class="page-content">
+          <h1 class="page-title" data-i18n="nav_buttons">Button Mapping</h1>
+          <p class="page-desc" data-i18n="btn_desc">Button mapping protocol partially decoded. Read-only display of current assignments. Full remapping requires further protocol analysis.</p>
+
+          <section class="panel settings-card">
+            <div class="mouse-map-area">
+              <div class="mouse-interactive-wrap">
+                <img class="button-mouse-img" src="assets/button.webp" alt="Mouse button layout">
+                <button class="pin pin-1 active" type="button" data-btn="1" onclick="selectButton(1)" title="1: Left Button">1</button>
+                <button class="pin pin-2" type="button" data-btn="2" onclick="selectButton(2)" title="2: Right Button">2</button>
+                <button class="pin pin-3" type="button" data-btn="3" onclick="selectButton(3)" title="3: Middle Button">3</button>
+                <button class="pin pin-4" type="button" data-btn="4" onclick="selectButton(4)" title="4: Forward Button">4</button>
+                <button class="pin pin-5" type="button" data-btn="5" onclick="selectButton(5)" title="5: Back Button">5</button>
+                <button class="pin pin-6" type="button" data-btn="6" onclick="selectButton(6)" title="6: DPI Loop">6</button>
+              </div>
+            </div>
+            <div class="mapping-grid" id="mapping-list">
+              <div class="mapping-row active" data-btn="1" onclick="selectButton(1)"><span class="number">1</span><button class="mapping-button" type="button"><span id="lbl-btn-1" data-i18n="btn_left">Left Button</span> <span class="muted">›</span></button></div>
+              <div class="mapping-row" data-btn="4" onclick="selectButton(4)"><span class="number">4</span><button class="mapping-button" type="button"><span id="lbl-btn-4" data-i18n="btn_fwd">Forward</span> <span class="muted">›</span></button></div>
+              <div class="mapping-row" data-btn="2" onclick="selectButton(2)"><span class="number">2</span><button class="mapping-button" type="button"><span id="lbl-btn-2" data-i18n="btn_right">Right Button</span> <span class="muted">›</span></button></div>
+              <div class="mapping-row" data-btn="5" onclick="selectButton(5)"><span class="number">5</span><button class="mapping-button" type="button"><span id="lbl-btn-5" data-i18n="btn_back">Back</span> <span class="muted">›</span></button></div>
+              <div class="mapping-row" data-btn="3" onclick="selectButton(3)"><span class="number">3</span><button class="mapping-button" type="button"><span id="lbl-btn-3" data-i18n="btn_mid">Middle Button</span> <span class="muted">›</span></button></div>
+              <div class="mapping-row" data-btn="6" onclick="selectButton(6)"><span class="number">6</span><button class="mapping-button" type="button"><span id="lbl-btn-6" data-i18n="btn_dpi">DPI Loop</span> <span class="muted">›</span></button></div>
+            </div>
+
+            <!-- Button Remapping Inspector -->
+            <div class="button-inspector-panel" id="button-inspector">
+              <div class="inspector-header">
+                <div class="inspector-title">
+                  <span class="number" id="insp-num">1</span>
+                  <div>
+                    <strong id="insp-name">Left Button</strong>
+                    <small id="insp-sub">Primary Click · Hardware Locked</small>
+                  </div>
+                </div>
+                <span class="mode-badge" id="insp-badge">Locked</span>
+              </div>
+              <div class="inspector-action-row">
+                <label for="insp-action-select" data-i18n="assigned_action">Action:</label>
+                <select id="insp-action-select" onchange="previewButtonAction(this.value)">
+                  <option value="0101">Left Click (01 01)</option>
+                  <option value="0102">Right Click (01 02)</option>
+                  <option value="0104">Middle Click (01 04)</option>
+                  <option value="0110">Forward (01 10)</option>
+                  <option value="0108">Back (01 08)</option>
+                  <option value="0500">DPI Loop (05 00)</option>
+                  <option value="0000">Disabled (00 00)</option>
+                </select>
+                <button type="button" class="btn-primary" id="btn-apply-remap" onclick="applyButtonRemap()">Apply Action</button>
+              </div>
+              <p class="inspector-note" id="insp-note">Primary left click is locked to prevent disabling main click control.</p>
+            </div>
+
+            <div class="evidence-tag" data-i18n="evidence_btn">✓ Button registers (0x6404–0x7404) verified from USB captures for basic mouse actions. Keyboard & macros require memory chunks.</div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ═══════ PAGE: PROFILES ═══════ -->
+      <div class="page" id="page-profiles">
+        <div class="page-content">
+          <h1 class="page-title" data-i18n="nav_profiles">Profiles</h1>
+          <p class="page-desc" data-i18n="profile_desc">Select between 3 onboard profiles. Each profile stores independent settings.</p>
+
+          <section class="panel settings-card">
+            <div class="profile-select-grid" id="profile-select-grid">
+              <button class="profile-big active" onclick="selectProfile(0)">
+                <span class="profile-num">01</span>
+                <span data-i18n="profile">Profile</span> 1
+                <small class="profile-active-label" data-i18n="active">Active</small>
+              </button>
+              <button class="profile-big" onclick="selectProfile(1)">
+                <span class="profile-num">02</span>
+                <span data-i18n="profile">Profile</span> 2
+                <small class="profile-active-label" data-i18n="active">Active</small>
+              </button>
+              <button class="profile-big" onclick="selectProfile(2)">
+                <span class="profile-num">03</span>
+                <span data-i18n="profile">Profile</span> 3
+                <small class="profile-active-label" data-i18n="active">Active</small>
+              </button>
+            </div>
+            <div class="evidence-tag" data-i18n="evidence_high">✓ Protocol fully decoded from capture evidence</div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ═══════ PAGE: FEATURE GUIDE ═══════ -->
+      <div class="page" id="page-guide">
+        <div class="page-content guide-content">
+          <h1 class="page-title" data-i18n="nav_guide">Feature Guide</h1>
+          <p class="page-desc" data-i18n="guide_intro">Complete reference for all configurator features, their protocol status, and what each setting does.</p>
+
+          <div class="guide-grid">
+            <article class="guide-card">
+              <div class="guide-status confirmed">✓ <span data-i18n="confirmed">Confirmed</span></div>
+              <h3 data-i18n="polling_rate">Polling Rate</h3>
+              <p data-i18n="guide_poll">Controls how frequently the mouse reports its position to the computer. 125 Hz = every 8ms (lowest latency requirement), 8000 Hz = every 0.125ms (highest responsiveness, highest CPU usage). Uses register 0x0002 with bit-flag encoding. All 7 rates (125–8000 Hz) confirmed in capture evidence.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status confirmed">✓ <span data-i18n="confirmed">Confirmed</span></div>
+              <h3 data-i18n="peak_perf">Peak Performance</h3>
+              <p data-i18n="guide_peak">Temporarily boosts sensor processing power for competitive play. Increases battery drain. Toggle (register 0xB502) and duration (register 0xB702) both captured. Duration values in the capture: 3 and 90 (likely minutes).</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status confirmed">✓ <span data-i18n="confirmed">Confirmed</span></div>
+              <h3 data-i18n="lp_hp_mode">Power Mode (LP/HP)</h3>
+              <p data-i18n="guide_hp">Switches between Low Power mode (longer battery life) and High Performance mode (better responsiveness). Register 0xB902, value 0=LP, 1=HP. Clean toggle pattern confirmed.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status confirmed">✓ <span data-i18n="confirmed">Confirmed</span></div>
+              <h3 data-i18n="debounce">Debounce Time</h3>
+              <p data-i18n="guide_debounce">Click filtering delay in milliseconds. Lower values = faster click registration but may cause double-clicks. Higher values = more reliable filtering. Register 0xA902, value is direct milliseconds. Confirmed values: 5ms, 15ms, 20ms.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status partial">⚠ <span data-i18n="partial">Partial</span></div>
+              <h3 data-i18n="sensor_toggles">Sensor Toggles</h3>
+              <p data-i18n="guide_toggles">Three on/off toggles at registers 0xAB02, 0xAF02, 0xB102. All three confirmed as working toggles (0=off, 1=on). Likely correspond to Motion Sync, Ripple Control, and Angle Snapping from the official software, but the exact register-to-label mapping needs physical device verification.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status partial">⚠ <span data-i18n="partial">Partial</span></div>
+              <h3 data-i18n="sleep_lod">Sleep / LOD</h3>
+              <p data-i18n="guide_sleep">Register 0xAD02. Values observed: 1, 30, 60, 210, 240. Could be sleep timeout in seconds or lift-off distance. The range of values (1–240) suggests sleep timeout, but physical testing needed to confirm.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status confirmed">✓ <span data-i18n="confirmed">Confirmed</span></div>
+              <h3 data-i18n="nav_profiles">Profiles</h3>
+              <p data-i18n="guide_profiles">3 onboard profiles selectable via command 0x0F with values 0, 1, 2. Profile memory can be read via command 0x08. Profile switching is clean and confirmed.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status partial">⚠ <span data-i18n="partial">Partial</span></div>
+              <h3 data-i18n="nav_buttons">Button Mapping</h3>
+              <p data-i18n="guide_buttons">5 configurable button registers at addresses 0x64–0x74 (spacing 4). Action types partially decoded: mouse button (01xx), keyboard key (02xx), macro (040a), DPI cycle (0500), multimedia (0700). Full remapping requires more protocol analysis.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status unverified">◌ <span data-i18n="not_impl">Not Implemented</span></div>
+              <h3 data-i18n="macro_mgr">Macro Manager</h3>
+              <p data-i18n="guide_macro">Macro data structure partially decoded (name + key sequences with timing). Complex multi-segment write protocol. Not safe to implement without thorough testing.</p>
+            </article>
+            <article class="guide-card">
+              <div class="guide-status partial">⚠ <span data-i18n="partial">Partial</span></div>
+              <h3>DPI</h3>
+              <p data-i18n="guide_dpi">DPI stage management uses commands 0x14 (write stage count) and 0x16 (select active stage). Current DPI readable from status command 0x04 (byte 6 = DPI encoding). Full DPI value setting protocol needs more capture analysis. DPI byte 0x64 (100) observed — likely 50× or 100× multiplier.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PAGE: ABOUT ═══════ -->
+      <div class="page" id="page-about">
+        <div class="page-content">
+          <h1 class="page-title" data-i18n="nav_about">About</h1>
+
+          <div class="settings-grid">
+            <section class="panel settings-card about-card">
+              <div class="about-hero">
+                <img src="assets/fantech-logo.webp" alt="Fantech" class="about-logo" onerror="this.style.display='none'">
+                <div>
+                  <h2>Aria II Pro Configurator</h2>
+                  <p class="about-sub" data-i18n="about_sub">Independent Community Project</p>
+                </div>
+              </div>
+              <p data-i18n="about_text">This is an independent, open-source web configurator for the Fantech Aria II Pro XD7v2P gaming mouse. It is not developed, endorsed, or affiliated with Fantech in any way. All protocol knowledge was obtained through USB capture analysis of the official software.</p>
+              <div class="about-credits">
+                <p class="made-love" data-i18n="about_made">Made with ♥ by <strong>HNXZL</strong></p>
+                <a class="support-link" href="https://tako.id/hnxzl" target="_blank" rel="noopener noreferrer">Support me ↗</a>
+              </div>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="device_info">Device Information</h2>
+              <div class="info-grid" id="device-info-grid">
+                <div class="info-row"><span>VID</span><code>0x3554</code></div>
+                <div class="info-row"><span>PID</span><code id="info-pid">—</code></div>
+                <div class="info-row"><span data-i18n="firmware">Firmware</span><code id="info-fw">—</code></div>
+                <div class="info-row"><span data-i18n="sensor_id">Sensor ID</span><code id="info-sensor">—</code></div>
+                <div class="info-row"><span data-i18n="interface">Interface</span><code>HID (vendor-specific)</code></div>
+                <div class="info-row"><span data-i18n="connection">Connection</span><code id="info-conn">—</code></div>
+              </div>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="linux_support">Linux & WebHID Permissions</h2>
+              <p data-i18n="linux_support_desc">On Arch Linux and other systemd distributions, raw HID access requires an active-seat udev rule. HTTPS alone does not grant Linux kernel permissions.</p>
+              <pre class="code-block"><code>sudo tee /etc/udev/rules.d/99-fantech-aria-ii-pro.rules &lt;&lt; 'EOF'
+ACTION!="remove", SUBSYSTEM=="hidraw", KERNEL=="hidraw*", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f523", MODE="0660", TAG+="uaccess"
+ACTION!="remove", SUBSYSTEM=="hidraw", KERNEL=="hidraw*", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f5a5", MODE="0660", TAG+="uaccess"
+EOF
+sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger --subsystem-match=hidraw</code></pre>
+              <a class="guide-link-btn" href="docs/linux-setup.md" target="_blank" rel="noopener noreferrer"><span data-i18n="linux_guide_link">View Linux Setup Guide (udev, Flatpak, diagnostics) ↗</span></a>
+            </section>
+
+            <section class="panel settings-card">
+              <h2 data-i18n="tech_details">Technical Details</h2>
+              <p data-i18n="tech_text">Communication uses Interface 1 (49-byte vendor-specific HID). 17-byte packets with checksum = sum mod 256 ≡ 0x55. Value bytes use complement encoding (byte + complement = 0x55). Write commands are echoed back by the device as confirmation.</p>
+              <p data-i18n="tech_warning">⚠ This configurator sends real HID commands to your device. While all implemented commands are based on verified capture evidence, use at your own risk. Incorrect settings can be reset by the official Fantech software.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <span>ARIA II PRO · COMMUNITY CONFIGURATOR</span>
+        <span id="status-msg" data-i18n="status_ready">Ready</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ═══════════ TOAST NOTIFICATION ═══════════ -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script>
+  // ─── i18n ─────────────────────────────────────
+  const LANG = {
+    en: {
+      brand_sub: "ESPORTS WIRELESS GAMING MOUSE",
+      not_connected: "DEVICE NOT CONNECTED",
+      eyebrow: "WEB CONFIGURATOR · ARIA II PRO",
+      hero_title: 'Precision.<br><span>Under your control.</span>',
+      hero_desc: "Connect your Aria II Pro to configure performance, sensor behavior, buttons, macros, and profiles in one focused workspace.",
+      connect_btn: "Connect device",
+      connect_note: "USB / Wireless receiver · WebHID-compatible browser required",
+      linux_hint: "Linux users (Arch / Hyprland): requires udev rule.",
+      made_love: 'Made with <span aria-label="love">♥</span> for the community',
+      nav_home: "Home", nav_perf: "Performance", nav_sensor: "Sensor Settings",
+      nav_buttons: "Button Mapping", nav_profiles: "Profiles", nav_guide: "Feature Guide", nav_about: "About",
+      device_connected: "Device connected", disconnect: "Disconnect",
+      device_status: "Device Status", wireless_receiver: "Wireless Receiver",
+      current_dpi: "Current DPI", polling_rate: "Polling Rate",
+      mode_select: "Mode Select",
+      mode_select_desc: "Power & tracking profile. 125–1000 Hz supports LP / HP. 2000–8000 Hz operates exclusively in Corded mode.",
+      low_power: "Low Power (LP)",
+      lp_detail: "Standard tracking · Battery saving (125–1000 Hz)",
+      high_perf: "High Performance (HP)",
+      hp_detail: "Maximum tracking stability (125–1000 Hz)",
+      corded_mode: "Corded",
+      corded_detail: "Required for 2000–8000 Hz · Max throughput profile",
+      corded_locked_sub: "Corded (Locked at 2K–8K Hz)",
+      mode_locked_notice: "Polling rate is set to 2000–8000 Hz. Device operates in Corded mode; LP / HP selection is disabled.",
+      evidence_mode: "✓ Mode Select rules verified against official software captures",
+      toast_mode_locked: "Mode Select is locked to Corded at 2000–8000 Hz.",
+      toast_mode_corded: "Mode Select switched to Corded for high-rate polling",
+      dpi_config: "DPI Stages & Configuration",
+      dpi_config_desc: "Select active DPI stage and configure active stage count. Stage select (CMD 0x16) and count (CMD 0x14) are hardware-verified.",
+      dpi_stage: "DPI Stage",
+      active_stages: "Active Stages:",
+      stage: "Stage",
+      locked: "Locked",
+      rebindable: "Rebindable",
+      assigned_action: "Action:",
+      btn_primary_locked: "Primary Click · Hardware Locked",
+      evidence_dpi_stage: "✓ Active Stage (CMD 0x16) and Stage Count (CMD 0x14) verified in official captures",
+      toast_dpi_set: "DPI stage set to",
+      toast_dpi_stages: "Active stage count set to",
+      toast_stage_exceeds_count: "Selected stage is beyond active stage count.",
+      toast_btn_applied: "Button mapping applied",
+      toast_btn_locked: "Primary Left Click is locked for safety.",
+      toast_cmd_busy: "Previous command still pending...",
+      quick_settings: "Quick Settings", peak_perf: "Peak Performance",
+      peak_perf_desc: "Boost sensor performance", lp_hp_mode: "HP Mode",
+      lp_hp_desc: "High Performance vs Low Power", profiles: "Profiles", active: "Active",
+      perf_desc: "Configure polling rate, peak performance, and power mode. All settings are written directly to the device.",
+      poll_desc: "Report rate from mouse to PC. Higher = lower latency, more CPU usage.",
+      evidence_high: "✓ Protocol fully decoded from capture evidence",
+      peak_desc: "Temporarily boost sensor processing. Drains battery faster.",
+      enable: "Enable", peak_duration: "Duration",
+      peak_dur_desc: "Auto-disable after this period",
+      hp_desc: "Switch between Low Power (battery saving) and High Performance modes.",
+      low_power: "Low Power", high_perf: "High Performance",
+      sensor_desc: "Configure debounce filtering and sensor behavior toggles. Toggle register-to-label mapping is based on capture order analysis and may need physical verification.",
+      debounce: "Debounce Time",
+      debounce_desc: "Click filtering delay. Lower = faster response, higher = prevents double-clicks.",
+      sensor_toggles: "Sensor Toggles",
+      sensor_toggles_desc: "Toggle sensor features. Labels are best-effort mapping from capture analysis.",
+      motion_sync: "Motion Sync", motion_sync_desc: "Synchronize sensor data with polling",
+      ripple_ctrl: "Ripple Control", ripple_desc: "Filter sensor ripple/jitter",
+      angle_snap: "Angle Snapping", angle_snap_desc: "Straighten diagonal movements",
+      sleep_lod: "Sleep / LOD",
+      sleep_desc: 'Register 0xAD02 — purpose not fully determined. Values observed: 1, 30, 60, 210, 240. May be sleep timeout (seconds) or lift-off distance.',
+      sleep_value: "Value",
+      evidence_label_uncertain: "⚠ Toggles confirmed; label-to-register mapping needs device verification",
+      evidence_partial: "⚠ Register confirmed; value meaning needs device verification",
+      btn_desc: "Button mapping protocol partially decoded. Read-only display of current assignments. Full remapping requires further protocol analysis.",
+      btn_left: "Left Button", btn_right: "Right Button", btn_mid: "Middle Button",
+      btn_fwd: "Forward", btn_back: "Back", btn_dpi: "DPI Loop",
+      evidence_btn: "⚠ Button registers partially decoded — remapping not yet safe to implement",
+      profile_desc: "Select between 3 onboard profiles. Each profile stores independent settings.",
+      profile: "Profile",
+      guide_intro: "Complete reference for all configurator features, their protocol status, and what each setting does.",
+      confirmed: "Confirmed", partial: "Partial", not_impl: "Not Implemented",
+      guide_poll: "Controls how frequently the mouse reports its position to the computer. 125 Hz = every 8ms, 8000 Hz = every 0.125ms. Uses register 0x0002 with bit-flag encoding. All 7 rates confirmed.",
+      guide_peak: "Temporarily boosts sensor processing power for competitive play. Toggle (0xB502) and duration (0xB702) both captured.",
+      guide_hp: "Switches between Low Power and High Performance mode. Register 0xB902, value 0=LP, 1=HP.",
+      guide_debounce: "Click filtering delay in milliseconds. Register 0xA902, value is direct milliseconds. Confirmed: 5ms, 15ms, 20ms.",
+      guide_toggles: "Three on/off toggles at registers 0xAB02, 0xAF02, 0xB102. Register-to-label mapping needs verification.",
+      guide_sleep: "Register 0xAD02. Values: 1, 30, 60, 210, 240. Could be sleep timeout or lift-off distance.",
+      guide_profiles: "3 onboard profiles via command 0x0F (values 0, 1, 2). Profile switching confirmed.",
+      guide_buttons: "5 configurable button registers at 0x64–0x74. Action types partially decoded.",
+      guide_macro: "Macro data partially decoded. Complex multi-segment writes. Not safe to implement yet.",
+      guide_dpi: "DPI stage management via commands 0x14/0x16. DPI byte 0x64 observed — likely 50× or 100× multiplier.",
+      macro_mgr: "Macro Manager",
+      about_sub: "Independent Community Project",
+      about_text: "This is an independent, open-source web configurator for the Fantech Aria II Pro XD7v2P gaming mouse. It is not developed, endorsed, or affiliated with Fantech in any way.",
+      about_made: "Made with ♥ by <strong>HNXZL</strong>",
+      device_info: "Device Information", firmware: "Firmware", sensor_id: "Sensor ID",
+      interface: "Interface", connection: "Connection",
+      linux_support: "Linux & WebHID Permissions",
+      linux_support_desc: "On Arch Linux and systemd distributions, raw HID access requires an active-seat udev rule. HTTPS provides browser security, but kernel permissions must be configured separately.",
+      linux_guide_link: "View Linux Setup Guide (udev, Flatpak, diagnostics) ↗",
+      tech_details: "Technical Details",
+      tech_text: "Communication uses Interface 1 (49-byte vendor-specific HID). 17-byte packets with checksum = sum mod 256 ≡ 0x55.",
+      tech_warning: "⚠ This configurator sends real HID commands to your device. Use at your own risk.",
+      status_ready: "Ready",
+      toast_connected: "Device connected successfully",
+      toast_disconnected: "Device disconnected",
+      toast_poll_set: "Polling rate set to",
+      toast_peak_on: "Peak Performance enabled",
+      toast_peak_off: "Peak Performance disabled",
+      toast_hp_on: "High Performance mode enabled",
+      toast_hp_off: "Low Power mode enabled",
+      toast_debounce: "Debounce set to",
+      toast_toggle_on: "enabled", toast_toggle_off: "disabled",
+      toast_profile: "Profile switched to",
+      toast_err: "Command failed",
+      toast_no_webhid: "WebHID unavailable. Use Chrome/Edge over HTTPS or localhost.",
+      toast_no_device: "No device selected",
+      toast_peak_dur: "Peak duration set to",
+    },
+    id: {
+      brand_sub: "MOUSE GAMING NIRKABEL ESPORTS",
+      not_connected: "PERANGKAT TIDAK TERHUBUNG",
+      eyebrow: "KONFIGURATOR WEB · ARIA II PRO",
+      hero_title: 'Presisi.<br><span>Dalam kendalimu.</span>',
+      hero_desc: "Hubungkan Aria II Pro untuk mengatur performa, perilaku sensor, tombol, makro, dan profil dalam satu ruang kerja terpadu.",
+      connect_btn: "Hubungkan perangkat",
+      connect_note: "USB / Receiver nirkabel · Browser WebHID diperlukan",
+      linux_hint: "Pengguna Linux (Arch / Hyprland): memerlukan aturan udev.",
+      made_love: 'Dibuat dengan <span aria-label="cinta">♥</span> untuk komunitas',
+      nav_home: "Beranda", nav_perf: "Performa", nav_sensor: "Pengaturan Sensor",
+      nav_buttons: "Pemetaan Tombol", nav_profiles: "Profil", nav_guide: "Panduan Fitur", nav_about: "Tentang",
+      device_connected: "Perangkat terhubung", disconnect: "Putuskan",
+      device_status: "Status Perangkat", wireless_receiver: "Receiver Nirkabel",
+      current_dpi: "DPI Saat Ini", polling_rate: "Polling Rate",
+      mode_select: "Mode Select",
+      mode_select_desc: "Profil daya & pelacakan. 125–1000 Hz mendukung LP / HP. 2000–8000 Hz beroperasi khusus pada mode Corded.",
+      low_power: "Hemat Daya (LP)",
+      lp_detail: "Pelacakan standar · Hemat baterai (125–1000 Hz)",
+      high_perf: "Performa Tinggi (HP)",
+      hp_detail: "Stabilitas pelacakan maksimal (125–1000 Hz)",
+      corded_mode: "Corded",
+      corded_detail: "Wajib untuk 2000–8000 Hz · Profil daya throughput maksimal",
+      corded_locked_sub: "Corded (Terkunci pada 2K–8K Hz)",
+      mode_locked_notice: "Polling rate diatur ke 2000–8000 Hz. Perangkat beroperasi dalam mode Corded; pemilihan LP/HP dinonaktifkan.",
+      evidence_mode: "✓ Aturan Mode Select terverifikasi terhadap rekaman perangkat lunak resmi",
+      toast_mode_locked: "Mode Select dikunci ke Corded pada 2000–8000 Hz.",
+      toast_mode_corded: "Mode Select beralih ke Corded untuk polling rate tinggi",
+      dpi_config: "Tahap & Konfigurasi DPI",
+      dpi_config_desc: "Pilih tahap DPI aktif dan atur jumlah tahap. Pemilihan tahap (CMD 0x16) dan jumlah tahap (CMD 0x14) terverifikasi hardware.",
+      dpi_stage: "Tahap DPI",
+      active_stages: "Tahap Aktif:",
+      stage: "Tahap",
+      locked: "Terkunci",
+      rebindable: "Dapat Diatur",
+      assigned_action: "Tindakan:",
+      btn_primary_locked: "Klik Utama · Terkunci Hardware",
+      evidence_dpi_stage: "✓ Tahap Aktif (CMD 0x16) dan Jumlah Tahap (CMD 0x14) terverifikasi dari rekaman resmi",
+      toast_dpi_set: "Tahap DPI diatur ke",
+      toast_dpi_stages: "Jumlah tahap aktif diatur ke",
+      toast_stage_exceeds_count: "Tahap yang dipilih melebihi jumlah tahap aktif.",
+      toast_btn_applied: "Pemetaan tombol diterapkan",
+      toast_btn_locked: "Klik Kiri Utama terkunci demi keamanan.",
+      toast_cmd_busy: "Perintah sebelumnya masih berjalan...",
+      quick_settings: "Pengaturan Cepat", peak_perf: "Performa Puncak",
+      peak_perf_desc: "Tingkatkan performa sensor", lp_hp_mode: "Mode HP",
+      lp_hp_desc: "Performa Tinggi vs Hemat Daya", profiles: "Profil", active: "Aktif",
+      perf_desc: "Atur polling rate, performa puncak, dan mode daya. Semua pengaturan ditulis langsung ke perangkat.",
+      poll_desc: "Frekuensi laporan dari mouse ke PC. Lebih tinggi = latensi lebih rendah, penggunaan CPU lebih tinggi.",
+      evidence_high: "✓ Protokol berhasil didekode dari bukti tangkapan",
+      peak_desc: "Tingkatkan pemrosesan sensor sementara. Menguras baterai lebih cepat.",
+      enable: "Aktifkan", peak_duration: "Durasi",
+      peak_dur_desc: "Nonaktifkan otomatis setelah periode ini",
+      hp_desc: "Beralih antara mode Hemat Daya dan Performa Tinggi.",
+      low_power: "Hemat Daya", high_perf: "Performa Tinggi",
+      sensor_desc: "Atur filter debounce dan toggle perilaku sensor.",
+      debounce: "Waktu Debounce",
+      debounce_desc: "Penundaan filter klik. Rendah = respons cepat, tinggi = mencegah klik ganda.",
+      sensor_toggles: "Toggle Sensor",
+      sensor_toggles_desc: "Toggle fitur sensor. Label berdasarkan analisis urutan tangkapan.",
+      motion_sync: "Motion Sync", motion_sync_desc: "Sinkronkan data sensor dengan polling",
+      ripple_ctrl: "Ripple Control", ripple_desc: "Filter ripple/jitter sensor",
+      angle_snap: "Angle Snapping", angle_snap_desc: "Luruskan gerakan diagonal",
+      sleep_lod: "Sleep / LOD",
+      sleep_desc: 'Register 0xAD02 — tujuan belum sepenuhnya ditentukan.',
+      sleep_value: "Nilai",
+      evidence_label_uncertain: "⚠ Toggle dikonfirmasi; pemetaan label memerlukan verifikasi perangkat",
+      evidence_partial: "⚠ Register dikonfirmasi; makna nilai memerlukan verifikasi",
+      btn_desc: "Protokol pemetaan tombol sebagian didekode. Tampilan hanya-baca.",
+      btn_left: "Tombol Kiri", btn_right: "Tombol Kanan", btn_mid: "Tombol Tengah",
+      btn_fwd: "Maju", btn_back: "Mundur", btn_dpi: "Siklus DPI",
+      evidence_btn: "⚠ Register tombol sebagian didekode — remapping belum aman",
+      profile_desc: "Pilih antara 3 profil onboard. Setiap profil menyimpan pengaturan independen.",
+      profile: "Profil",
+      guide_intro: "Referensi lengkap untuk semua fitur konfigurator, status protokol, dan penjelasan setiap pengaturan.",
+      confirmed: "Dikonfirmasi", partial: "Sebagian", not_impl: "Belum Diimplementasi",
+      guide_poll: "Mengontrol frekuensi mouse melaporkan posisi ke komputer. 125 Hz = setiap 8ms, 8000 Hz = setiap 0.125ms.",
+      guide_peak: "Meningkatkan daya pemrosesan sensor untuk permainan kompetitif.",
+      guide_hp: "Beralih antara mode Hemat Daya dan Performa Tinggi. Register 0xB902.",
+      guide_debounce: "Penundaan filter klik dalam milidetik. Register 0xA902, nilai langsung dalam ms.",
+      guide_toggles: "Tiga toggle on/off di register 0xAB02, 0xAF02, 0xB102.",
+      guide_sleep: "Register 0xAD02. Nilai: 1, 30, 60, 210, 240.",
+      guide_profiles: "3 profil onboard via perintah 0x0F (nilai 0, 1, 2).",
+      guide_buttons: "5 register tombol yang dapat dikonfigurasi di 0x64–0x74.",
+      guide_macro: "Data makro sebagian didekode. Belum aman untuk diimplementasi.",
+      guide_dpi: "Manajemen tahap DPI via perintah 0x14/0x16.",
+      macro_mgr: "Manajer Makro",
+      about_sub: "Proyek Komunitas Independen",
+      about_text: "Ini adalah konfigurator web independen untuk mouse Fantech Aria II Pro XD7v2P. Tidak dikembangkan atau berafiliasi dengan Fantech.",
+      about_made: "Dibuat dengan ♥ oleh <strong>HNXZL</strong>",
+      device_info: "Informasi Perangkat", firmware: "Firmware", sensor_id: "ID Sensor",
+      interface: "Antarmuka", connection: "Koneksi",
+      linux_support: "Izin WebHID & Linux",
+      linux_support_desc: "Pada Arch Linux dan distribusi berbasis systemd, akses raw HID memerlukan aturan udev sesi aktif (uaccess). HTTPS memenuhi syarat peramban, namun izin kernel harus diatur terpisah.",
+      linux_guide_link: "Buka Panduan Setup Linux (udev, Flatpak, diagnostik) ↗",
+      tech_details: "Detail Teknis",
+      tech_text: "Komunikasi menggunakan Interface 1 (HID vendor-specific 49-byte). Paket 17-byte dengan checksum.",
+      tech_warning: "⚠ Konfigurator ini mengirim perintah HID nyata ke perangkat. Gunakan dengan risiko sendiri.",
+      status_ready: "Siap",
+      toast_connected: "Perangkat berhasil terhubung",
+      toast_disconnected: "Perangkat terputus",
+      toast_poll_set: "Polling rate diatur ke",
+      toast_peak_on: "Performa Puncak diaktifkan",
+      toast_peak_off: "Performa Puncak dinonaktifkan",
+      toast_hp_on: "Mode Performa Tinggi diaktifkan",
+      toast_hp_off: "Mode Hemat Daya diaktifkan",
+      toast_debounce: "Debounce diatur ke",
+      toast_toggle_on: "diaktifkan", toast_toggle_off: "dinonaktifkan",
+      toast_profile: "Profil dialihkan ke",
+      toast_err: "Perintah gagal",
+      toast_no_webhid: "WebHID tidak tersedia. Gunakan Chrome/Edge via HTTPS atau localhost.",
+      toast_no_device: "Tidak ada perangkat dipilih",
+      toast_peak_dur: "Durasi puncak diatur ke",
+    }
+  };
+
+  let currentLang = localStorage.getItem('aria2pro-lang') || 'en';
+
+  function t(key) { return (LANG[currentLang] && LANG[currentLang][key]) || LANG.en[key] || key; }
+
+  function applyLang() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      const val = t(key);
+      if (val) el.innerHTML = val;
+    });
+    document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = currentLang.toUpperCase());
+    localStorage.setItem('aria2pro-lang', currentLang);
+  }
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'id' : 'en';
+    applyLang();
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+  document.getElementById('lang-toggle-2').addEventListener('click', toggleLang);
+
+  // ─── Toast Notifications ──────────────────────
+  function toast(msg, type = 'info') {
+    const c = document.getElementById('toast-container');
+    const d = document.createElement('div');
+    d.className = 'toast toast-' + type;
+    d.textContent = msg;
+    c.appendChild(d);
+    requestAnimationFrame(() => d.classList.add('show'));
+    setTimeout(() => { d.classList.remove('show'); setTimeout(() => d.remove(), 400); }, 3000);
+  }
+
+  // ─── Protocol Engine ──────────────────────────
+  const VID = 0x3554;
+  const PID_WIRELESS = 0xF523;
+  const PID_WIRED = 0xF5A5;
+  const PACKET_SIZE = 17;
+  const CHECKSUM_TARGET = 0x55;
+
+  // Polling rate bit flags
+  const POLL_MAP = { 0x01: 125, 0x02: 250, 0x04: 500, 0x08: 1000, 0x10: 2000, 0x20: 4000, 0x40: 8000 };
+  const POLL_REVERSE = Object.fromEntries(Object.entries(POLL_MAP).map(([k,v]) => [v, parseInt(k)]));
+
+  // Default hardware DPI stages decoded from official NVRAM memory block (0x000A - 0x002B)
+  const DEFAULT_DPI_STAGES = [
+    { stage: 1, dpi: 400, color: '#ff3333', raw: 0x07 },
+    { stage: 2, dpi: 800, color: '#3388ff', raw: 0x0F },
+    { stage: 3, dpi: 1600, color: '#00e879', raw: 0x1F },
+    { stage: 4, dpi: 3200, color: '#ffd700', raw: 0x3F },
+    { stage: 5, dpi: 3200, color: '#00e5ff', raw: 0x3F },
+    { stage: 6, dpi: 6400, color: '#b044ff', raw: 0x7F },
+  ];
+
+  // Button mapping specifications
+  const BUTTON_DEFS = {
+    1: { name: 'Left Button', defaultAction: '0101', reg: null, locked: true },
+    2: { name: 'Right Button', defaultAction: '0102', reg: 0x6404, locked: false },
+    3: { name: 'Middle Button', defaultAction: '0104', reg: 0x6804, locked: false },
+    4: { name: 'Forward', defaultAction: '0110', reg: 0x7004, locked: false },
+    5: { name: 'Back', defaultAction: '0108', reg: 0x6C04, locked: false },
+    6: { name: 'DPI Loop', defaultAction: '0500', reg: 0x7404, locked: false },
+  };
+
+  const ACTION_NAMES = {
+    '0101': 'Left Click',
+    '0102': 'Right Click',
+    '0104': 'Middle Click',
+    '0110': 'Forward',
+    '0108': 'Back',
+    '0500': 'DPI Loop',
+    '0000': 'Disabled'
+  };
+
+  let hidDevice = null;
+  let isCommandPending = false;
+
+  let deviceState = {
+    dpi: 1600,
+    dpiStage: 2, // 0-indexed Stage 3 (1600 DPI)
+    dpiStageCount: 6,
+    dpiSource: 'default', // 'default' | 'applied'
+    pollingRate: 1000,
+    pollingByte: 0x08,
+    peakPerformance: false,
+    peakDuration: 3,
+    hpMode: false,
+    modeSelect: 'lp',
+    savedHpMode: false,
+    debounce: 5,
+    sensorToggles: { 0xAB: false, 0xAF: false, 0xB1: false },
+    sleepLod: 30,
+    profile: 0,
+    firmware: null,
+    sensorId: null,
+    battery: null,
+    selectedButton: 1,
+    buttonMapping: {
+      1: '0101',
+      2: '0102',
+      3: '0104',
+      4: '0110',
+      5: '0108',
+      6: '0500',
+    }
+  };
+
+  function buildPacket(cmd, byte2 = 0, byte3 = 0, byte4 = 0, byte5 = 0, byte6 = 0, byte7 = null, extraBytes = []) {
+    const pkt = new Uint8Array(PACKET_SIZE);
+    pkt[0] = 0x08;
+    pkt[1] = cmd;
+    pkt[2] = byte2;
+    pkt[3] = byte3;
+    pkt[4] = byte4;
+    pkt[5] = byte5;
+    pkt[6] = byte6;
+    pkt[7] = byte7 !== null ? byte7 : ((CHECKSUM_TARGET - byte6) & 0xFF);
+    for (let i = 0; i < extraBytes.length && i + 8 < PACKET_SIZE - 1; i++) {
+      pkt[8 + i] = extraBytes[i];
+    }
+    let sum = 0;
+    for (let i = 0; i < PACKET_SIZE - 1; i++) sum += pkt[i];
+    pkt[PACKET_SIZE - 1] = (CHECKSUM_TARGET - (sum & 0xFF)) & 0xFF;
+    return pkt;
+  }
+
+  function buildSettingPacket(regHi, regLo, value) {
+    return buildPacket(0x07, 0, 0, regHi, regLo, value);
+  }
+
+  function buildButtonPacket(reg, b1, b2, b3 = 0) {
+    const pkt = new Uint8Array(PACKET_SIZE);
+    pkt[0] = 0x08;
+    pkt[1] = 0x07;
+    pkt[2] = 0x00;
+    pkt[3] = 0x00;
+    pkt[4] = (reg >> 8) & 0xFF;
+    pkt[5] = reg & 0xFF;
+    pkt[6] = b1;
+    pkt[7] = b2;
+    pkt[8] = b3;
+    pkt[9] = (CHECKSUM_TARGET - (b1 + b2 + b3)) & 0xFF;
+    for (let i = 10; i < PACKET_SIZE - 1; i++) {
+      pkt[i] = 0x00;
+    }
+    let sum = 0;
+    for (let i = 0; i < PACKET_SIZE - 1; i++) sum += pkt[i];
+    pkt[PACKET_SIZE - 1] = (CHECKSUM_TARGET - (sum & 0xFF)) & 0xFF;
+    return pkt;
+  }
+
+  async function sendAndReceive(packet) {
+    if (!hidDevice || !hidDevice.opened) throw new Error('Device not connected');
+    const reportId = packet[0];
+    const data = packet.slice(1);
+    await hidDevice.sendReport(reportId, data);
+
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        hidDevice.removeEventListener('inputreport', handler);
+        reject(new Error('Timeout waiting for device response'));
+      }, 2000);
+
+      function handler(event) {
+        if (event.reportId === 0x08) {
+          clearTimeout(timeout);
+          hidDevice.removeEventListener('inputreport', handler);
+          const response = new Uint8Array(event.data.buffer);
+          resolve(response);
+        }
+      }
+      hidDevice.addEventListener('inputreport', handler);
+    });
+  }
+
+  async function sendCommand(packet) {
+    if (isCommandPending) {
+      toast(t('toast_cmd_busy'), 'warn');
+      return null;
+    }
+    isCommandPending = true;
+    try {
+      const resp = await sendAndReceive(packet);
+      return resp;
+    } catch (e) {
+      console.error('Command failed:', e);
+      toast(t('toast_err') + ': ' + (e.message || 'Error'), 'error');
+      return null;
+    } finally {
+      isCommandPending = false;
+    }
+  }
+
+  // ─── Device Commands ──────────────────────────
+  async function readSensorInfo() {
+    const pkt = buildPacket(0x03);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.sensorId = Array.from(resp.slice(5, 9)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    return resp;
+  }
+
+  async function readStatus() {
+    const pkt = buildPacket(0x04);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      // In capture evidence: bytes 5-6 are static 0x02 0x64 (NOT current DPI).
+      // Byte 9 is battery level percentage.
+      const batt = resp[9];
+      if (batt > 0 && batt <= 100) {
+        deviceState.battery = batt;
+      }
+      const pollByte = resp[7];
+      if (POLL_MAP[pollByte]) {
+        deviceState.pollingByte = pollByte;
+        deviceState.pollingRate = POLL_MAP[pollByte];
+      }
+
+      if (deviceState.pollingRate >= 2000) {
+        deviceState.modeSelect = 'corded';
+        deviceState.hpMode = false;
+      } else if (deviceState.modeSelect === 'corded') {
+        deviceState.hpMode = !!deviceState.savedHpMode;
+        deviceState.modeSelect = deviceState.hpMode ? 'hp' : 'lp';
+      }
+    }
+    return resp;
+  }
+
+  async function readFirmware() {
+    const pkt = buildPacket(0x12);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.firmware = resp[5] + '.' + resp[6];
+    }
+    return resp;
+  }
+
+  // DPI stage select (CMD 0x16)
+  async function setDPIStage(stageIndex) {
+    if (stageIndex < 0 || stageIndex >= DEFAULT_DPI_STAGES.length) return;
+    if (stageIndex >= deviceState.dpiStageCount) {
+      toast(t('toast_stage_exceeds_count'), 'warn');
+      return;
+    }
+
+    // Verified CMD 0x16: 08 16 00 00 00 0a [stageIndex] 00 00 00 00 00 00 00 00 [chk]
+    const pkt = buildPacket(0x16, 0, 0, 0x00, 0x0A, stageIndex, 0);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.dpiStage = stageIndex;
+      deviceState.dpi = DEFAULT_DPI_STAGES[stageIndex].dpi;
+      deviceState.dpiSource = 'applied';
+      updateUI();
+      toast(t('toast_dpi_set') + ' ' + deviceState.dpi + ' DPI (' + t('stage') + ' ' + (stageIndex + 1) + ')', 'success');
+    }
+  }
+
+  // DPI stage count (CMD 0x14)
+  async function setDPIStageCount(count) {
+    if (count < 1 || count > 6) return;
+    // Verified CMD 0x14: 08 14 00 00 00 0a [count] 00 00 00 00 00 00 00 00 [chk]
+    const pkt = buildPacket(0x14, 0, 0, 0x00, 0x0A, count, 0);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.dpiStageCount = count;
+      if (deviceState.dpiStage >= count) {
+        deviceState.dpiStage = count - 1;
+        deviceState.dpi = DEFAULT_DPI_STAGES[deviceState.dpiStage].dpi;
+      }
+      updateUI();
+      toast(t('toast_dpi_stages') + ' ' + count, 'success');
+    }
+  }
+
+  async function setPollingRate(valHex) {
+    const val = typeof valHex === 'string' ? parseInt(valHex, 16) : valHex;
+    const pkt = buildSettingPacket(0x00, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.pollingByte = val;
+      deviceState.pollingRate = POLL_MAP[val];
+
+      const isHighRate = deviceState.pollingRate >= 2000;
+      if (isHighRate) {
+        // Switching to 2000-8000 Hz: lock to Corded mode
+        if (deviceState.modeSelect !== 'corded') {
+          deviceState.savedHpMode = (deviceState.hpMode === true);
+        }
+        deviceState.modeSelect = 'corded';
+        deviceState.hpMode = false; // Incompatible LP/HP mode must not remain visibly selected
+      } else {
+        // Returning to <= 1000 Hz: restore user LP/HP selection without uncaptured secondary command
+        deviceState.hpMode = !!deviceState.savedHpMode;
+        deviceState.modeSelect = deviceState.hpMode ? 'hp' : 'lp';
+      }
+
+      updateUI();
+      toast(t('toast_poll_set') + ' ' + POLL_MAP[val] + ' Hz', 'success');
+      if (isHighRate) {
+        toast(t('toast_mode_corded'), 'info');
+      }
+    }
+  }
+
+  async function setPeakPerformance(on) {
+    const val = on ? 1 : 0;
+    const pkt = buildSettingPacket(0xB5, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.peakPerformance = on;
+      updateUI();
+      toast(on ? t('toast_peak_on') : t('toast_peak_off'), 'success');
+    }
+  }
+
+  async function setPeakDuration(minutes) {
+    const val = parseInt(minutes);
+    const pkt = buildSettingPacket(0xB7, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.peakDuration = val;
+      updateUI();
+      toast(t('toast_peak_dur') + ' ' + val + ' min', 'success');
+    }
+  }
+
+  async function setHPMode(on) {
+    if (deviceState.pollingRate >= 2000) {
+      toast(t('toast_mode_locked'), 'error');
+      return;
+    }
+    const val = on ? 1 : 0;
+    const pkt = buildSettingPacket(0xB9, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.hpMode = on;
+      deviceState.savedHpMode = on;
+      deviceState.modeSelect = on ? 'hp' : 'lp';
+      updateUI();
+      toast(on ? t('toast_hp_on') : t('toast_hp_off'), 'success');
+    }
+  }
+
+  async function setDebounce(ms) {
+    const val = parseInt(ms);
+    const pkt = buildSettingPacket(0xA9, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.debounce = val;
+      updateUI();
+      toast(t('toast_debounce') + ' ' + val + ' ms', 'success');
+    }
+  }
+
+  async function setSensorToggle(reg, on) {
+    const val = on ? 1 : 0;
+    const pkt = buildSettingPacket(reg, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.sensorToggles[reg] = on;
+      updateUI();
+      const names = { 0xB1: 'Motion Sync', 0xAF: 'Ripple Control', 0xAB: 'Angle Snapping' };
+      toast(names[reg] + ' ' + (on ? t('toast_toggle_on') : t('toast_toggle_off')), 'success');
+    }
+  }
+
+  async function setSleepLOD(val) {
+    const pkt = buildSettingPacket(0xAD, 0x02, val);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.sleepLod = val;
+      updateUI();
+      toast('Sleep/LOD set to ' + val, 'success');
+    }
+  }
+
+  async function selectProfile(idx) {
+    const pkt = buildPacket(0x0F, 0, 0, 0x00, 0x01, idx);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.profile = idx;
+      updateUI();
+      toast(t('toast_profile') + ' ' + (idx + 1), 'success');
+    }
+  }
+
+  // Button mapping actions
+  function selectButton(btnNum) {
+    deviceState.selectedButton = btnNum;
+    updateUI();
+    if (document.getElementById('page-buttons').classList.contains('active')) {
+      const el = document.getElementById('button-inspector');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function previewButtonAction(val) {
+    // Dropdown change
+  }
+
+  async function applyButtonRemap() {
+    const btnNum = deviceState.selectedButton;
+    const def = BUTTON_DEFS[btnNum];
+    if (!def || def.locked) {
+      toast(t('toast_btn_locked'), 'warn');
+      return;
+    }
+
+    const sel = document.getElementById('insp-action-select');
+    const actionCode = sel.value;
+    const byte1 = parseInt(actionCode.substring(0, 2), 16);
+    const byte2 = parseInt(actionCode.substring(2, 4), 16);
+
+    const pkt = buildButtonPacket(def.reg, byte1, byte2, 0);
+    const resp = await sendCommand(pkt);
+    if (resp) {
+      deviceState.buttonMapping[btnNum] = actionCode;
+      updateUI();
+      toast(t('toast_btn_applied') + ' (' + def.name + ' → ' + ACTION_NAMES[actionCode] + ')', 'success');
+    }
+  }
+
+  function scrollToCard(id) {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+
+  // ─── Connection ───────────────────────────────
+  async function connectDevice() {
+    if (!('hid' in navigator)) {
+      toast(t('toast_no_webhid'), 'error');
+      return;
+    }
+    try {
+      const devices = await navigator.hid.requestDevice({
+        filters: [
+          { vendorId: VID, productId: PID_WIRELESS },
+          { vendorId: VID, productId: PID_WIRED },
+        ]
+      });
+
+      if (!devices || devices.length === 0) {
+        toast(t('toast_no_device'), 'error');
+        return;
+      }
+
+      let device = devices[0];
+      for (const d of (Array.isArray(devices) ? devices : [devices])) {
+        for (const col of d.collections) {
+          if (col.usagePage >= 0xFF00 || col.outputReports?.some(r => r.reportId === 0x08)) {
+            device = d;
+            break;
+          }
+        }
+      }
+
+      if (!device.opened) {
+        await device.open();
+      }
+
+      hidDevice = device;
+
+      navigator.hid.addEventListener('disconnect', (e) => {
+        if (e.device === hidDevice) {
+          hidDevice = null;
+          showDisconnected();
+          toast(t('toast_disconnected'), 'info');
+        }
+      });
+
+      await readSensorInfo();
+      await readStatus();
+      await readFirmware();
+
+      showConnected();
+      toast(t('toast_connected'), 'success');
+    } catch (e) {
+      console.error('Connection failed:', e);
+      toast(e.message || 'Connection failed', 'error');
+    }
+  }
+
+  async function disconnectDevice() {
+    if (hidDevice) {
+      try { await hidDevice.close(); } catch (e) {}
+      hidDevice = null;
+    }
+    showDisconnected();
+    toast(t('toast_disconnected'), 'info');
+  }
+
+  // ─── UI State ─────────────────────────────────
+  function showConnected() {
+    document.getElementById('connect-view').hidden = true;
+    document.getElementById('home-view').hidden = false;
+    updateUI();
+  }
+
+  function showDisconnected() {
+    document.getElementById('connect-view').hidden = false;
+    document.getElementById('home-view').hidden = true;
+  }
+
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + name);
+    if (target) target.classList.add('active');
+    document.querySelectorAll('.nav-item').forEach(n => {
+      n.classList.toggle('active', n.dataset.page === name);
+    });
+    updateUI();
+  }
+
+  function updateUI() {
+    const s = deviceState;
+    const isHighRate = (s.pollingRate >= 2000);
+
+    // Home stats
+    document.getElementById('home-dpi').textContent = s.dpi ? s.dpi + ' DPI' : '— DPI';
+    document.getElementById('home-poll').textContent = s.pollingRate ? s.pollingRate + ' Hz' : '— Hz';
+    document.getElementById('quick-poll-val').textContent = s.pollingRate ? s.pollingRate + ' Hz' : '—';
+    const homeModeEl = document.getElementById('home-mode');
+    if (homeModeEl) {
+      homeModeEl.textContent = isHighRate ? 'Corded' : (s.hpMode ? 'HP' : 'LP');
+    }
+
+    // Quick settings: DPI
+    const quickDpiSelect = document.getElementById('quick-dpi-select');
+    if (quickDpiSelect) {
+      quickDpiSelect.value = s.dpiStage;
+    }
+    const quickDpiSub = document.getElementById('quick-dpi-sub');
+    if (quickDpiSub) {
+      quickDpiSub.textContent = t('stage') + ' ' + (s.dpiStage + 1) + ' · ' + s.dpi + ' DPI';
+    }
+
+    // Quick settings: Polling
+    if (s.pollingByte) {
+      document.getElementById('quick-poll-select').value = '0x' + s.pollingByte.toString(16).padStart(2, '0');
+    }
+    document.getElementById('quick-peak').checked = !!s.peakPerformance;
+
+    // Quick Mode Select
+    const quickHpInput = document.getElementById('quick-hp');
+    const quickHpSwitch = document.getElementById('quick-hp-switch');
+    const quickCordedBadge = document.getElementById('quick-corded-badge');
+    const quickModeSub = document.getElementById('quick-mode-sub');
+    if (quickHpInput && quickCordedBadge && quickHpSwitch) {
+      if (isHighRate) {
+        quickHpInput.disabled = true;
+        quickHpInput.checked = false;
+        quickHpSwitch.hidden = true;
+        quickCordedBadge.hidden = false;
+        if (quickModeSub) quickModeSub.textContent = t('corded_locked_sub');
+      } else {
+        quickHpInput.disabled = false;
+        quickHpInput.checked = !!s.hpMode;
+        quickHpSwitch.hidden = false;
+        quickCordedBadge.hidden = true;
+        if (quickModeSub) quickModeSub.textContent = t('lp_hp_desc');
+      }
+    }
+
+    // Performance page: DPI configuration
+    const perfDpiVal = document.getElementById('perf-dpi-val');
+    const perfDpiTag = document.getElementById('perf-dpi-stage-tag');
+    if (perfDpiVal) perfDpiVal.textContent = s.dpi + ' DPI';
+    if (perfDpiTag) perfDpiTag.textContent = t('stage') + ' ' + (s.dpiStage + 1);
+
+    document.querySelectorAll('#stage-count-buttons .stage-cnt-btn').forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.dataset.count) === s.dpiStageCount);
+    });
+
+    document.querySelectorAll('#dpi-stages-grid .dpi-stage-card').forEach(card => {
+      const stageIdx = parseInt(card.dataset.stage);
+      card.classList.toggle('active', stageIdx === s.dpiStage);
+      card.classList.toggle('disabled', stageIdx >= s.dpiStageCount);
+    });
+
+    // Performance page Polling buttons
+    document.querySelectorAll('#poll-grid .poll-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.val === '0x' + (s.pollingByte || 0).toString(16).padStart(2, '0'));
+    });
+    document.getElementById('perf-peak').checked = !!s.peakPerformance;
+    if (s.peakDuration) document.getElementById('perf-peak-dur').value = s.peakDuration;
+
+    // Performance page Mode Select
+    const modeBadge = document.getElementById('mode-active-badge');
+    const lockNotice = document.getElementById('mode-lock-notice');
+    if (modeBadge) {
+      modeBadge.textContent = isHighRate ? 'CORDED' : (s.modeSelect === 'hp' ? 'HP' : 'LP');
+      modeBadge.classList.toggle('corded', isHighRate);
+    }
+    if (lockNotice) {
+      lockNotice.hidden = !isHighRate;
+    }
+
+    document.querySelectorAll('#mode-toggle .mode-btn').forEach(btn => {
+      const mode = btn.dataset.mode;
+      if (mode === 'corded') {
+        btn.classList.toggle('active', isHighRate);
+        btn.classList.toggle('disabled', !isHighRate);
+      } else {
+        btn.disabled = isHighRate;
+        btn.classList.toggle('disabled', isHighRate);
+        btn.classList.toggle('active', !isHighRate && s.modeSelect === mode);
+      }
+    });
+
+    // Sensor page
+    document.querySelectorAll('#debounce-grid .poll-btn').forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.dataset.val) === s.debounce);
+    });
+    document.getElementById('sensor-b1').checked = !!s.sensorToggles[0xB1];
+    document.getElementById('sensor-af').checked = !!s.sensorToggles[0xAF];
+    document.getElementById('sensor-ab').checked = !!s.sensorToggles[0xAB];
+    if (s.sleepLod != null) document.getElementById('sensor-ad').value = s.sleepLod;
+
+    // Button Mapping & Pins
+    document.querySelectorAll('.pin').forEach(pin => {
+      const btnId = parseInt(pin.dataset.btn);
+      pin.classList.toggle('active', btnId === s.selectedButton);
+    });
+
+    document.querySelectorAll('#mapping-list .mapping-row').forEach(row => {
+      const btnId = parseInt(row.dataset.btn);
+      row.classList.toggle('active', btnId === s.selectedButton);
+    });
+
+    for (let i = 1; i <= 6; i++) {
+      const lbl = document.getElementById('lbl-btn-' + i);
+      if (lbl) {
+        const actionCode = s.buttonMapping[i];
+        lbl.textContent = BUTTON_DEFS[i].name + ' (' + (ACTION_NAMES[actionCode] || actionCode) + ')';
+      }
+    }
+
+    const def = BUTTON_DEFS[s.selectedButton];
+    if (def) {
+      document.getElementById('insp-num').textContent = s.selectedButton;
+      document.getElementById('insp-name').textContent = def.name;
+      const subEl = document.getElementById('insp-sub');
+      const badgeEl = document.getElementById('insp-badge');
+      const selEl = document.getElementById('insp-action-select');
+      const applyBtn = document.getElementById('btn-apply-remap');
+      const noteEl = document.getElementById('insp-note');
+
+      if (def.locked) {
+        subEl.textContent = t('btn_primary_locked');
+        badgeEl.textContent = t('locked');
+        badgeEl.className = 'mode-badge';
+        selEl.disabled = true;
+        selEl.value = '0101';
+        applyBtn.disabled = true;
+        noteEl.textContent = 'Primary Left Click is locked for safety to prevent losing mouse interaction.';
+      } else {
+        subEl.textContent = 'Register 0x' + def.reg.toString(16).toUpperCase() + ' · Current: ' + ACTION_NAMES[s.buttonMapping[s.selectedButton]];
+        badgeEl.textContent = t('rebindable');
+        badgeEl.className = 'mode-badge corded';
+        selEl.disabled = false;
+        selEl.value = s.buttonMapping[s.selectedButton] || def.defaultAction;
+        applyBtn.disabled = false;
+        noteEl.textContent = 'Verified hardware register write (CMD 0x07). Echo confirmed by device.';
+      }
+    }
+
+    // Profiles
+    document.querySelectorAll('#profile-cards .profile-card').forEach((card, i) => {
+      card.classList.toggle('active', i === s.profile);
+      card.querySelector('small').textContent = i === s.profile ? t('active') : 'Profile';
+    });
+    document.querySelectorAll('#profile-select-grid .profile-big').forEach((card, i) => {
+      card.classList.toggle('active', i === s.profile);
+    });
+
+    // About page info
+    if (s.firmware) {
+      document.getElementById('info-fw').textContent = 'v' + s.firmware;
+      document.getElementById('fw-label').textContent = 'FW v' + s.firmware;
+    }
+    if (s.sensorId) document.getElementById('info-sensor').textContent = '0x' + s.sensorId;
+    if (hidDevice) {
+      document.getElementById('info-pid').textContent = '0x' + hidDevice.productId.toString(16).toUpperCase().padStart(4, '0');
+      document.getElementById('info-conn').textContent = hidDevice.productId === PID_WIRELESS ? 'Wireless (2.4 GHz)' : 'Wired USB';
+    }
+
+    document.getElementById('status-msg').textContent = t('status_ready');
+  }
+
+  // ─── Event Listeners ──────────────────────────
+  document.getElementById('connect-button').addEventListener('click', connectDevice);
+  document.getElementById('disconnect-btn').addEventListener('click', disconnectDevice);
+
+  document.querySelectorAll('.nav-item').forEach(a => {
+    a.addEventListener('click', e => e.preventDefault());
+  });
+
+  // Init
+  applyLang();
+  </script>
+</body>
+</html>

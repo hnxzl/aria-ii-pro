@@ -1,0 +1,8 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=DriverLib.UsbServer METHOD=Get4KDongleRGBValue TOKEN=0x0600017F IL_BYTES=19
+0000: call             0x060000EF // Boolean isX64System()
+0005: brfalse.s        IL_000D
+0007: call             0x06000158 // Void UsbServer_Get4KDongleRGBValue()
+000C: ret
+000D: call             0x060001AF // Void UsbServer_Get4KDongleRGBValue()
+0012: ret

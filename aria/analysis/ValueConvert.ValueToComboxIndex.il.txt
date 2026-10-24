@@ -1,0 +1,58 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ValueConvert METHOD=ValueToComboxIndex TOKEN=0x06000519 IL_BYTES=125
+0000: ldc.i4.0
+0001: stloc.0
+0002: ldc.i4.0
+0003: stloc.1
+0004: ldc.i4.0
+0005: stloc.2
+0006: br.s             IL_0069
+0008: ldarg.0
+0009: callvirt         0x0A0000D4 // System.String get_Name()
+000E: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0013: ldloc.2
+0014: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0019: ldfld            0x04000049 // System.String Name
+001E: call             0x0A000042 // Boolean op_Equality(System.String, System.String)
+0023: brfalse.s        IL_0062
+0025: ldc.i4.0
+0026: stloc.1
+0027: br.s             IL_004A
+0029: ldarg.1
+002A: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+002F: ldloc.2
+0030: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0035: ldfld            0x0400004B // System.Collections.Generic.List`1[System.Int32] Values
+003A: ldloc.1
+003B: callvirt         0x0A0000E1 // Int32 get_Item(Int32)
+0040: bne.un.s         IL_0046
+0042: ldc.i4.1
+0043: stloc.0
+0044: br.s             IL_0062
+0046: ldloc.1
+0047: ldc.i4.1
+0048: add
+0049: stloc.1
+004A: ldloc.1
+004B: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+0050: ldloc.2
+0051: callvirt         0x0A0000DC // FileManager.ComboBoxStruct get_Item(Int32)
+0056: ldfld            0x0400004B // System.Collections.Generic.List`1[System.Int32] Values
+005B: callvirt         0x0A000250 // Int32 get_Count()
+0060: blt.s            IL_0029
+0062: ldloc.0
+0063: brtrue.s         IL_0076
+0065: ldloc.2
+0066: ldc.i4.1
+0067: add
+0068: stloc.2
+0069: ldloc.2
+006A: ldsfld           0x04000053 // System.Collections.Generic.List`1[FileManager.ComboBoxStruct] ComboBoxStructs
+006F: callvirt         0x0A0000E2 // Int32 get_Count()
+0074: blt.s            IL_0008
+0076: ldloc.0
+0077: brtrue.s         IL_007B
+0079: ldc.i4.0
+007A: stloc.1
+007B: ldloc.1
+007C: ret

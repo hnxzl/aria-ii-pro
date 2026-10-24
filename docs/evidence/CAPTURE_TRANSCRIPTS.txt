@@ -1,0 +1,991 @@
+# Decoded vendor-interface (interface 1) transactions from every PCAPNG in the workspace
+# Generated 2026-10-23 with TShark 4.x (cloud workspace copy of the captures; originals untouched).
+# Frame layout used by the decoder: [0]=report ID 0x08 [1]=command id [2]=status [3..4]=16-bit BE address [5]=length [6..15]=data [16]=checksum (sum of all 17 bytes == 0x55).
+# Polling frames id=03 (DeviceOnLine) and id=04 (BatteryLevel) are summarised, not listed, unless noted. Times are seconds from first listed frame.
+##### caps/aria__adv_settings_battery_state.pcapng.tsv
+  3695    0.777 OUT         id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+  3697    0.865 IN82        id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+##### caps/aria__adv_settings_connection_state_and_report_rate.pcapng.tsv
+  2919    2.532 OUT         id=14 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  2921    2.621 IN82        id=14 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+##### caps/aria__adv_settings_only_battery_warning.pcapng.tsv
+  2075    0.443 OUT         id=14 st=00 addr=0000 len=0A data=03 00 00 00 00 00 00 00 00 00 ck=ok
+  2077    0.532 IN82        id=14 st=00 addr=0000 len=0A data=03 00 00 00 00 00 00 00 00 00 ck=ok
+##### caps/aria__button_remap.pcapng.tsv
+  6049   11.860 OUT         id=07 st=00 addr=0070 len=04 data=05 00 00 50 00 00 00 00 00 00 ck=ok
+  6051   11.863 IN82        id=07 st=00 addr=0070 len=04 data=05 00 00 50 00 00 00 00 00 00 ck=ok
+  6053   11.871 OUT         id=07 st=00 addr=0180 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+  6055   11.874 IN82        id=07 st=00 addr=0180 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+  8223   15.652 IN82        RAW 05e200
+  8433   15.793 IN82        RAW 050000
+  8463   16.043 IN82        RAW 05e200
+  8465   16.158 IN82        RAW 050000
+  9993   22.755 OUT         id=07 st=00 addr=006C len=04 data=05 00 00 50 00 00 00 00 00 00 ck=ok
+  9995   22.758 IN82        id=07 st=00 addr=006C len=04 data=05 00 00 50 00 00 00 00 00 00 ck=ok
+  9997   22.766 OUT         id=07 st=00 addr=0160 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+  9999   22.769 IN82        id=07 st=00 addr=0160 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+ 10729   24.086 IN82        RAW 05e200
+ 10731   24.185 IN82        RAW 050000
+ 10801   24.690 IN82        RAW 05e200
+ 10817   24.836 IN82        RAW 050000
+ 10819   25.264 IN82        RAW 05e200
+ 10829   25.341 IN82        RAW 050000
+ 10879   25.685 IN82        RAW 05e200
+ 10887   25.809 IN82        RAW 050000
+ 10899   25.992 IN82        RAW 05e200
+ 10903   26.082 IN82        RAW 050000
+ 10909   26.366 IN82        RAW 05e200
+ 10911   26.474 IN82        RAW 050000
+ 25685   52.457 OUT         id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 25687   52.460 IN82        id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 28673   58.369 OUT         id=07 st=00 addr=006C len=04 data=01 08 00 4c 00 00 00 00 00 00 ck=ok
+ 28675   58.371 IN82        id=07 st=00 addr=006C len=04 data=01 08 00 4c 00 00 00 00 00 00 ck=ok
+##### caps/aria__cycle_until_key_pressed_+_cycle_until_this_key_pressed.pcapng.tsv
+  6203    5.605 OUT         id=07 st=00 addr=0070 len=04 data=06 04 ff 4c 00 00 00 00 00 00 ck=ok
+  6205    5.608 IN82        id=07 st=00 addr=0070 len=04 data=06 04 ff 4c 00 00 00 00 00 00 ck=ok
+ 11197   12.863 OUT         id=07 st=00 addr=0070 len=04 data=06 04 fd 4e 00 00 00 00 00 00 ck=ok
+ 11199   12.866 IN82        id=07 st=00 addr=0070 len=04 data=06 04 fd 4e 00 00 00 00 00 00 ck=ok
+##### caps/aria__debounce.pcapng.tsv
+  5007    4.060 OUT         id=07 st=00 addr=00A9 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  5017    4.063 IN82        id=07 st=00 addr=00A9 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  8061    7.913 OUT         id=07 st=00 addr=00A9 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+  8069    7.915 IN82        id=07 st=00 addr=00A9 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 17831   17.433 OUT         id=07 st=00 addr=00A9 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+ 17837   17.435 IN82        id=07 st=00 addr=00A9 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+ 21175   21.505 OUT         id=07 st=00 addr=00A9 len=02 data=04 51 00 00 00 00 00 00 00 00 ck=ok
+ 21183   21.508 IN82        id=07 st=00 addr=00A9 len=02 data=04 51 00 00 00 00 00 00 00 00 ck=ok
+##### caps/aria__dpi_color_from_red_blue_red_again.pcapng.tsv
+  8069    8.107 OUT         id=07 st=00 addr=002C len=04 data=ff 00 00 56 00 00 00 00 00 00 ck=ok
+  8075    8.109 IN82        id=07 st=00 addr=002C len=04 data=ff 00 00 56 00 00 00 00 00 00 ck=ok
+ 13853   14.163 OUT         id=07 st=00 addr=002C len=04 data=00 00 ff 56 00 00 00 00 00 00 ck=ok
+ 13855   14.166 IN82        id=07 st=00 addr=002C len=04 data=00 00 ff 56 00 00 00 00 00 00 ck=ok
+ 18347   18.470 OUT         id=07 st=00 addr=002C len=04 data=ff 00 00 56 00 00 00 00 00 00 ck=ok
+ 18349   18.472 IN82        id=07 st=00 addr=002C len=04 data=ff 00 00 56 00 00 00 00 00 00 ck=ok
+##### caps/aria__dpi_stages_with_colors_changes.pcapng.tsv
+  3141    0.228 OUT         id=07 st=00 addr=0002 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+  3143    0.231 IN82        id=07 st=00 addr=0002 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+  7873   10.023 OUT         id=07 st=00 addr=002C len=04 data=ff 80 80 56 00 00 00 00 00 00 ck=ok
+  7875   10.026 IN82        id=07 st=00 addr=002C len=04 data=ff 80 80 56 00 00 00 00 00 00 ck=ok
+ 10111   13.219 OUT         id=07 st=00 addr=0004 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 10113   13.222 IN82        id=07 st=00 addr=0004 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 13297   18.292 OUT         id=07 st=00 addr=0030 len=04 data=00 00 00 55 00 00 00 00 00 00 ck=ok
+ 13299   18.295 IN82        id=07 st=00 addr=0030 len=04 data=00 00 00 55 00 00 00 00 00 00 ck=ok
+ 18991   24.544 OUT         id=07 st=00 addr=0030 len=04 data=ff ff ff 58 00 00 00 00 00 00 ck=ok
+ 18995   24.547 IN82        id=07 st=00 addr=0030 len=04 data=ff ff ff 58 00 00 00 00 00 00 ck=ok
+ 21043   28.185 OUT         id=07 st=00 addr=0004 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 21045   28.187 IN82        id=07 st=00 addr=0004 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 22721   31.920 OUT         id=07 st=00 addr=0002 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+ 22723   31.922 IN82        id=07 st=00 addr=0002 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+ 23403   33.247 OUT         id=07 st=00 addr=0004 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 23405   33.250 IN82        id=07 st=00 addr=0004 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 24697   34.917 OUT         id=07 st=00 addr=0004 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 24699   34.920 IN82        id=07 st=00 addr=0004 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 24717   35.804 OUT         id=07 st=00 addr=0004 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 24719   35.808 IN82        id=07 st=00 addr=0004 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 25721   37.456 OUT         id=07 st=00 addr=0002 len=02 data=04 51 00 00 00 00 00 00 00 00 ck=ok
+ 25723   37.460 IN82        id=07 st=00 addr=0002 len=02 data=04 51 00 00 00 00 00 00 00 00 ck=ok
+ 26917   39.337 OUT         id=07 st=00 addr=0004 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+ 26919   39.340 IN82        id=07 st=00 addr=0004 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+ 27037   39.779 OUT         id=07 st=00 addr=0018 len=04 data=cc cc 00 bd 00 00 00 00 00 00 ck=ok
+ 27039   39.782 IN82        id=07 st=00 addr=0018 len=04 data=cc cc 00 bd 00 00 00 00 00 00 ck=ok
+ 29417   42.115 OUT         id=07 st=00 addr=0004 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 29419   42.118 IN82        id=07 st=00 addr=0004 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 30267   43.779 OUT         id=07 st=00 addr=0004 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 30269   43.782 IN82        id=07 st=00 addr=0004 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 31731   47.398 OUT         id=07 st=00 addr=0004 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 31735   47.401 IN82        id=07 st=00 addr=0004 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 33479   49.158 OUT         id=07 st=00 addr=0002 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 33481   49.160 IN82        id=07 st=00 addr=0002 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+##### caps/aria__macro_autoclick_cycle_until_release.pcapng.tsv
+ 30677   42.630 OUT         id=07 st=00 addr=0070 len=04 data=06 04 fe 4d 00 00 00 00 00 00 ck=ok
+ 30679   42.633 IN82        id=07 st=00 addr=0070 len=04 data=06 04 fe 4d 00 00 00 00 00 00 ck=ok
+ 30681   42.641 OUT         id=07 st=00 addr=0900 len=0A data=0c 63 79 63 6c 65 20 72 65 6c ck=ok
+ 30683   42.644 IN82        id=07 st=00 addr=0900 len=0A data=0c 63 79 63 6c 65 20 72 65 6c ck=ok
+ 30685   42.651 OUT         id=07 st=00 addr=090A len=0A data=65 61 73 ff ff ff ff ff ff ff ck=ok
+ 30687   42.654 IN82        id=07 st=00 addr=090A len=0A data=65 61 73 ff ff ff ff ff ff ff ck=ok
+ 30689   42.661 OUT         id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 30691   42.664 IN82        id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 30693   42.671 OUT         id=07 st=00 addr=091E len=0A data=ff 06 84 01 00 00 0a 44 01 00 ck=ok
+ 30695   42.674 IN82        id=07 st=00 addr=091E len=0A data=ff 06 84 01 00 00 0a 44 01 00 ck=ok
+ 30697   42.681 OUT         id=07 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 30699   42.684 IN82        id=07 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 30701   42.691 OUT         id=07 st=00 addr=0932 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 30703   42.694 IN82        id=07 st=00 addr=0932 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 30705   42.701 OUT         id=07 st=00 addr=093C len=03 data=00 0a b5 00 00 00 00 00 00 00 ck=ok
+ 30707   42.704 IN82        id=07 st=00 addr=093C len=03 data=00 0a b5 00 00 00 00 00 00 00 ck=ok
+ 42977   66.848 OUT         id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 42979   66.851 IN82        id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__advanced-settings.pcapng.tsv
+  4983    0.338 OUT         id=07 st=00 addr=00AD len=02 data=3c 19 00 00 00 00 00 00 00 00 ck=ok
+  4985    0.342 IN82        id=07 st=00 addr=00AD len=02 data=3c 19 00 00 00 00 00 00 00 00 ck=ok
+  5847    2.103 OUT         id=07 st=00 addr=00AD len=02 data=d2 83 00 00 00 00 00 00 00 00 ck=ok
+  5849    2.107 IN82        id=07 st=00 addr=00AD len=02 data=d2 83 00 00 00 00 00 00 00 00 ck=ok
+  6655    3.436 OUT         id=07 st=00 addr=00AD len=02 data=1e 37 00 00 00 00 00 00 00 00 ck=ok
+  6659    3.439 IN82        id=07 st=00 addr=00AD len=02 data=1e 37 00 00 00 00 00 00 00 00 ck=ok
+  8055    4.770 OUT         id=16 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  8057    4.858 IN82        id=16 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  8505    6.861 OUT         id=16 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  8517    6.949 IN82        id=16 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 10425    8.282 OUT         id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 10433    8.372 IN82        id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 10665   10.145 OUT         id=14 st=00 addr=0000 len=0A data=03 00 00 00 00 00 00 00 00 00 ck=ok
+ 10667   10.235 IN82        id=14 st=00 addr=0000 len=0A data=03 00 00 00 00 00 00 00 00 00 ck=ok
+ 10933   11.889 OUT         id=14 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 10937   11.979 IN82        id=14 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__all-settings-experiment.pcapng.tsv
+  3349    5.392 OUT         id=07 st=00 addr=00B1 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  3351    5.397 IN82        id=07 st=00 addr=00B1 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  3721    7.053 OUT         id=07 st=00 addr=00B1 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  3723    7.058 IN82        id=07 st=00 addr=00B1 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  4005    8.597 OUT         id=07 st=00 addr=00AF len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  4007    8.602 IN82        id=07 st=00 addr=00AF len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  4047   10.149 OUT         id=07 st=00 addr=00AF len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  4049   10.154 IN82        id=07 st=00 addr=00AF len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  4279   11.697 OUT         id=07 st=00 addr=00AB len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  4281   11.702 IN82        id=07 st=00 addr=00AB len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  4291   13.359 OUT         id=07 st=00 addr=00AB len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  4293   13.364 IN82        id=07 st=00 addr=00AB len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  6259   15.244 OUT         id=07 st=00 addr=0000 len=02 data=08 4d 00 00 00 00 00 00 00 00 ck=ok
+  6261   15.249 IN82        id=07 st=00 addr=0000 len=02 data=08 4d 00 00 00 00 00 00 00 00 ck=ok
+  6349   17.447 OUT         id=07 st=00 addr=0000 len=02 data=04 51 00 00 00 00 00 00 00 00 ck=ok
+  6351   17.456 IN82        id=07 st=00 addr=0000 len=02 data=04 51 00 00 00 00 00 00 00 00 ck=ok
+  6501   19.877 OUT         id=07 st=00 addr=0000 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+  6503   19.886 IN82        id=07 st=00 addr=0000 len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+  6967   21.545 OUT         id=07 st=00 addr=0000 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  6969   21.553 IN82        id=07 st=00 addr=0000 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  7323   23.540 OUT         id=07 st=00 addr=0000 len=02 data=10 45 00 00 00 00 00 00 00 00 ck=ok
+  7325   23.547 IN82        id=07 st=00 addr=0000 len=02 data=10 45 00 00 00 00 00 00 00 00 ck=ok
+  8477   25.198 OUT         id=07 st=00 addr=0000 len=02 data=20 35 00 00 00 00 00 00 00 00 ck=ok
+  8479   25.204 IN82        id=07 st=00 addr=0000 len=02 data=20 35 00 00 00 00 00 00 00 00 ck=ok
+ 10471   27.522 OUT         id=07 st=00 addr=0000 len=02 data=40 15 00 00 00 00 00 00 00 00 ck=ok
+ 10473   27.528 IN82        id=07 st=00 addr=0000 len=02 data=40 15 00 00 00 00 00 00 00 00 ck=ok
+ 14791   31.054 OUT         id=07 st=00 addr=0052 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 14793   31.057 IN82        id=07 st=00 addr=0052 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 16149   33.050 OUT         id=07 st=00 addr=004E len=02 data=10 45 00 00 00 00 00 00 00 00 ck=ok
+ 16161   33.054 IN82        id=07 st=00 addr=004E len=02 data=10 45 00 00 00 00 00 00 00 00 ck=ok
+ 18073   35.150 OUT         id=07 st=00 addr=004C len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 18083   35.154 IN82        id=07 st=00 addr=004C len=02 data=02 53 00 00 00 00 00 00 00 00 ck=ok
+ 18999   36.265 OUT         id=07 st=00 addr=0050 len=02 data=05 50 00 00 00 00 00 00 00 00 ck=ok
+ 19001   36.269 IN82        id=07 st=00 addr=0050 len=02 data=05 50 00 00 00 00 00 00 00 00 ck=ok
+ 20135   39.348 OUT         id=07 st=00 addr=0050 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 20137   39.352 IN82        id=07 st=00 addr=0050 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 26083   47.256 OUT         id=07 st=00 addr=00AD len=02 data=1e 37 00 00 00 00 00 00 00 00 ck=ok
+ 26085   47.260 IN82        id=07 st=00 addr=00AD len=02 data=1e 37 00 00 00 00 00 00 00 00 ck=ok
+ 27153   51.001 OUT         id=07 st=00 addr=00AD len=02 data=f0 65 00 00 00 00 00 00 00 00 ck=ok
+ 27157   51.005 IN82        id=07 st=00 addr=00AD len=02 data=f0 65 00 00 00 00 00 00 00 00 ck=ok
+ 29257   54.975 OUT         id=07 st=00 addr=00AD len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 29259   54.979 IN82        id=07 st=00 addr=00AD len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+ 31113   58.723 OUT         id=16 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 31115   58.815 IN82        id=16 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 31461   61.234 OUT         id=16 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 31463   61.326 IN82        id=16 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 32085   64.427 OUT         id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 32087   64.517 IN82        id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 32269   67.172 OUT         id=14 st=00 addr=0000 len=0A data=03 00 00 00 00 00 00 00 00 00 ck=ok
+ 32271   67.262 IN82        id=14 st=00 addr=0000 len=0A data=03 00 00 00 00 00 00 00 00 00 ck=ok
+ 32867   73.429 OUT         id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 32869   73.519 IN82        id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 35391   78.354 OUT         id=14 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 35399   78.444 IN82        id=14 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__button-remap.pcapng.tsv
+  4451    6.700 OUT         id=07 st=00 addr=0064 len=04 data=07 00 00 4e 00 00 00 00 00 00 ck=ok
+  4453    6.705 IN82        id=07 st=00 addr=0064 len=04 data=07 00 00 4e 00 00 00 00 00 00 ck=ok
+  6249   12.858 OUT         id=07 st=00 addr=0064 len=04 data=01 02 00 52 00 00 00 00 00 00 ck=ok
+  6251   12.862 IN82        id=07 st=00 addr=0064 len=04 data=01 02 00 52 00 00 00 00 00 00 ck=ok
+  9337   18.047 OUT         id=07 st=00 addr=0068 len=04 data=04 0a 03 44 00 00 00 00 00 00 ck=ok
+  9339   18.051 IN82        id=07 st=00 addr=0068 len=04 data=04 0a 03 44 00 00 00 00 00 00 ck=ok
+ 13239   25.640 OUT         id=07 st=00 addr=0068 len=04 data=00 00 00 55 00 00 00 00 00 00 ck=ok
+ 13241   25.644 IN82        id=07 st=00 addr=0068 len=04 data=00 00 00 55 00 00 00 00 00 00 ck=ok
+ 14783   30.810 OUT         id=07 st=00 addr=0068 len=04 data=01 04 00 50 00 00 00 00 00 00 ck=ok
+ 14785   30.814 IN82        id=07 st=00 addr=0068 len=04 data=01 04 00 50 00 00 00 00 00 00 ck=ok
+ 18527   36.002 OUT         id=07 st=00 addr=0070 len=04 data=04 0a 03 44 00 00 00 00 00 00 ck=ok
+ 18531   36.007 IN82        id=07 st=00 addr=0070 len=04 data=04 0a 03 44 00 00 00 00 00 00 ck=ok
+ 19463   37.227 OUT         id=07 st=00 addr=0070 len=04 data=07 00 00 4e 00 00 00 00 00 00 ck=ok
+ 19465   37.232 IN82        id=07 st=00 addr=0070 len=04 data=07 00 00 4e 00 00 00 00 00 00 ck=ok
+ 20623   40.549 OUT         id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 20625   40.553 IN82        id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 21733   42.639 OUT         id=07 st=00 addr=006C len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 21735   42.643 IN82        id=07 st=00 addr=006C len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 23619   46.722 OUT         id=07 st=00 addr=006C len=04 data=01 01 00 53 00 00 00 00 00 00 ck=ok
+ 23621   46.727 IN82        id=07 st=00 addr=006C len=04 data=01 01 00 53 00 00 00 00 00 00 ck=ok
+ 25313   50.256 OUT         id=07 st=00 addr=006C len=04 data=01 08 00 4c 00 00 00 00 00 00 ck=ok
+ 25315   50.261 IN82        id=07 st=00 addr=006C len=04 data=01 08 00 4c 00 00 00 00 00 00 ck=ok
+ 29449   56.555 OUT         id=07 st=00 addr=0074 len=04 data=05 00 00 50 00 00 00 00 00 00 ck=ok
+ 29451   56.559 IN82        id=07 st=00 addr=0074 len=04 data=05 00 00 50 00 00 00 00 00 00 ck=ok
+ 29453   56.567 OUT         id=07 st=00 addr=01A0 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+ 29455   56.571 IN82        id=07 st=00 addr=01A0 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+ 36565   68.777 OUT         id=07 st=00 addr=0074 len=04 data=02 01 00 52 00 00 00 00 00 00 ck=ok
+ 36567   68.781 IN82        id=07 st=00 addr=0074 len=04 data=02 01 00 52 00 00 00 00 00 00 ck=ok
+ 44689   83.053 OUT         id=07 st=00 addr=00A9 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+ 44691   83.057 IN82        id=07 st=00 addr=00A9 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__debounce.pcapng.tsv
+ 10231   15.826 OUT         id=07 st=00 addr=00A9 len=02 data=05 50 00 00 00 00 00 00 00 00 ck=ok
+ 10233   15.830 IN82        id=07 st=00 addr=00A9 len=02 data=05 50 00 00 00 00 00 00 00 00 ck=ok
+ 14559   23.094 OUT         id=07 st=00 addr=00A9 len=02 data=0f 46 00 00 00 00 00 00 00 00 ck=ok
+ 14561   23.098 IN82        id=07 st=00 addr=00A9 len=02 data=0f 46 00 00 00 00 00 00 00 00 ck=ok
+ 15897   26.539 OUT         id=07 st=00 addr=00A9 len=02 data=14 41 00 00 00 00 00 00 00 00 ck=ok
+ 15899   26.543 IN82        id=07 st=00 addr=00A9 len=02 data=14 41 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__macro-manager.pcapng.tsv
+ 43307   56.340 OUT         id=07 st=00 addr=0070 len=04 data=06 04 01 4a 00 00 00 00 00 00 ck=ok
+ 43309   56.344 IN82        id=07 st=00 addr=0070 len=04 data=06 04 01 4a 00 00 00 00 00 00 ck=ok
+ 43311   56.352 OUT         id=07 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+ 43313   56.357 IN82        id=07 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+ 43315   56.365 OUT         id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 43317   56.369 IN82        id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 43319   56.377 OUT         id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 43321   56.381 IN82        id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 43323   56.389 OUT         id=07 st=00 addr=091E len=0A data=ff 04 84 01 00 00 0a 44 01 00 ck=ok
+ 43325   56.393 IN82        id=07 st=00 addr=091E len=0A data=ff 04 84 01 00 00 0a 44 01 00 ck=ok
+ 43327   56.401 OUT         id=07 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 43329   56.405 IN82        id=07 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 43331   56.413 OUT         id=07 st=00 addr=0932 len=03 data=00 0a 95 00 00 00 00 00 00 00 ck=ok
+ 43333   56.417 IN82        id=07 st=00 addr=0932 len=03 data=00 0a 95 00 00 00 00 00 00 00 ck=ok
+ 55239   70.918 OUT         id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+ 55241   70.922 IN82        id=07 st=00 addr=0070 len=04 data=01 10 00 44 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__mode-lp-hp.pcapng.tsv
+  1863    0.092 OUT         id=07 st=00 addr=00B9 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  1865    0.098 IN82        id=07 st=00 addr=00B9 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  2119    3.829 OUT         id=07 st=00 addr=00B9 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  2121    3.835 IN82        id=07 st=00 addr=00B9 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  3261    5.721 OUT         id=07 st=00 addr=0000 len=02 data=10 45 00 00 00 00 00 00 00 00 ck=ok
+  3263    5.729 IN82        id=07 st=00 addr=0000 len=02 data=10 45 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__peak-performance-duration.pcapng.tsv
+  3139   10.342 OUT         id=07 st=00 addr=00B7 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+  3141   10.346 IN82        id=07 st=00 addr=00B7 len=02 data=03 52 00 00 00 00 00 00 00 00 ck=ok
+  3709   16.175 OUT         id=07 st=00 addr=00B7 len=02 data=5a fb 00 00 00 00 00 00 00 00 ck=ok
+  3711   16.180 IN82        id=07 st=00 addr=00B7 len=02 data=5a fb 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__peak-performance-toggle.pcapng.tsv
+  4463   15.261 OUT         id=07 st=00 addr=00B5 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  4467   15.266 IN82        id=07 st=00 addr=00B5 len=02 data=00 55 00 00 00 00 00 00 00 00 ck=ok
+  4733   22.117 OUT         id=07 st=00 addr=00B5 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+  4735   22.121 IN82        id=07 st=00 addr=00B5 len=02 data=01 54 00 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__profiles-config.pcapng.tsv
+  2971    1.544 OUT         id=0F st=00 addr=0000 len=01 data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  2975    1.640 IN82        id=0F st=00 addr=0000 len=01 data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  2977    1.642 IN82        id=0A st=00 addr=0000 len=0A data=04 00 00 00 00 00 00 00 00 00 ck=ok
+  3209    3.079 OUT         id=08 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3211    3.083 IN82        id=08 st=00 addr=0000 len=0A data=01 54 04 51 01 54 00 55 00 55 ck=ok
+  3213    3.091 OUT         id=08 st=00 addr=000A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3215    3.095 IN82        id=08 st=00 addr=000A len=0A data=01 54 07 07 00 47 0f 0f 00 37 ck=ok
+  3217    3.103 OUT         id=08 st=00 addr=0014 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3219    3.107 IN82        id=08 st=00 addr=0014 len=0A data=1f 1f 00 17 3f 3f 00 d7 3f 3f ck=ok
+  3221    3.115 OUT         id=08 st=00 addr=001E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3223    3.119 IN82        id=08 st=00 addr=001E len=0A data=00 d7 7f 7f 00 57 7f 7f 00 57 ck=ok
+  3225    3.127 OUT         id=08 st=00 addr=0028 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3227    3.131 IN82        id=08 st=00 addr=0028 len=0A data=7f 7f 00 57 ff 00 00 56 00 00 ck=ok
+  3231    3.139 OUT         id=08 st=00 addr=0032 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3233    3.143 IN82        id=08 st=00 addr=0032 len=0A data=ff 56 00 ff 00 56 ff 00 ff 57 ck=ok
+  3235    3.151 OUT         id=08 st=00 addr=003C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3237    3.155 IN82        id=08 st=00 addr=003C len=0A data=ff 00 ff 57 ff 00 ff 57 ff 00 ck=ok
+  3239    3.163 OUT         id=08 st=00 addr=0046 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3241    3.167 IN82        id=08 st=00 addr=0046 len=0A data=ff 57 ff 00 ff 57 02 53 80 d5 ck=ok
+  3243    3.175 OUT         id=08 st=00 addr=0050 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3245    3.179 IN82        id=08 st=00 addr=0050 len=0A data=03 52 01 54 ff 00 ff 57 00 55 ck=ok
+  3247    3.187 OUT         id=08 st=00 addr=005A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3249    3.191 IN82        id=08 st=00 addr=005A len=0A data=80 d5 03 52 00 55 01 01 00 53 ck=ok
+  3251    3.199 OUT         id=08 st=00 addr=0064 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3253    3.203 IN82        id=08 st=00 addr=0064 len=0A data=01 02 00 52 01 04 00 50 01 08 ck=ok
+  3255    3.211 OUT         id=08 st=00 addr=006E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3257    3.215 IN82        id=08 st=00 addr=006E len=0A data=00 4c 01 10 00 44 02 01 00 52 ck=ok
+  3261    3.223 OUT         id=08 st=00 addr=0078 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3263    3.227 IN82        id=08 st=00 addr=0078 len=0A data=02 02 00 51 02 03 00 50 07 00 ck=ok
+  3267    3.235 OUT         id=08 st=00 addr=0082 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3269    3.239 IN82        id=08 st=00 addr=0082 len=0A data=00 4e 08 04 00 49 04 0a 03 44 ck=ok
+  3273    3.247 OUT         id=08 st=00 addr=008C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3275    3.251 IN82        id=08 st=00 addr=008C len=0A data=00 00 00 55 00 00 00 55 00 00 ck=ok
+  3277    3.259 OUT         id=08 st=00 addr=0096 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3281    3.263 IN82        id=08 st=00 addr=0096 len=0A data=00 55 00 00 00 55 00 00 00 55 ck=ok
+  3283    3.271 OUT         id=08 st=00 addr=00A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3285    3.275 IN82        id=08 st=00 addr=00A0 len=0A data=01 ff 00 ff 07 09 46 00 55 08 ck=ok
+  3289    3.283 OUT         id=08 st=00 addr=00AA len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3291    3.287 IN82        id=08 st=00 addr=00AA len=0A data=4d 01 54 3c 19 00 55 00 55 00 ck=ok
+  3295    3.295 OUT         id=08 st=00 addr=00B4 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3297    3.299 IN82        id=08 st=00 addr=00B4 len=0A data=55 00 55 06 4f 00 55 0a 4b ff ck=ok
+  3299    3.307 OUT         id=08 st=00 addr=00BE len=02 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3301    3.311 IN82        id=08 st=00 addr=00BE len=02 data=ff ff 00 00 00 00 00 00 00 00 ck=ok
+  3305    3.319 OUT         id=08 st=00 addr=0100 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3307    3.323 IN82        id=08 st=00 addr=0100 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3309    3.331 OUT         id=08 st=00 addr=0120 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3311    3.335 IN82        id=08 st=00 addr=0120 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3315    3.343 OUT         id=08 st=00 addr=0140 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3317    3.347 IN82        id=08 st=00 addr=0140 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3319    3.355 OUT         id=08 st=00 addr=0160 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3321    3.359 IN82        id=08 st=00 addr=0160 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3325    3.367 OUT         id=08 st=00 addr=0180 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3327    3.371 IN82        id=08 st=00 addr=0180 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3329    3.379 OUT         id=08 st=00 addr=01A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3333    3.383 IN82        id=08 st=00 addr=01A0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3335    3.391 OUT         id=08 st=00 addr=01C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3337    3.395 IN82        id=08 st=00 addr=01C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3339    3.403 OUT         id=08 st=00 addr=01E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3341    3.407 IN82        id=08 st=00 addr=01E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3343    3.415 OUT         id=08 st=00 addr=0200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3345    3.419 IN82        id=08 st=00 addr=0200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3347    3.427 OUT         id=08 st=00 addr=0220 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3349    3.431 IN82        id=08 st=00 addr=0220 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3351    3.439 OUT         id=08 st=00 addr=0240 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3353    3.443 IN82        id=08 st=00 addr=0240 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3355    3.451 OUT         id=08 st=00 addr=0260 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3357    3.455 IN82        id=08 st=00 addr=0260 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3359    3.463 OUT         id=08 st=00 addr=0280 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3361    3.467 IN82        id=08 st=00 addr=0280 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3363    3.475 OUT         id=08 st=00 addr=02A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3365    3.479 IN82        id=08 st=00 addr=02A0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3367    3.487 OUT         id=08 st=00 addr=02C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3369    3.491 IN82        id=08 st=00 addr=02C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3371    3.499 OUT         id=08 st=00 addr=02E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3373    3.503 IN82        id=08 st=00 addr=02E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3375    3.511 OUT         id=08 st=00 addr=0300 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3377    3.515 IN82        id=08 st=00 addr=0300 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3379    3.523 OUT         id=08 st=00 addr=031F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3381    3.527 IN82        id=08 st=00 addr=031F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3383    3.535 OUT         id=08 st=00 addr=0480 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3385    3.539 IN82        id=08 st=00 addr=0480 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3387    3.547 OUT         id=08 st=00 addr=049F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3389    3.551 IN82        id=08 st=00 addr=049F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3391    3.559 OUT         id=08 st=00 addr=0600 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3393    3.563 IN82        id=08 st=00 addr=0600 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3395    3.571 OUT         id=08 st=00 addr=061F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3397    3.575 IN82        id=08 st=00 addr=061F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3399    3.583 OUT         id=08 st=00 addr=0780 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3401    3.587 IN82        id=08 st=00 addr=0780 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3403    3.595 OUT         id=08 st=00 addr=079F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3405    3.599 IN82        id=08 st=00 addr=079F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3407    3.607 OUT         id=08 st=00 addr=0900 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3409    3.611 IN82        id=08 st=00 addr=0900 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3411    3.619 OUT         id=08 st=00 addr=091F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3413    3.623 IN82        id=08 st=00 addr=091F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3415    3.631 OUT         id=08 st=00 addr=0A80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3417    3.635 IN82        id=08 st=00 addr=0A80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3419    3.643 OUT         id=08 st=00 addr=0A9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3421    3.647 IN82        id=08 st=00 addr=0A9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3423    3.655 OUT         id=08 st=00 addr=0C00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3425    3.659 IN82        id=08 st=00 addr=0C00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3427    3.667 OUT         id=08 st=00 addr=0C1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3429    3.671 IN82        id=08 st=00 addr=0C1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3431    3.679 OUT         id=08 st=00 addr=0D80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3433    3.683 IN82        id=08 st=00 addr=0D80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3435    3.691 OUT         id=08 st=00 addr=0D9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3437    3.695 IN82        id=08 st=00 addr=0D9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3439    3.703 OUT         id=08 st=00 addr=0F00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3441    3.707 IN82        id=08 st=00 addr=0F00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3443    3.715 OUT         id=08 st=00 addr=0F1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3445    3.719 IN82        id=08 st=00 addr=0F1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3447    3.727 OUT         id=08 st=00 addr=1080 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3449    3.731 IN82        id=08 st=00 addr=1080 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3451    3.739 OUT         id=08 st=00 addr=109F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3453    3.743 IN82        id=08 st=00 addr=109F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3455    3.751 OUT         id=08 st=00 addr=1200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3457    3.755 IN82        id=08 st=00 addr=1200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3459    3.763 OUT         id=08 st=00 addr=121F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3461    3.767 IN82        id=08 st=00 addr=121F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3463    3.775 OUT         id=08 st=00 addr=1380 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3465    3.779 IN82        id=08 st=00 addr=1380 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3467    3.787 OUT         id=08 st=00 addr=139F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3469    3.791 IN82        id=08 st=00 addr=139F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3471    3.799 OUT         id=08 st=00 addr=1500 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3473    3.803 IN82        id=08 st=00 addr=1500 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3475    3.811 OUT         id=08 st=00 addr=151F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3477    3.815 IN82        id=08 st=00 addr=151F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3479    3.823 OUT         id=08 st=00 addr=1680 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3481    3.827 IN82        id=08 st=00 addr=1680 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3483    3.835 OUT         id=08 st=00 addr=169F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3485    3.839 IN82        id=08 st=00 addr=169F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3487    3.847 OUT         id=08 st=00 addr=1800 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3489    3.851 IN82        id=08 st=00 addr=1800 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3491    3.859 OUT         id=08 st=00 addr=181F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3493    3.863 IN82        id=08 st=00 addr=181F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3495    3.871 OUT         id=08 st=00 addr=1980 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3497    3.875 IN82        id=08 st=00 addr=1980 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3499    3.883 OUT         id=08 st=00 addr=199F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3501    3.887 IN82        id=08 st=00 addr=199F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  3507    4.041 OUT         id=08 st=00 addr=004C len=08 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3509    4.045 IN82        id=08 st=00 addr=004C len=08 data=02 53 80 d5 03 52 01 54 00 00 ck=ok
+  3515    4.067 OUT         id=12 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3517    4.071 IN82        id=12 st=00 addr=0000 len=02 data=02 19 00 00 00 00 00 00 00 00 ck=ok
+  3519    4.080 OUT         id=0E st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3521    4.084 IN82        id=0E st=00 addr=0000 len=01 data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  3523    4.092 OUT         id=17 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3525    4.096 IN82        id=17 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3527    4.106 OUT         id=15 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  3528    4.108 IN82        id=15 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  3941    7.192 OUT         id=0F st=00 addr=0000 len=01 data=02 00 00 00 00 00 00 00 00 00 ck=ok
+  3943    7.286 IN82        id=0F st=00 addr=0000 len=01 data=02 00 00 00 00 00 00 00 00 00 ck=ok
+  3945    7.287 IN82        id=0A st=00 addr=0000 len=0A data=04 00 00 00 00 00 00 00 00 00 ck=ok
+  4239    8.710 OUT         id=08 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4241    8.714 IN82        id=08 st=00 addr=0000 len=0A data=01 54 04 51 01 54 00 55 00 55 ck=ok
+  4245    8.721 OUT         id=08 st=00 addr=000A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4247    8.725 IN82        id=08 st=00 addr=000A len=0A data=01 54 07 07 00 47 0f 0f 00 37 ck=ok
+  4251    8.732 OUT         id=08 st=00 addr=0014 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4255    8.736 IN82        id=08 st=00 addr=0014 len=0A data=1f 1f 00 17 3f 3f 00 d7 3f 3f ck=ok
+  4257    8.743 OUT         id=08 st=00 addr=001E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4259    8.747 IN82        id=08 st=00 addr=001E len=0A data=00 d7 7f 7f 00 57 7f 7f 00 57 ck=ok
+  4263    8.754 OUT         id=08 st=00 addr=0028 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4265    8.758 IN82        id=08 st=00 addr=0028 len=0A data=7f 7f 00 57 ff 00 00 56 00 00 ck=ok
+  4267    8.765 OUT         id=08 st=00 addr=0032 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4269    8.769 IN82        id=08 st=00 addr=0032 len=0A data=ff 56 00 ff 00 56 ff 00 ff 57 ck=ok
+  4271    8.776 OUT         id=08 st=00 addr=003C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4273    8.780 IN82        id=08 st=00 addr=003C len=0A data=ff 00 ff 57 ff 00 ff 57 ff 00 ck=ok
+  4275    8.787 OUT         id=08 st=00 addr=0046 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4277    8.791 IN82        id=08 st=00 addr=0046 len=0A data=ff 57 ff 00 ff 57 02 53 80 d5 ck=ok
+  4281    8.798 OUT         id=08 st=00 addr=0050 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4283    8.802 IN82        id=08 st=00 addr=0050 len=0A data=03 52 01 54 ff 00 ff 57 00 55 ck=ok
+  4287    8.809 OUT         id=08 st=00 addr=005A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4291    8.813 IN82        id=08 st=00 addr=005A len=0A data=80 d5 03 52 00 55 01 01 00 53 ck=ok
+  4297    8.820 OUT         id=08 st=00 addr=0064 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4301    8.824 IN82        id=08 st=00 addr=0064 len=0A data=01 02 00 52 01 04 00 50 01 08 ck=ok
+  4305    8.831 OUT         id=08 st=00 addr=006E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4307    8.835 IN82        id=08 st=00 addr=006E len=0A data=00 4c 01 10 00 44 02 01 00 52 ck=ok
+  4311    8.842 OUT         id=08 st=00 addr=0078 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4315    8.846 IN82        id=08 st=00 addr=0078 len=0A data=02 02 00 51 02 03 00 50 07 00 ck=ok
+  4319    8.853 OUT         id=08 st=00 addr=0082 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4321    8.857 IN82        id=08 st=00 addr=0082 len=0A data=00 4e 08 04 00 49 04 0a 03 44 ck=ok
+  4323    8.864 OUT         id=08 st=00 addr=008C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4325    8.868 IN82        id=08 st=00 addr=008C len=0A data=00 00 00 55 00 00 00 55 00 00 ck=ok
+  4327    8.875 OUT         id=08 st=00 addr=0096 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4329    8.879 IN82        id=08 st=00 addr=0096 len=0A data=00 55 00 00 00 55 00 00 00 55 ck=ok
+  4331    8.886 OUT         id=08 st=00 addr=00A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4333    8.890 IN82        id=08 st=00 addr=00A0 len=0A data=01 ff 00 ff 07 09 46 00 55 08 ck=ok
+  4335    8.897 OUT         id=08 st=00 addr=00AA len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4337    8.901 IN82        id=08 st=00 addr=00AA len=0A data=4d 01 54 3c 19 00 55 00 55 00 ck=ok
+  4339    8.908 OUT         id=08 st=00 addr=00B4 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4341    8.912 IN82        id=08 st=00 addr=00B4 len=0A data=55 00 55 06 4f 00 55 0a 4b ff ck=ok
+  4345    8.919 OUT         id=08 st=00 addr=00BE len=02 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4347    8.923 IN82        id=08 st=00 addr=00BE len=02 data=ff ff 00 00 00 00 00 00 00 00 ck=ok
+  4349    8.930 OUT         id=08 st=00 addr=0100 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4351    8.934 IN82        id=08 st=00 addr=0100 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4355    8.941 OUT         id=08 st=00 addr=0120 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4357    8.945 IN82        id=08 st=00 addr=0120 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4359    8.952 OUT         id=08 st=00 addr=0140 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4361    8.956 IN82        id=08 st=00 addr=0140 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4363    8.963 OUT         id=08 st=00 addr=0160 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4365    8.967 IN82        id=08 st=00 addr=0160 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4367    8.974 OUT         id=08 st=00 addr=0180 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4369    8.978 IN82        id=08 st=00 addr=0180 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4371    8.985 OUT         id=08 st=00 addr=01A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4373    8.989 IN82        id=08 st=00 addr=01A0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4375    8.996 OUT         id=08 st=00 addr=01C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4377    9.000 IN82        id=08 st=00 addr=01C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4379    9.007 OUT         id=08 st=00 addr=01E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4381    9.011 IN82        id=08 st=00 addr=01E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4383    9.018 OUT         id=08 st=00 addr=0200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4385    9.022 IN82        id=08 st=00 addr=0200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4387    9.029 OUT         id=08 st=00 addr=0220 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4389    9.033 IN82        id=08 st=00 addr=0220 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4391    9.040 OUT         id=08 st=00 addr=0240 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4393    9.044 IN82        id=08 st=00 addr=0240 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4395    9.051 OUT         id=08 st=00 addr=0260 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4397    9.055 IN82        id=08 st=00 addr=0260 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4401    9.062 OUT         id=08 st=00 addr=0280 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4403    9.066 IN82        id=08 st=00 addr=0280 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4407    9.073 OUT         id=08 st=00 addr=02A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4411    9.077 IN82        id=08 st=00 addr=02A0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4413    9.084 OUT         id=08 st=00 addr=02C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4417    9.088 IN82        id=08 st=00 addr=02C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4419    9.095 OUT         id=08 st=00 addr=02E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4421    9.099 IN82        id=08 st=00 addr=02E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4423    9.106 OUT         id=08 st=00 addr=0300 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4425    9.110 IN82        id=08 st=00 addr=0300 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4427    9.117 OUT         id=08 st=00 addr=031F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4429    9.121 IN82        id=08 st=00 addr=031F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4431    9.128 OUT         id=08 st=00 addr=0480 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4433    9.132 IN82        id=08 st=00 addr=0480 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4437    9.139 OUT         id=08 st=00 addr=049F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4439    9.143 IN82        id=08 st=00 addr=049F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4441    9.150 OUT         id=08 st=00 addr=0600 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4443    9.154 IN82        id=08 st=00 addr=0600 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4447    9.161 OUT         id=08 st=00 addr=061F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4449    9.165 IN82        id=08 st=00 addr=061F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4453    9.172 OUT         id=08 st=00 addr=0780 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4455    9.176 IN82        id=08 st=00 addr=0780 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4459    9.183 OUT         id=08 st=00 addr=079F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4461    9.187 IN82        id=08 st=00 addr=079F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4465    9.194 OUT         id=08 st=00 addr=0900 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4469    9.198 IN82        id=08 st=00 addr=0900 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4471    9.205 OUT         id=08 st=00 addr=091F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4473    9.209 IN82        id=08 st=00 addr=091F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4475    9.216 OUT         id=08 st=00 addr=0A80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4477    9.220 IN82        id=08 st=00 addr=0A80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4479    9.227 OUT         id=08 st=00 addr=0A9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4481    9.231 IN82        id=08 st=00 addr=0A9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4483    9.238 OUT         id=08 st=00 addr=0C00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4485    9.242 IN82        id=08 st=00 addr=0C00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4487    9.249 OUT         id=08 st=00 addr=0C1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4489    9.253 IN82        id=08 st=00 addr=0C1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4491    9.260 OUT         id=08 st=00 addr=0D80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4493    9.264 IN82        id=08 st=00 addr=0D80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4495    9.271 OUT         id=08 st=00 addr=0D9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4497    9.275 IN82        id=08 st=00 addr=0D9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4499    9.282 OUT         id=08 st=00 addr=0F00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4501    9.286 IN82        id=08 st=00 addr=0F00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4503    9.293 OUT         id=08 st=00 addr=0F1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4505    9.297 IN82        id=08 st=00 addr=0F1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4507    9.304 OUT         id=08 st=00 addr=1080 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4509    9.308 IN82        id=08 st=00 addr=1080 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4511    9.315 OUT         id=08 st=00 addr=109F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4513    9.319 IN82        id=08 st=00 addr=109F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4515    9.326 OUT         id=08 st=00 addr=1200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4517    9.330 IN82        id=08 st=00 addr=1200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4519    9.337 OUT         id=08 st=00 addr=121F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4521    9.341 IN82        id=08 st=00 addr=121F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4523    9.348 OUT         id=08 st=00 addr=1380 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4525    9.352 IN82        id=08 st=00 addr=1380 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4527    9.359 OUT         id=08 st=00 addr=139F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4529    9.363 IN82        id=08 st=00 addr=139F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4531    9.370 OUT         id=08 st=00 addr=1500 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4533    9.374 IN82        id=08 st=00 addr=1500 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4535    9.381 OUT         id=08 st=00 addr=151F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4537    9.385 IN82        id=08 st=00 addr=151F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4539    9.392 OUT         id=08 st=00 addr=1680 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4541    9.396 IN82        id=08 st=00 addr=1680 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4543    9.403 OUT         id=08 st=00 addr=169F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4545    9.407 IN82        id=08 st=00 addr=169F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4547    9.414 OUT         id=08 st=00 addr=1800 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4549    9.418 IN82        id=08 st=00 addr=1800 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4551    9.425 OUT         id=08 st=00 addr=181F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4553    9.429 IN82        id=08 st=00 addr=181F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4555    9.436 OUT         id=08 st=00 addr=1980 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4557    9.440 IN82        id=08 st=00 addr=1980 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4559    9.447 OUT         id=08 st=00 addr=199F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4561    9.451 IN82        id=08 st=00 addr=199F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  4563    9.527 OUT         id=08 st=00 addr=004C len=08 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4565    9.531 IN82        id=08 st=00 addr=004C len=08 data=02 53 80 d5 03 52 01 54 00 00 ck=ok
+  4571    9.610 OUT         id=12 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4573    9.614 IN82        id=12 st=00 addr=0000 len=02 data=02 19 00 00 00 00 00 00 00 00 ck=ok
+  4575    9.623 OUT         id=0E st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4577    9.627 IN82        id=0E st=00 addr=0000 len=01 data=02 00 00 00 00 00 00 00 00 00 ck=ok
+  4579    9.635 OUT         id=17 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4581    9.639 IN82        id=17 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4583    9.667 OUT         id=15 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4584    9.669 IN82        id=15 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  4871   11.445 OUT         id=0F st=00 addr=0000 len=01 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4879   11.538 IN82        id=0F st=00 addr=0000 len=01 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  4885   11.540 IN82        id=0A st=00 addr=0000 len=0A data=04 00 00 00 00 00 00 00 00 00 ck=ok
+  6483   12.969 OUT         id=08 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6489   12.974 IN82        id=08 st=00 addr=0000 len=0A data=10 45 01 54 00 55 00 55 00 55 ck=ok
+  6497   12.981 OUT         id=08 st=00 addr=000A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6501   12.985 IN82        id=08 st=00 addr=000A len=0A data=01 54 1f 1f 00 17 0f 0f 00 37 ck=ok
+  6513   12.992 OUT         id=08 st=00 addr=0014 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6517   12.996 IN82        id=08 st=00 addr=0014 len=0A data=1f 1f 00 17 3f 3f 00 d7 3f 3f ck=ok
+  6525   13.003 OUT         id=08 st=00 addr=001E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6529   13.008 IN82        id=08 st=00 addr=001E len=0A data=00 d7 7f 7f 00 57 7f 7f 00 57 ck=ok
+  6537   13.015 OUT         id=08 st=00 addr=0028 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6541   13.019 IN82        id=08 st=00 addr=0028 len=0A data=7f 7f 00 57 00 00 ff 56 00 00 ck=ok
+  6549   13.026 OUT         id=08 st=00 addr=0032 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6555   13.030 IN82        id=08 st=00 addr=0032 len=0A data=ff 56 00 ff 68 ee ff 00 ff 57 ck=ok
+  6563   13.037 OUT         id=08 st=00 addr=003C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6567   13.042 IN82        id=08 st=00 addr=003C len=0A data=ff 00 ff 57 ff 00 ff 57 ff 00 ck=ok
+  6577   13.049 OUT         id=08 st=00 addr=0046 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6581   13.053 IN82        id=08 st=00 addr=0046 len=0A data=ff 57 ff 00 ff 57 02 53 10 45 ck=ok
+  6593   13.060 OUT         id=08 st=00 addr=0050 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6599   13.064 IN82        id=08 st=00 addr=0050 len=0A data=01 54 01 54 ff 00 ff 57 00 55 ck=ok
+  6610   13.071 OUT         id=08 st=00 addr=005A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6617   13.076 IN82        id=08 st=00 addr=005A len=0A data=80 d5 03 52 00 55 01 01 00 53 ck=ok
+  6629   13.083 OUT         id=08 st=00 addr=0064 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6635   13.087 IN82        id=08 st=00 addr=0064 len=0A data=01 02 00 52 01 04 00 50 01 08 ck=ok
+  6647   13.094 OUT         id=08 st=00 addr=006E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6653   13.098 IN82        id=08 st=00 addr=006E len=0A data=00 4c 01 10 00 44 02 01 00 52 ck=ok
+  6664   13.105 OUT         id=08 st=00 addr=0078 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6669   13.109 IN82        id=08 st=00 addr=0078 len=0A data=02 02 00 51 02 03 00 50 07 00 ck=ok
+  6680   13.116 OUT         id=08 st=00 addr=0082 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6685   13.120 IN82        id=08 st=00 addr=0082 len=0A data=00 4e 08 04 00 49 04 0a 03 44 ck=ok
+  6695   13.127 OUT         id=08 st=00 addr=008C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6701   13.131 IN82        id=08 st=00 addr=008C len=0A data=00 00 00 55 00 00 00 55 00 00 ck=ok
+  6711   13.138 OUT         id=08 st=00 addr=0096 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6715   13.142 IN82        id=08 st=00 addr=0096 len=0A data=00 55 00 00 00 55 00 00 00 55 ck=ok
+  6727   13.149 OUT         id=08 st=00 addr=00A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6731   13.153 IN82        id=08 st=00 addr=00A0 len=0A data=01 ff 00 ff 07 09 46 00 55 00 ck=ok
+  6739   13.160 OUT         id=08 st=00 addr=00AA len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6743   13.165 IN82        id=08 st=00 addr=00AA len=0A data=55 00 55 1e 37 00 55 00 55 00 ck=ok
+  6749   13.172 OUT         id=08 st=00 addr=00B4 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6751   13.176 IN82        id=08 st=00 addr=00B4 len=0A data=55 01 54 5a fb 00 55 0a 4b ff ck=ok
+  6755   13.183 OUT         id=08 st=00 addr=00BE len=02 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6759   13.188 IN82        id=08 st=00 addr=00BE len=02 data=ff ff 00 00 00 00 00 00 00 00 ck=ok
+  6761   13.195 OUT         id=08 st=00 addr=0100 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6765   13.199 IN82        id=08 st=00 addr=0100 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6769   13.206 OUT         id=08 st=00 addr=0120 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6771   13.210 IN82        id=08 st=00 addr=0120 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6775   13.217 OUT         id=08 st=00 addr=0140 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6777   13.221 IN82        id=08 st=00 addr=0140 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6779   13.228 OUT         id=08 st=00 addr=0160 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6781   13.232 IN82        id=08 st=00 addr=0160 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6783   13.239 OUT         id=08 st=00 addr=0180 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6785   13.243 IN82        id=08 st=00 addr=0180 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6787   13.250 OUT         id=08 st=00 addr=01A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6789   13.254 IN82        id=08 st=00 addr=01A0 len=0A data=02 82 e2 00 42 e2 00 cb ff ff ck=ok
+  6791   13.261 OUT         id=08 st=00 addr=01A0 len=08 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6793   13.265 IN82        id=08 st=00 addr=01A0 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+  6795   13.272 OUT         id=08 st=00 addr=01C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6797   13.276 IN82        id=08 st=00 addr=01C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6799   13.283 OUT         id=08 st=00 addr=01E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6801   13.287 IN82        id=08 st=00 addr=01E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6803   13.294 OUT         id=08 st=00 addr=0200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6805   13.298 IN82        id=08 st=00 addr=0200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6807   13.305 OUT         id=08 st=00 addr=0220 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6809   13.309 IN82        id=08 st=00 addr=0220 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6811   13.316 OUT         id=08 st=00 addr=0240 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6813   13.320 IN82        id=08 st=00 addr=0240 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6815   13.327 OUT         id=08 st=00 addr=0260 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6817   13.331 IN82        id=08 st=00 addr=0260 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6819   13.338 OUT         id=08 st=00 addr=0280 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6821   13.342 IN82        id=08 st=00 addr=0280 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6823   13.349 OUT         id=08 st=00 addr=02A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6825   13.353 IN82        id=08 st=00 addr=02A0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6827   13.360 OUT         id=08 st=00 addr=02C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6829   13.364 IN82        id=08 st=00 addr=02C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6831   13.371 OUT         id=08 st=00 addr=02E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6833   13.375 IN82        id=08 st=00 addr=02E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6835   13.382 OUT         id=08 st=00 addr=0300 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6837   13.386 IN82        id=08 st=00 addr=0300 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6839   13.394 OUT         id=08 st=00 addr=031F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6841   13.398 IN82        id=08 st=00 addr=031F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6843   13.405 OUT         id=08 st=00 addr=0480 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6845   13.409 IN82        id=08 st=00 addr=0480 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6847   13.416 OUT         id=08 st=00 addr=049F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6849   13.420 IN82        id=08 st=00 addr=049F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6851   13.427 OUT         id=08 st=00 addr=0600 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6853   13.431 IN82        id=08 st=00 addr=0600 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6855   13.438 OUT         id=08 st=00 addr=061F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6857   13.442 IN82        id=08 st=00 addr=061F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6859   13.449 OUT         id=08 st=00 addr=0780 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6861   13.453 IN82        id=08 st=00 addr=0780 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6863   13.460 OUT         id=08 st=00 addr=079F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6865   13.464 IN82        id=08 st=00 addr=079F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6867   13.471 OUT         id=08 st=00 addr=0900 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6869   13.475 IN82        id=08 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+  6871   13.482 OUT         id=08 st=00 addr=091F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6873   13.486 IN82        id=08 st=00 addr=091F len=0A data=04 84 01 00 00 0a 44 01 00 00 ck=ok
+  6875   13.493 OUT         id=08 st=00 addr=0900 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6877   13.497 IN82        id=08 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+  6879   13.504 OUT         id=08 st=00 addr=090A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6881   13.508 IN82        id=08 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6883   13.515 OUT         id=08 st=00 addr=0914 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6885   13.519 IN82        id=08 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6887   13.526 OUT         id=08 st=00 addr=091E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6889   13.530 IN82        id=08 st=00 addr=091E len=0A data=ff 04 84 01 00 00 0a 44 01 00 ck=ok
+  6891   13.537 OUT         id=08 st=00 addr=0928 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6893   13.541 IN82        id=08 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+  6895   13.549 OUT         id=08 st=00 addr=0932 len=03 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6897   13.553 IN82        id=08 st=00 addr=0932 len=03 data=00 0a 95 00 00 00 00 00 00 00 ck=ok
+  6899   13.560 OUT         id=08 st=00 addr=0A80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6901   13.564 IN82        id=08 st=00 addr=0A80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6903   13.571 OUT         id=08 st=00 addr=0A9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6905   13.575 IN82        id=08 st=00 addr=0A9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6907   13.582 OUT         id=08 st=00 addr=0C00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6909   13.586 IN82        id=08 st=00 addr=0C00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6911   13.593 OUT         id=08 st=00 addr=0C1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6913   13.597 IN82        id=08 st=00 addr=0C1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6915   13.604 OUT         id=08 st=00 addr=0D80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6917   13.608 IN82        id=08 st=00 addr=0D80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6919   13.615 OUT         id=08 st=00 addr=0D9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6921   13.619 IN82        id=08 st=00 addr=0D9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6923   13.626 OUT         id=08 st=00 addr=0F00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6925   13.630 IN82        id=08 st=00 addr=0F00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6927   13.637 OUT         id=08 st=00 addr=0F1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6929   13.641 IN82        id=08 st=00 addr=0F1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6931   13.648 OUT         id=08 st=00 addr=1080 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6933   13.652 IN82        id=08 st=00 addr=1080 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6935   13.659 OUT         id=08 st=00 addr=109F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6937   13.663 IN82        id=08 st=00 addr=109F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6939   13.670 OUT         id=08 st=00 addr=1200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6941   13.674 IN82        id=08 st=00 addr=1200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6943   13.681 OUT         id=08 st=00 addr=121F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6945   13.685 IN82        id=08 st=00 addr=121F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6947   13.692 OUT         id=08 st=00 addr=1380 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6949   13.696 IN82        id=08 st=00 addr=1380 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6951   13.703 OUT         id=08 st=00 addr=139F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6953   13.707 IN82        id=08 st=00 addr=139F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6955   13.714 OUT         id=08 st=00 addr=1500 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6957   13.718 IN82        id=08 st=00 addr=1500 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6959   13.725 OUT         id=08 st=00 addr=151F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6961   13.729 IN82        id=08 st=00 addr=151F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6963   13.736 OUT         id=08 st=00 addr=1680 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6965   13.740 IN82        id=08 st=00 addr=1680 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6967   13.747 OUT         id=08 st=00 addr=169F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6969   13.751 IN82        id=08 st=00 addr=169F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6971   13.758 OUT         id=08 st=00 addr=1800 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6973   13.762 IN82        id=08 st=00 addr=1800 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6975   13.769 OUT         id=08 st=00 addr=181F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6977   13.773 IN82        id=08 st=00 addr=181F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6979   13.780 OUT         id=08 st=00 addr=1980 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6981   13.784 IN82        id=08 st=00 addr=1980 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6983   13.791 OUT         id=08 st=00 addr=199F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6985   13.795 IN82        id=08 st=00 addr=199F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+  6991   13.945 OUT         id=08 st=00 addr=004C len=08 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  6993   13.949 IN82        id=08 st=00 addr=004C len=08 data=02 53 10 45 01 54 01 54 00 00 ck=ok
+  6999   13.971 OUT         id=12 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  7001   13.975 IN82        id=12 st=00 addr=0000 len=02 data=02 19 00 00 00 00 00 00 00 00 ck=ok
+  7003   13.984 OUT         id=0E st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  7005   13.988 IN82        id=0E st=00 addr=0000 len=01 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  7007   13.996 OUT         id=17 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  7009   14.000 IN82        id=17 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  7011   14.009 OUT         id=15 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+  7012   14.011 IN82        id=15 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 13489   23.248 OUT         id=07 st=00 addr=01A0 len=02 data=00 ff 00 00 00 00 00 00 00 00 ck=ok
+ 13491   23.252 IN82        id=07 st=00 addr=01A0 len=02 data=00 ff 00 00 00 00 00 00 00 00 ck=ok
+ 13493   23.260 OUT         id=07 st=00 addr=0900 len=0A data=00 ff ff ff ff ff ff ff ff ff ck=ok
+ 13495   23.264 IN82        id=07 st=00 addr=0900 len=0A data=00 ff ff ff ff ff ff ff ff ff ck=ok
+ 13497   23.271 OUT         id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13499   23.275 IN82        id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13501   23.282 OUT         id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13503   23.286 IN82        id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13505   23.293 OUT         id=07 st=00 addr=091E len=03 data=ff 00 55 00 00 00 00 00 00 00 ck=ok
+ 13507   23.297 IN82        id=07 st=00 addr=091E len=03 data=ff 00 55 00 00 00 00 00 00 00 ck=ok
+ 13509   23.305 OUT         id=07 st=00 addr=01A0 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+ 13511   23.309 IN82        id=07 st=00 addr=01A0 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+ 13513   23.317 OUT         id=07 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+ 13515   23.321 IN82        id=07 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+ 13517   23.328 OUT         id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13519   23.332 IN82        id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13521   23.339 OUT         id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13523   23.343 IN82        id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 13525   23.350 OUT         id=07 st=00 addr=091E len=0A data=ff 04 84 01 00 00 0a 44 01 00 ck=ok
+ 13527   23.354 IN82        id=07 st=00 addr=091E len=0A data=ff 04 84 01 00 00 0a 44 01 00 ck=ok
+ 13529   23.361 OUT         id=07 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 13531   23.365 IN82        id=07 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 13533   23.372 OUT         id=07 st=00 addr=0932 len=03 data=00 0a 95 00 00 00 00 00 00 00 ck=ok
+ 13535   23.376 IN82        id=07 st=00 addr=0932 len=03 data=00 0a 95 00 00 00 00 00 00 00 ck=ok
+ 15535   28.757 OUT         id=09 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15537   29.364 IN82        id=09 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15543   29.372 OUT         id=16 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 15545   29.465 IN82        id=16 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 15551   29.473 OUT         id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 15555   29.563 IN82        id=14 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 15557   29.571 OUT         id=08 st=00 addr=0000 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15573   29.578 IN82        id=08 st=00 addr=0000 len=0A data=01 54 04 51 01 54 00 55 00 55 ck=ok
+ 15599   29.586 OUT         id=08 st=00 addr=000A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15603   29.591 IN82        id=08 st=00 addr=000A len=0A data=01 54 07 07 00 47 0f 0f 00 37 ck=ok
+ 15607   29.599 OUT         id=08 st=00 addr=0014 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15611   29.604 IN82        id=08 st=00 addr=0014 len=0A data=1f 1f 00 17 3f 3f 00 d7 3f 3f ck=ok
+ 15617   29.612 OUT         id=08 st=00 addr=001E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15621   29.617 IN82        id=08 st=00 addr=001E len=0A data=00 d7 7f 7f 00 57 7f 7f 00 57 ck=ok
+ 15627   29.625 OUT         id=08 st=00 addr=0028 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15631   29.630 IN82        id=08 st=00 addr=0028 len=0A data=7f 7f 00 57 ff 00 00 56 00 00 ck=ok
+ 15637   29.638 OUT         id=08 st=00 addr=0032 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15641   29.643 IN82        id=08 st=00 addr=0032 len=0A data=ff 56 00 ff 00 56 ff 00 ff 57 ck=ok
+ 15647   29.651 OUT         id=08 st=00 addr=003C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15651   29.656 IN82        id=08 st=00 addr=003C len=0A data=ff 00 ff 57 ff 00 ff 57 ff 00 ck=ok
+ 15655   29.664 OUT         id=08 st=00 addr=0046 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15659   29.669 IN82        id=08 st=00 addr=0046 len=0A data=ff 57 ff 00 ff 57 02 53 80 d5 ck=ok
+ 15665   29.677 OUT         id=08 st=00 addr=0050 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15667   29.682 IN82        id=08 st=00 addr=0050 len=0A data=03 52 01 54 ff 00 ff 57 00 55 ck=ok
+ 15673   29.690 OUT         id=08 st=00 addr=005A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15677   29.695 IN82        id=08 st=00 addr=005A len=0A data=80 d5 03 52 00 55 01 01 00 53 ck=ok
+ 15681   29.703 OUT         id=08 st=00 addr=0064 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15685   29.708 IN82        id=08 st=00 addr=0064 len=0A data=01 02 00 52 01 04 00 50 01 08 ck=ok
+ 15689   29.716 OUT         id=08 st=00 addr=006E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15693   29.721 IN82        id=08 st=00 addr=006E len=0A data=00 4c 01 10 00 44 02 01 00 52 ck=ok
+ 15697   29.729 OUT         id=08 st=00 addr=0078 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15701   29.734 IN82        id=08 st=00 addr=0078 len=0A data=02 02 00 51 02 03 00 50 07 00 ck=ok
+ 15705   29.742 OUT         id=08 st=00 addr=0082 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15707   29.747 IN82        id=08 st=00 addr=0082 len=0A data=00 4e 08 04 00 49 04 0a 03 44 ck=ok
+ 15711   29.755 OUT         id=08 st=00 addr=008C len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15715   29.760 IN82        id=08 st=00 addr=008C len=0A data=00 00 00 55 00 00 00 55 00 00 ck=ok
+ 15717   29.768 OUT         id=08 st=00 addr=0096 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15721   29.773 IN82        id=08 st=00 addr=0096 len=0A data=00 55 00 00 00 55 00 00 00 55 ck=ok
+ 15725   29.781 OUT         id=08 st=00 addr=00A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15727   29.786 IN82        id=08 st=00 addr=00A0 len=0A data=01 ff 00 ff 07 09 46 00 55 08 ck=ok
+ 15731   29.794 OUT         id=08 st=00 addr=00AA len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15735   29.799 IN82        id=08 st=00 addr=00AA len=0A data=4d 01 54 3c 19 00 55 00 55 00 ck=ok
+ 15741   29.807 OUT         id=08 st=00 addr=00B4 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15747   29.812 IN82        id=08 st=00 addr=00B4 len=0A data=55 00 55 06 4f 00 55 0a 4b ff ck=ok
+ 15755   29.820 OUT         id=08 st=00 addr=00BE len=02 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15759   29.825 IN82        id=08 st=00 addr=00BE len=02 data=ff ff 00 00 00 00 00 00 00 00 ck=ok
+ 15767   29.833 OUT         id=08 st=00 addr=0100 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15773   29.838 IN82        id=08 st=00 addr=0100 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15781   29.846 OUT         id=08 st=00 addr=0120 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15783   29.851 IN82        id=08 st=00 addr=0120 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15785   29.859 OUT         id=08 st=00 addr=0140 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15787   29.864 IN82        id=08 st=00 addr=0140 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15789   29.872 OUT         id=08 st=00 addr=0160 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15791   29.877 IN82        id=08 st=00 addr=0160 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15793   29.885 OUT         id=08 st=00 addr=0180 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15795   29.890 IN82        id=08 st=00 addr=0180 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15797   29.898 OUT         id=08 st=00 addr=01A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15799   29.903 IN82        id=08 st=00 addr=01A0 len=0A data=02 82 e2 00 42 e2 00 cb ff ff ck=ok
+ 15801   29.911 OUT         id=08 st=00 addr=01A0 len=08 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15803   29.916 IN82        id=08 st=00 addr=01A0 len=08 data=02 82 e2 00 42 e2 00 cb 00 00 ck=ok
+ 15805   29.924 OUT         id=08 st=00 addr=01C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15807   29.929 IN82        id=08 st=00 addr=01C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15809   29.937 OUT         id=08 st=00 addr=01E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15811   29.942 IN82        id=08 st=00 addr=01E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15813   29.950 OUT         id=08 st=00 addr=0200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15815   29.955 IN82        id=08 st=00 addr=0200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15817   29.963 OUT         id=08 st=00 addr=0220 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15819   29.968 IN82        id=08 st=00 addr=0220 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15821   29.976 OUT         id=08 st=00 addr=0240 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15823   29.981 IN82        id=08 st=00 addr=0240 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15825   29.989 OUT         id=08 st=00 addr=0260 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15827   29.994 IN82        id=08 st=00 addr=0260 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15829   30.002 OUT         id=08 st=00 addr=0280 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15831   30.007 IN82        id=08 st=00 addr=0280 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15833   30.015 OUT         id=08 st=00 addr=02A0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15835   30.020 IN82        id=08 st=00 addr=02A0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15837   30.028 OUT         id=08 st=00 addr=02C0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15839   30.033 IN82        id=08 st=00 addr=02C0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15841   30.041 OUT         id=08 st=00 addr=02E0 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15843   30.046 IN82        id=08 st=00 addr=02E0 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15845   30.054 OUT         id=08 st=00 addr=0300 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15847   30.059 IN82        id=08 st=00 addr=0300 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15849   30.067 OUT         id=08 st=00 addr=031F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15851   30.072 IN82        id=08 st=00 addr=031F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15853   30.080 OUT         id=08 st=00 addr=0480 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15855   30.085 IN82        id=08 st=00 addr=0480 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15857   30.093 OUT         id=08 st=00 addr=049F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15859   30.098 IN82        id=08 st=00 addr=049F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15863   30.106 OUT         id=08 st=00 addr=0600 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15867   30.111 IN82        id=08 st=00 addr=0600 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15869   30.119 OUT         id=08 st=00 addr=061F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 15871   30.124 IN82        id=08 st=00 addr=061F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 15875   30.132 OUT         id=08 st=00 addr=0780 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16061   31.135 OUT         id=08 st=00 addr=0780 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16063   31.140 IN82        id=08 st=00 addr=0780 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16069   31.148 OUT         id=08 st=00 addr=079F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16071   31.153 IN82        id=08 st=00 addr=079F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16075   31.161 OUT         id=08 st=00 addr=0900 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16077   31.166 IN82        id=08 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+ 16079   31.174 OUT         id=08 st=00 addr=091F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16085   31.179 IN82        id=08 st=00 addr=091F len=0A data=04 84 01 00 00 0a 44 01 00 00 ck=ok
+ 16087   31.187 OUT         id=08 st=00 addr=0900 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16091   31.192 IN82        id=08 st=00 addr=0900 len=0A data=04 65 62 65 6e ff ff ff ff ff ck=ok
+ 16093   31.200 OUT         id=08 st=00 addr=090A len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16097   31.205 IN82        id=08 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16099   31.213 OUT         id=08 st=00 addr=0914 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16103   31.218 IN82        id=08 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16105   31.226 OUT         id=08 st=00 addr=091E len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16109   31.231 IN82        id=08 st=00 addr=091E len=0A data=ff 04 84 01 00 00 0a 44 01 00 ck=ok
+ 16113   31.239 OUT         id=08 st=00 addr=0928 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16115   31.244 IN82        id=08 st=00 addr=0928 len=0A data=00 0a 84 01 00 00 0a 44 01 00 ck=ok
+ 16119   31.252 OUT         id=08 st=00 addr=0932 len=03 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16123   31.257 IN82        id=08 st=00 addr=0932 len=03 data=00 0a 95 00 00 00 00 00 00 00 ck=ok
+ 16127   31.265 OUT         id=08 st=00 addr=0A80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16131   31.270 IN82        id=08 st=00 addr=0A80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16135   31.278 OUT         id=08 st=00 addr=0A9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16139   31.283 IN82        id=08 st=00 addr=0A9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16143   31.291 OUT         id=08 st=00 addr=0C00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16147   31.296 IN82        id=08 st=00 addr=0C00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16151   31.304 OUT         id=08 st=00 addr=0C1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16155   31.309 IN82        id=08 st=00 addr=0C1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16159   31.317 OUT         id=08 st=00 addr=0D80 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16161   31.322 IN82        id=08 st=00 addr=0D80 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16167   31.330 OUT         id=08 st=00 addr=0D9F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16171   31.335 IN82        id=08 st=00 addr=0D9F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16175   31.343 OUT         id=08 st=00 addr=0F00 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16177   31.348 IN82        id=08 st=00 addr=0F00 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16183   31.356 OUT         id=08 st=00 addr=0F1F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16187   31.361 IN82        id=08 st=00 addr=0F1F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16191   31.369 OUT         id=08 st=00 addr=1080 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16193   31.374 IN82        id=08 st=00 addr=1080 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16199   31.382 OUT         id=08 st=00 addr=109F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16203   31.387 IN82        id=08 st=00 addr=109F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16211   31.395 OUT         id=08 st=00 addr=1200 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16213   31.400 IN82        id=08 st=00 addr=1200 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16221   31.408 OUT         id=08 st=00 addr=121F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16223   31.413 IN82        id=08 st=00 addr=121F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16227   31.421 OUT         id=08 st=00 addr=1380 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16231   31.426 IN82        id=08 st=00 addr=1380 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16237   31.434 OUT         id=08 st=00 addr=139F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16241   31.439 IN82        id=08 st=00 addr=139F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16243   31.447 OUT         id=08 st=00 addr=1500 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16247   31.452 IN82        id=08 st=00 addr=1500 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16253   31.460 OUT         id=08 st=00 addr=151F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16255   31.465 IN82        id=08 st=00 addr=151F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16259   31.473 OUT         id=08 st=00 addr=1680 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16263   31.478 IN82        id=08 st=00 addr=1680 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16269   31.486 OUT         id=08 st=00 addr=169F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16271   31.491 IN82        id=08 st=00 addr=169F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16277   31.499 OUT         id=08 st=00 addr=1800 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16281   31.504 IN82        id=08 st=00 addr=1800 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16287   31.512 OUT         id=08 st=00 addr=181F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16291   31.517 IN82        id=08 st=00 addr=181F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16299   31.525 OUT         id=08 st=00 addr=1980 len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16303   31.530 IN82        id=08 st=00 addr=1980 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16309   31.538 OUT         id=08 st=00 addr=199F len=0A data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16313   31.543 IN82        id=08 st=00 addr=199F len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16411   31.697 OUT         id=08 st=00 addr=004C len=08 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16417   31.702 IN82        id=08 st=00 addr=004C len=08 data=02 53 80 d5 03 52 01 54 00 00 ck=ok
+ 16433   31.724 OUT         id=12 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16439   31.729 IN82        id=12 st=00 addr=0000 len=02 data=02 19 00 00 00 00 00 00 00 00 ck=ok
+ 16445   31.738 OUT         id=0E st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16449   31.743 IN82        id=0E st=00 addr=0000 len=01 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16453   31.751 OUT         id=17 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16459   31.756 IN82        id=17 st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+ 16463   31.766 OUT         id=15 st=00 addr=0000 len=00 data=00 00 00 00 00 00 00 00 00 00 ck=ok
+ 16464   31.768 IN82        id=15 st=00 addr=0000 len=0A data=02 00 00 00 00 00 00 00 00 00 ck=ok
+ 16469   31.777 OUT         id=07 st=00 addr=01A0 len=02 data=00 ff 00 00 00 00 00 00 00 00 ck=ok
+ 16475   31.782 IN82        id=07 st=00 addr=01A0 len=02 data=00 ff 00 00 00 00 00 00 00 00 ck=ok
+ 16481   31.834 OUT         id=07 st=00 addr=0900 len=0A data=00 ff ff ff ff ff ff ff ff ff ck=ok
+ 16487   31.839 IN82        id=07 st=00 addr=0900 len=0A data=00 ff ff ff ff ff ff ff ff ff ck=ok
+ 16489   31.847 OUT         id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16493   31.852 IN82        id=07 st=00 addr=090A len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16497   31.860 OUT         id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16501   31.865 IN82        id=07 st=00 addr=0914 len=0A data=ff ff ff ff ff ff ff ff ff ff ck=ok
+ 16503   31.873 OUT         id=07 st=00 addr=091E len=03 data=ff 00 55 00 00 00 00 00 00 00 ck=ok
+ 16505   31.878 IN82        id=07 st=00 addr=091E len=03 data=ff 00 55 00 00 00 00 00 00 00 ck=ok
+##### caps/windows-capture__usb-captures__wireshark.pcapng.tsv
+  9913    0.000 IN82        id=0A st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  9915    0.260 IN82        id=0A st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  9917    0.470 IN82        id=0A st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+  9919    0.663 IN82        id=0A st=00 addr=0000 len=0A data=01 00 00 00 00 00 00 00 00 00 ck=ok
+
+# ---- id=03 responses ----
+aria__adv_settings_battery_state.pcapng: 08030000000101e6d3f30000000000009c x3
+aria__adv_settings_connection_state_and_report_rate.pcapng: 08030000000101e6d3f30000000000009c x3
+aria__adv_settings_only_battery_warning.pcapng: 08030000000101e6d3f30000000000009c x3
+aria__button_remap.pcapng: 08030000000101e6d3f30000000000009c x32
+aria__cycle_until_key_pressed_+_cycle_until_this_key_pressed.pcapng: 08030000000101e6d3f30000000000009c x10
+aria__debounce.pcapng: 08030000000101e6d3f30000000000009c x12
+aria__dpi_color_from_red_blue_red_again.pcapng: 08030000000101e6d3f30000000000009c x10
+aria__dpi_stages_with_colors_changes.pcapng: 08030000000101e6d3f30000000000009c x31
+aria__macro_autoclick_cycle_until_release.pcapng: 08030000000101e6d3f30000000000009c x22
+windows-capture__usb-captures__advanced-settings.pcapng: 08030000000101e6d3f30000000000009c x15
+windows-capture__usb-captures__all-settings-experiment.pcapng: 08030000000101e6d3f30000000000009c x53
+windows-capture__usb-captures__button-remap.pcapng: 08030000000101e6d3f30000000000009c x62
+windows-capture__usb-captures__debounce.pcapng: 08030000000101e6d3f30000000000009c x12
+windows-capture__usb-captures__macro-manager.pcapng: 08030000000101e6d3f30000000000009c x19
+windows-capture__usb-captures__mode-lp-hp.pcapng: 08030000000101e6d3f30000000000009c x6
+windows-capture__usb-captures__peak-performance-duration.pcapng: 08030000000101e6d3f30000000000009c x7
+windows-capture__usb-captures__peak-performance-toggle.pcapng: 08030000000101e6d3f30000000000009c x9
+windows-capture__usb-captures__profiles-config.pcapng: 08030000000101e6d3f30000000000009c x17
+
+# ---- non-0x08 report IDs seen on endpoint 0x82 ----
+aria__button_remap.pcapng: 050000 x8
+aria__button_remap.pcapng: 05e200 x8
+aria__macro_autoclick_cycle_until_release.pcapng: 0b01000000000000 x307
+aria__macro_autoclick_cycle_until_release.pcapng: 0b00000000000000 x307
+windows-capture__usb-captures__macro-manager.pcapng: 0b01000000000000 x8
+windows-capture__usb-captures__macro-manager.pcapng: 0b00000000000000 x8
+
+# ---- id=04 BatteryLevel responses decoded (data[0]=level, data[1]=isCharging, data[2..3]=voltage big-endian) ----
+aria__adv_settings_battery_state.pcapng: level=90 isCharging=0 BatVoltage=4051 mV  x2
+aria__adv_settings_connection_state_and_report_rate.pcapng: level=90 isCharging=0 BatVoltage=4051 mV  x2
+aria__adv_settings_only_battery_warning.pcapng: level=85 isCharging=0 BatVoltage=4046 mV  x1
+aria__adv_settings_only_battery_warning.pcapng: level=85 isCharging=0 BatVoltage=4051 mV  x1
+aria__button_remap.pcapng: level=90 isCharging=0 BatVoltage=4051 mV  x10
+aria__button_remap.pcapng: level=90 isCharging=0 BatVoltage=4055 mV  x6
+aria__cycle_until_key_pressed_+_cycle_until_this_key_pressed.pcapng: level=90 isCharging=0 BatVoltage=4051 mV  x8
+aria__debounce.pcapng: level=90 isCharging=0 BatVoltage=4051 mV  x3
+aria__debounce.pcapng: level=90 isCharging=0 BatVoltage=4055 mV  x2
+aria__dpi_color_from_red_blue_red_again.pcapng: level=85 isCharging=0 BatVoltage=4046 mV  x4
+aria__dpi_stages_with_colors_changes.pcapng: level=85 isCharging=0 BatVoltage=4046 mV  x9
+aria__dpi_stages_with_colors_changes.pcapng: level=85 isCharging=0 BatVoltage=4051 mV  x2
+aria__macro_autoclick_cycle_until_release.pcapng: level=90 isCharging=0 BatVoltage=4051 mV  x5
+aria__macro_autoclick_cycle_until_release.pcapng: level=90 isCharging=0 BatVoltage=4055 mV  x9
+windows-capture__usb-captures__advanced-settings.pcapng: level=100 isCharging=0 BatVoltage=4147 mV  x2
+windows-capture__usb-captures__advanced-settings.pcapng: level=100 isCharging=0 BatVoltage=4151 mV  x3
+windows-capture__usb-captures__all-settings-experiment.pcapng: level=100 isCharging=0 BatVoltage=4155 mV  x1
+windows-capture__usb-captures__all-settings-experiment.pcapng: level=100 isCharging=0 BatVoltage=4159 mV  x11
+windows-capture__usb-captures__all-settings-experiment.pcapng: level=100 isCharging=0 BatVoltage=4164 mV  x5
+windows-capture__usb-captures__button-remap.pcapng: level=100 isCharging=0 BatVoltage=4151 mV  x13
+windows-capture__usb-captures__button-remap.pcapng: level=100 isCharging=0 BatVoltage=4155 mV  x4
+windows-capture__usb-captures__debounce.pcapng: level=100 isCharging=0 BatVoltage=4151 mV  x2
+windows-capture__usb-captures__debounce.pcapng: level=100 isCharging=0 BatVoltage=4155 mV  x5
+windows-capture__usb-captures__macro-manager.pcapng: level=100 isCharging=0 BatVoltage=4151 mV  x14
+windows-capture__usb-captures__macro-manager.pcapng: level=100 isCharging=0 BatVoltage=4155 mV  x1
+windows-capture__usb-captures__mode-lp-hp.pcapng: level=100 isCharging=0 BatVoltage=4159 mV  x1
+windows-capture__usb-captures__mode-lp-hp.pcapng: level=100 isCharging=0 BatVoltage=4164 mV  x1
+windows-capture__usb-captures__peak-performance-duration.pcapng: level=100 isCharging=0 BatVoltage=4164 mV  x5
+windows-capture__usb-captures__peak-performance-toggle.pcapng: level=100 isCharging=0 BatVoltage=4164 mV  x3
+windows-capture__usb-captures__peak-performance-toggle.pcapng: level=100 isCharging=0 BatVoltage=4168 mV  x3
+windows-capture__usb-captures__profiles-config.pcapng: level=100 isCharging=0 BatVoltage=4147 mV  x3
+windows-capture__usb-captures__profiles-config.pcapng: level=100 isCharging=0 BatVoltage=4151 mV  x9

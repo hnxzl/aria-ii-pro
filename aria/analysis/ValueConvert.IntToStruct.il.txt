@@ -1,0 +1,91 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.ValueConvert METHOD=IntToStruct TOKEN=0x06000512 IL_BYTES=145
+0000: ldc.i4.4
+0001: ldarg.0
+0002: ldlen
+0003: conv.i4
+0004: mul
+0005: newarr           0x01000026 // System.Byte
+000A: stloc.0
+000B: ldc.i4.0
+000C: stloc.3
+000D: br.s             IL_0045
+000F: ldloc.0
+0010: ldloc.3
+0011: ldc.i4.4
+0012: mul
+0013: ldc.i4.3
+0014: add
+0015: ldarg.0
+0016: ldloc.3
+0017: ldelem.i4
+0018: ldc.i4.s         24
+001A: shr
+001B: conv.u1
+001C: stelem.i1
+001D: ldloc.0
+001E: ldloc.3
+001F: ldc.i4.4
+0020: mul
+0021: ldc.i4.2
+0022: add
+0023: ldarg.0
+0024: ldloc.3
+0025: ldelem.i4
+0026: ldc.i4.s         16
+0028: shr
+0029: conv.u1
+002A: stelem.i1
+002B: ldloc.0
+002C: ldloc.3
+002D: ldc.i4.4
+002E: mul
+002F: ldc.i4.1
+0030: add
+0031: ldarg.0
+0032: ldloc.3
+0033: ldelem.i4
+0034: ldc.i4.8
+0035: shr
+0036: conv.u1
+0037: stelem.i1
+0038: ldloc.0
+0039: ldloc.3
+003A: ldc.i4.4
+003B: mul
+003C: ldarg.0
+003D: ldloc.3
+003E: ldelem.i4
+003F: conv.u1
+0040: stelem.i1
+0041: ldloc.3
+0042: ldc.i4.1
+0043: add
+0044: stloc.3
+0045: ldloc.3
+0046: ldarg.0
+0047: ldlen
+0048: conv.i4
+0049: blt.s            IL_000F
+004B: ldtoken          0x1B000017 // <unresolved>
+0050: call             0x0A0000B2 // System.Type GetTypeFromHandle(System.RuntimeTypeHandle)
+0055: call             0x0A0000B3 // Int32 SizeOf(System.Type)
+005A: stloc.1
+005B: ldloc.1
+005C: call             0x0A0000B4 // IntPtr AllocHGlobal(Int32)
+0061: stloc.2
+0062: ldloc.0
+0063: ldc.i4.0
+0064: ldloc.2
+0065: ldloc.1
+0066: call             0x0A0000B8 // Void Copy(Byte[], Int32, IntPtr, Int32)
+006B: ldloc.2
+006C: ldtoken          0x1B000017 // <unresolved>
+0071: call             0x0A0000B2 // System.Type GetTypeFromHandle(System.RuntimeTypeHandle)
+0076: call             0x0A0000B9 // System.Object PtrToStructure(IntPtr, System.Type)
+007B: unbox.any        0x1B000017 // <unresolved>
+0080: box              0x1B000017 // <unresolved>
+0085: ldloc.2
+0086: call             0x0A0000B7 // Void FreeHGlobal(IntPtr)
+008B: unbox.any        0x1B000017 // <unresolved>
+0090: ret

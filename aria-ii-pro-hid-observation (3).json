@@ -1,0 +1,65 @@
+{
+  "schema": "aria-ii-pro-webhid-observation-v1",
+  "application": "Fantech Aria II Pro WebHID Lab",
+  "capturedAt": "2026-10-23T11:03:15.060Z",
+  "device": {
+    "productName": "Fantech StrikeSpeed Pro",
+    "vendorId": 13652,
+    "productId": 62755
+  },
+  "reports": [
+    {
+      "sequence": 1,
+      "time": "2026-10-23T11:03:11.608Z",
+      "reportId": 8,
+      "data": [
+        8,
+        0,
+        0,
+        76,
+        8,
+        2,
+        83,
+        16,
+        69,
+        5,
+        80,
+        0,
+        85,
+        0,
+        0,
+        157
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "sequence": 1,
+      "time": "2026-10-23T11:03:11.606Z",
+      "operation": "ReadFlashData",
+      "channel": "output",
+      "address": 76,
+      "length": 8,
+      "reportId": 8,
+      "data": [
+        8,
+        0,
+        0,
+        76,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        241
+      ]
+    }
+  ],
+  "note": "The page can send only a single read-only ReadFlashData request; no configuration write is available."
+}

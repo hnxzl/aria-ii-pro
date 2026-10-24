@@ -1,0 +1,33 @@
+﻿ASSEMBLY=C:\Program Files (x86)\Fantech Aria II Pro\Mouse Drive Beta.exe
+TYPE=Mouse_Drive_Beta.FormMain METHOD=UpdateLightModeUI TOKEN=0x06000425 IL_BYTES=71
+0000: ldarg.0
+0001: ldfld            0x040004B1 // CustomControlLibrary.CustomTrackBar customTrackBar_LightBrightness
+0006: ldarg.1
+0007: ldc.i4.0
+0008: ldelem.u1
+0009: callvirt         0x0600035F // Void set_Enable(Boolean)
+000E: ldarg.0
+000F: ldfld            0x040004B0 // System.Windows.Forms.Label label_LightBrightnessValue
+0014: ldarg.1
+0015: ldc.i4.0
+0016: ldelem.u1
+0017: callvirt         0x0A000212 // Void set_Visible(Boolean)
+001C: ldarg.0
+001D: ldfld            0x040004B2 // CustomControlLibrary.CustomTrackBar customTrackBar_LightSpeed
+0022: ldarg.1
+0023: ldc.i4.1
+0024: ldelem.u1
+0025: callvirt         0x0600035F // Void set_Enable(Boolean)
+002A: ldarg.0
+002B: ldfld            0x040004B3 // System.Windows.Forms.Label label_LightSpeedValue
+0030: ldarg.1
+0031: ldc.i4.1
+0032: ldelem.u1
+0033: callvirt         0x0A000212 // Void set_Visible(Boolean)
+0038: ldarg.0
+0039: ldfld            0x040004CB // System.Windows.Forms.Panel panel_LEDColor
+003E: ldarg.1
+003F: ldc.i4.2
+0040: ldelem.u1
+0041: callvirt         0x0A000212 // Void set_Visible(Boolean)
+0046: ret
